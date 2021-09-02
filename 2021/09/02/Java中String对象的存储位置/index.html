@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://charmingzmz.github.io">
-  <title>Charmingzmz的个人博客</title>
+  <title>Java中String对象的存储位置 | Charmingzmz的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="学习的动力在于此">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Charmingzmz的个人博客">
-<meta property="og:url" content="https://charmingzmz.github.io/index.html">
+  <meta name="description" content="Java中String对象的存储位置Java中String对象的存储位置（学习笔记） 首先，String是final修饰的、immutable对象，它以一个个字符的方式存储在字符数组中。其次，String类型创建对象有两种方式：①通过字面量赋值：会先去常量池中查找是否存在相同的字符串，若存在，栈中引用直接指定该字符串；若不存在，在常量池中进行缓存，再将栈中引用指向它。②通过new关键字：每次new">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java中String对象的存储位置">
+<meta property="og:url" content="https://charmingzmz.github.io/2021/09/02/Java%E4%B8%ADString%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Charmingzmz的个人博客">
-<meta property="og:description" content="学习的动力在于此">
+<meta property="og:description" content="Java中String对象的存储位置Java中String对象的存储位置（学习笔记） 首先，String是final修饰的、immutable对象，它以一个个字符的方式存储在字符数组中。其次，String类型创建对象有两种方式：①通过字面量赋值：会先去常量池中查找是否存在相同的字符串，若存在，栈中引用直接指定该字符串；若不存在，在常量池中进行缓存，再将栈中引用指向它。②通过new关键字：每次new">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/09/02/Java%E4%B8%ADString%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/1.png">
+<meta property="article:published_time" content="2021-09-02T15:28:06.000Z">
+<meta property="article:modified_time" content="2021-09-02T15:37:21.726Z">
 <meta property="article:author" content="郑铭哲">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://charmingzmz.github.io/2021/09/02/Java%E4%B8%ADString%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Charmingzmz的个人博客" type="application/atom+xml">
   
@@ -143,16 +147,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Java中String对象的存储位置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Java中String对象的存储位置" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/02/Java%E4%B8%ADString%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/">Java中String对象的存储位置</a>
+    <h1 class="article-title" itemprop="name">
+      Java中String对象的存储位置
     </h1>
   
 
@@ -174,6 +176,32 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://i.loli.net/2021/08/25/QHZPTmdWkoI6Jqy.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -181,16 +209,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/09/02/Java%E4%B8%ADString%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://charmingzmz.github.io/2021/09/02/Java%E4%B8%ADString%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2021/08/30/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8css%E4%BC%AA%E7%B1%BB/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如何使用css伪类</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -210,516 +297,14 @@
 
 
 
-
   
-    <article id="post-如何使用css伪类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/30/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8css%E4%BC%AA%E7%B1%BB/">如何使用css伪类</a>
-    </h1>
   
 
-        
-        <a href="/2021/08/30/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8css%E4%BC%AA%E7%B1%BB/" class="archive-article-date">
-  	<time datetime="2021-08-30T14:53:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="如何使用css伪类"><a href="#如何使用css伪类" class="headerlink" title="如何使用css伪类"></a>如何使用css伪类</h2><ul>
-<li><h5 id="CSS-伪类-Pseudo-classes"><a href="#CSS-伪类-Pseudo-classes" class="headerlink" title="CSS 伪类(Pseudo-classes)"></a>CSS 伪类(Pseudo-classes)</h5></li>
-</ul>
-<p>​     <em>语法</em></p>
-<p>​     伪类的语法：</p>
-<p>​     </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">selector:pseudo-class &#123;property:value;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>​     CSS类也可以使用伪类：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">selector.class:pseudo-class &#123;property:value;&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h5 id="anchor伪类"><a href="#anchor伪类" class="headerlink" title="anchor伪类"></a>anchor伪类</h5><p>在支持 CSS 的浏览器中，链接的不同状态都可以以不同的方式显示</p>
-<p><strong>实例</strong></p>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a:link &#123;color:#FF0000;&#125; /* 未访问的链接 */</span><br><span class="line">a:visited &#123;color:#00FF00;&#125; /* 已访问的链接 */</span><br><span class="line">a:hover &#123;color:#FF00FF;&#125; /* 鼠标划过链接 */</span><br><span class="line">a:active &#123;color:#0000FF;&#125; /* 已选中的链接 */</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><strong>注意：</strong> 在CSS定义中，a:hover 必须被置于 a:link 和 a:visited 之后，才是有效的。</p>
-<p><strong>注意：</strong> 在 CSS 定义中，a:active 必须被置于 a:hover 之后，才是有效的。</p>
-<p><strong>注意：</strong>伪类的名称不区分大小写。</p>
-<ul>
-<li><h5 id="伪类和CSS类"><a href="#伪类和CSS类" class="headerlink" title="伪类和CSS类"></a>伪类和CSS类</h5></li>
-</ul>
-<p> 伪类可以与 CSS 类配合使用：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a.red:visited &#123;color:#FF0000;&#125;</span><br><span class="line"> </span><br><span class="line">&lt;a class=&quot;red&quot; href=&quot;css-syntax.html&quot;&gt;CSS 语法&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-
-<p> 如果在上面的例子的链接已被访问，它会显示为红色。</p>
-<ul>
-<li><h5 id="CSS-first-child-伪类"><a href="#CSS-first-child-伪类" class="headerlink" title="CSS :first-child 伪类"></a>CSS :first-child 伪类</h5></li>
-</ul>
-<p>您可以使用 :first-child 伪类来选择父元素的第一个子元素。</p>
-<p><strong>注意：</strong>在IE8的之前版本必须声明<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-doctype.html"></a> ，这样 :first-child 才能生效。</p>
-<ul>
-<li><h5 id="匹配第一个-元素"><a href="#匹配第一个-元素" class="headerlink" title="匹配第一个  元素"></a>匹配第一个 <p> 元素</p></h5></li>
-</ul>
-<p>在下面的例子中，选择器匹配作为任何元素的第一个子元素的 </p><p> 元素：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">p:first-child</span><br><span class="line">&#123;</span><br><span class="line">    color:blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h5 id="匹配所有作为第一个子元素的-元素中的所有-元素"><a href="#匹配所有作为第一个子元素的-元素中的所有-元素" class="headerlink" title="匹配所有作为第一个子元素的  元素中的所有  元素"></a>匹配所有作为第一个子元素的 <p> 元素中的所有 <i> 元素</i></p></h5></li>
-</ul>
-<p>在下面的例子中，选择器匹配所有作为元素的第一个子元素的 </p><p> 元素中的所有 <i> 元素：</i></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">p &gt; i:first-child</span><br><span class="line">&#123;</span><br><span class="line">    color:blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p> <strong>匹配所有作为第一个子元素的 <p> 元素中的所有 <i> 元素</i></p></strong></p>
-<p>在下面的例子中，选择器匹配所有作为元素的第一个子元素的 </p><p> 元素中的所有 <i> 元素：</i></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">p:first-child i</span><br><span class="line">&#123;</span><br><span class="line">    color:blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li><h5 id="CSS-lang-伪类"><a href="#CSS-lang-伪类" class="headerlink" title="CSS - :lang 伪类"></a>CSS - :lang 伪类</h5></li>
-</ul>
-<p>:lang 伪类使你有能力为不同的语言定义特殊的规则</p>
-<p><strong>注意：</strong>IE8必须声明<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-doctype.html"></a>才能支持;lang伪类。</p>
-<p>在下面的例子中，:lang 类为属性值为 no 的q元素定义引号的类型：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">q:lang(no) &#123;quotes: &quot;~&quot; &quot;~&quot;;&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://www.runoob.com/images/tryitimg.gif" alt="Examples">更多实例</p>
-<p> <a target="_blank" rel="noopener" href="https://www.runoob.com/try/try.php?filename=trycss_link2">为超链接添加不同样式</a><br>这个例子演示了如何为超链接添加其他样式。</p>
-<p><a target="_blank" rel="noopener" href="https://www.runoob.com/try/try.php?filename=trycss_link_focus">使用 :focus</a><br>这个例子演示了如何使用 :focus伪类</p>
-<ul>
-<li><h5 id="所有CSS伪类-元素"><a href="#所有CSS伪类-元素" class="headerlink" title="所有CSS伪类/元素"></a>所有CSS伪类/元素</h5></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">选择器	示例	示例说明</span><br><span class="line">:checked	input:checked	选择所有选中的表单元素</span><br><span class="line">:disabled	input:disabled	选择所有禁用的表单元素</span><br><span class="line">:empty	    p:empty	            选择所有没有子元素的p元素</span><br><span class="line">:enabled	input:enabled	选择所有启用的表单元素</span><br><span class="line">:first-of-type	p:first-of-type	选择的每个 p 元素是其父元素的第一个 p 元素</span><br><span class="line">:in-range	input:in-range	选择元素指定范围内的值</span><br><span class="line">:invalid	input:invalid	选择所有无效的元素</span><br><span class="line">:last-child	p:last-child	选择所有p元素的最后一个子元素</span><br><span class="line">:last-of-type	p:last-of-type	选择每个p元素是其母元素的最后一个p元素</span><br><span class="line">:not(selector)	:not(p)	选择所有p以外的元素</span><br><span class="line">:nth-child(n)	p:nth-child(2)	选择所有 p 元素的父元素的第二个子元素</span><br><span class="line">:nth-last-child(n)	p:nth-last-child(2)	选择所有p元素倒数的第二个子元素</span><br><span class="line">:nth-last-of-type(n)	p:nth-last-of-type(2)	选择所有p元素倒数的第二个为p的子元素</span><br><span class="line">:nth-of-type(n)	p:nth-of-type(2)	选择所有p元素第二个为p的子元素</span><br><span class="line">:only-of-type	p:only-of-type	选择所有仅有一个子元素为p的元素</span><br><span class="line">:only-child	p:only-child	选择所有仅有一个子元素的p元素</span><br><span class="line">:optional	input:optional	选择没有&quot;required&quot;的元素属性</span><br><span class="line">:out-of-range	input:out-of-range	选择指定范围以外的值的元素属性</span><br><span class="line">:read-only	input:read-only	选择只读属性的元素属性</span><br><span class="line">:read-write	input:read-write	选择没有只读属性的元素属性</span><br><span class="line">:required	input:required	选择有&quot;required&quot;属性指定的元素属性</span><br><span class="line">:root	root	选择文档的根元素</span><br><span class="line">:target	#news:target	选择当前活动#news元素(点击URL包含锚的名字)</span><br><span class="line">:valid	input:valid	选择所有有效值的属性</span><br><span class="line">:link	a:link	选择所有未访问链接</span><br><span class="line">:visited	a:visited	选择所有访问过的链接</span><br><span class="line">:active	a:active	选择正在活动链接</span><br><span class="line">:hover	a:hover	把鼠标放在链接上的状态</span><br><span class="line">:focus	input:focus	选择元素输入后具有焦点</span><br><span class="line">:first-letter	p:first-letter	选择每个&lt;p&gt; 元素的第一个字母</span><br><span class="line">:first-line	p:first-line	选择每个&lt;p&gt; 元素的第一行</span><br><span class="line">:first-child	p:first-child	选择器匹配属于任意元素的第一个子元素的 &lt;p&gt; 元素</span><br><span class="line">:before	p:before	在每个&lt;p&gt;元素之前插入内容</span><br><span class="line">:after	p:after	在每个&lt;p&gt;元素之后插入内容</span><br><span class="line">:lang(language)	p:lang(it)	为&lt;p&gt;元素的lang属性选择一个开始值</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p>伪类可以看作以选中元素为基准点，此元素的一些状态或属性。</p>
-<p>chrome消除 div 滚动条的宽度，通过箭头键直接控制滚动：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#divContainer &#123;</span><br><span class="line">  overflow: auto;</span><br><span class="line">  height: 160px;</span><br><span class="line">  width: 260px;</span><br><span class="line">  background-color:red;</span><br><span class="line">&#125;</span><br><span class="line">#divContainer::-webkit-scrollbar &#123;</span><br><span class="line">    border-width:1px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/08/30/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8css%E4%BC%AA%E7%B1%BB/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HTML里面怎么使用图标库引用图标" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/28/HTML%E9%87%8C%E9%9D%A2%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8%E5%9B%BE%E6%A0%87%E5%BA%93%E5%BC%95%E7%94%A8%E5%9B%BE%E6%A0%87/">HTML里面怎么使用图标库引用图标</a>
-    </h1>
   
 
-        
-        <a href="/2021/08/28/HTML%E9%87%8C%E9%9D%A2%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8%E5%9B%BE%E6%A0%87%E5%BA%93%E5%BC%95%E7%94%A8%E5%9B%BE%E6%A0%87/" class="archive-article-date">
-  	<time datetime="2021-08-28T14:26:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="HTML里面怎么使用图标库引用图标"><a href="#HTML里面怎么使用图标库引用图标" class="headerlink" title="HTML里面怎么使用图标库引用图标"></a>HTML里面怎么使用图标库引用图标</h2><ul>
-<li>打开图标库官网  ：<a target="_blank" rel="noopener" href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></li>
-</ul>
-<p><img src="/2021/08/28/HTML%E9%87%8C%E9%9D%A2%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8%E5%9B%BE%E6%A0%87%E5%BA%93%E5%BC%95%E7%94%A8%E5%9B%BE%E6%A0%87/1.png"></p>
-<ul>
-<li><p>先新建一个账号</p>
-</li>
-<li><p>搜索想要的图标 ，加入到购物车</p>
-</li>
-<li><p><img src="/2021/08/28/HTML%E9%87%8C%E9%9D%A2%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8%E5%9B%BE%E6%A0%87%E5%BA%93%E5%BC%95%E7%94%A8%E5%9B%BE%E6%A0%87/2.png"></p>
-</li>
-<li><p>新建项目，把图标添加至项目。</p>
-<p><img src="/2021/08/28/HTML%E9%87%8C%E9%9D%A2%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8%E5%9B%BE%E6%A0%87%E5%BA%93%E5%BC%95%E7%94%A8%E5%9B%BE%E6%A0%87/3.png"></p>
-</li>
-<li><p>查看在线连接</p>
-<p><img src="/2021/08/28/HTML%E9%87%8C%E9%9D%A2%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8%E5%9B%BE%E6%A0%87%E5%BA%93%E5%BC%95%E7%94%A8%E5%9B%BE%E6%A0%87/4.png"></p>
-</li>
-<li><p>复制在线链接，打开HTML，<link rel="stylesheet" href="http://at.alicdn.com/t/font_2774117_eyxmx912yy.css"> 引入图标库在线链接</p>
-<p><img src="/2021/08/28/HTML%E9%87%8C%E9%9D%A2%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8%E5%9B%BE%E6%A0%87%E5%BA%93%E5%BC%95%E7%94%A8%E5%9B%BE%E6%A0%87/5.png"></p>
-</li>
-<li><p><i class="iconfont icon-sousuo_huaban1"></i>  使用i标签引用图标 class 里面记得要加iconfont</p>
-</li>
-<li><p><img src="/2021/08/28/HTML%E9%87%8C%E9%9D%A2%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8%E5%9B%BE%E6%A0%87%E5%BA%93%E5%BC%95%E7%94%A8%E5%9B%BE%E6%A0%87/6.png"></p>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;i class=&quot;iconfont icon-sousuo_huaban1&quot;&gt;&lt;/i&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>OK 图标使用成功打开网页查看</li>
-</ul>
-<p><img src="/2021/08/28/HTML%E9%87%8C%E9%9D%A2%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8%E5%9B%BE%E6%A0%87%E5%BA%93%E5%BC%95%E7%94%A8%E5%9B%BE%E6%A0%87/7.png"></p>
-<ul>
-<li>谢谢您的观看</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/08/28/HTML%E9%87%8C%E9%9D%A2%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8%E5%9B%BE%E6%A0%87%E5%BA%93%E5%BC%95%E7%94%A8%E5%9B%BE%E6%A0%87/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Hexo-yilia添加helper-live2d插件宠物动画" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/25/Hexo-yilia%E6%B7%BB%E5%8A%A0helper-live2d%E6%8F%92%E4%BB%B6%E5%AE%A0%E7%89%A9%E5%8A%A8%E7%94%BB/">Hexo+yilia添加helper-live2d插件宠物动画</a>
-    </h1>
   
 
-        
-        <a href="/2021/08/25/Hexo-yilia%E6%B7%BB%E5%8A%A0helper-live2d%E6%8F%92%E4%BB%B6%E5%AE%A0%E7%89%A9%E5%8A%A8%E7%94%BB/" class="archive-article-date">
-  	<time datetime="2021-08-25T14:22:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Hexo-yilia添加helper-live2d插件宠物动画"><a href="#Hexo-yilia添加helper-live2d插件宠物动画" class="headerlink" title="Hexo+yilia添加helper-live2d插件宠物动画"></a>Hexo+yilia添加helper-live2d插件宠物动画</h2><p>个人主页：<a href="https://charmingzmz.github.io/">https://charmingzmz.github.io/</a></p>
-<p><img src="/2021/08/25/Hexo-yilia%E6%B7%BB%E5%8A%A0helper-live2d%E6%8F%92%E4%BB%B6%E5%AE%A0%E7%89%A9%E5%8A%A8%E7%94%BB/1.png"></p>
-<h3 id="安装模块"><a href="#安装模块" class="headerlink" title="安装模块:"></a>安装模块:</h3><p>博客根目录选择<code>cmd</code>命令窗口或者<code>git bash</code> 输入以下代码，安装插件</p>
-<h4 id="操作："><a href="#操作：" class="headerlink" title="操作："></a>操作：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-helper-live2d</span><br></pre></td></tr></table></figure>
-
-<h3 id="下载模型"><a href="#下载模型" class="headerlink" title="下载模型"></a>下载模型</h3><p>作者动画展示网站<a target="_blank" rel="noopener" href="https://huaji8.top/post/live2d-plugin-2.0/">https://huaji8.top/post/live2d-plugin-2.0/</a></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">live2d-widget-model-chitose</span><br><span class="line">live2d-widget-model-epsilon2_1</span><br><span class="line">live2d-widget-model-gf</span><br><span class="line">live2d-widget-model-haru/01 (use npm install --save live2d-widget-model-haru)</span><br><span class="line">live2d-widget-model-haru/02 (use npm install --save live2d-widget-model-haru)</span><br><span class="line">live2d-widget-model-haruto</span><br><span class="line">live2d-widget-model-hibiki</span><br><span class="line">live2d-widget-model-hijiki</span><br><span class="line">live2d-widget-model-izumi</span><br><span class="line">live2d-widget-model-koharu</span><br><span class="line">live2d-widget-model-miku</span><br><span class="line">live2d-widget-model-ni-j</span><br><span class="line">live2d-widget-model-nico</span><br><span class="line">live2d-widget-model-nietzsche</span><br><span class="line">live2d-widget-model-nipsilon</span><br><span class="line">live2d-widget-model-nito</span><br><span class="line">live2d-widget-model-shizuku</span><br><span class="line">live2d-widget-model-tororo</span><br><span class="line">live2d-widget-model-tsumiki</span><br><span class="line">live2d-widget-model-unitychan</span><br><span class="line">live2d-widget-model-wanko</span><br><span class="line">live2d-widget-model-z16</span><br></pre></td></tr></table></figure>
-
-<p>选好对应的模型，使用 <code>npm install 模型的包名</code>来安装</p>
-<p>比如我选择的的是<code>live2d-widget-model-hijiki</code> 模型包</p>
-<p>在hexo博客根目录选择<code>cmd</code>命令窗口或者<code>git bash</code> 输入以下代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install live2d-widget-model-hijiki</span><br></pre></td></tr></table></figure>
-
-<p>执行安装就完事了</p>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>请向<code>Hexo</code>的 <code>_config.yml</code> 文件添加配置.</p>
-<h4 id="操作：-1"><a href="#操作：-1" class="headerlink" title="操作："></a>操作：</h4><p>打开个人Hexo博客文件根目录下的 <code>_config.yml</code> 文件，在最后添加一下代码<br>示例:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">live2d:</span><br><span class="line">  enable: true</span><br><span class="line">  scriptFrom: local</span><br><span class="line">  pluginRootPath: live2dw/</span><br><span class="line">  pluginJsPath: lib/</span><br><span class="line">  pluginModelPath: assets/</span><br><span class="line">  tagMode: false</span><br><span class="line">  debug: false</span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-hijiki</span><br><span class="line">  display:</span><br><span class="line">    position: right</span><br><span class="line">    width: 150</span><br><span class="line">    height: 300</span><br><span class="line">  mobile:</span><br><span class="line">    show: true</span><br></pre></td></tr></table></figure>
-
-
-
-<p>插件部署与应用就完成了，接下来就是部署hexo博客和个人主页</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/08/25/Hexo-yilia%E6%B7%BB%E5%8A%A0helper-live2d%E6%8F%92%E4%BB%B6%E5%AE%A0%E7%89%A9%E5%8A%A8%E7%94%BB/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-图片url地址的生成获取方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/25/%E5%9B%BE%E7%89%87url%E5%9C%B0%E5%9D%80%E7%9A%84%E7%94%9F%E6%88%90%E8%8E%B7%E5%8F%96%E6%96%B9%E6%B3%95/">图片url地址的生成获取方法</a>
-    </h1>
-  
-
-        
-        <a href="/2021/08/25/%E5%9B%BE%E7%89%87url%E5%9C%B0%E5%9D%80%E7%9A%84%E7%94%9F%E6%88%90%E8%8E%B7%E5%8F%96%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2021-08-24T18:48:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="图片url地址的生成获取方法"><a href="#图片url地址的生成获取方法" class="headerlink" title="图片url地址的生成获取方法"></a>图片url地址的生成获取方法</h2><p>　在写博客插入图片时，许多时候需要提供图片的url地址。作为菜鸡的我，自然是一脸懵逼。那么什么是所谓的url地址呢？又该如何获取图片的url地址呢？</p>
-<p>　　首先来看一下度娘对url地址的解释：url是统一资源定位符，对可以从互联网上得到的资源的位置和访问方法的一种简洁的表示，是互联网上标准资源的地址。互联网上的每个文件都有一个唯一的url，它包含的信息指出文件的位置以及浏览器应该怎么处理它。</p>
-<p>　　简单来说，url地址是是用来定位、访问网上资源用的。常见的网址也属于url地址。</p>
-<p>　　那么该如何获取一张图片的url地址呢？</p>
-<p>　　url既然是用来访问网络资源的，所以在获取url地址前，得先把本地的图片上传到网络上去。那么该把本地的图片上传到哪里呢？这时候，你就不得不接触一个新事物了——图床。</p>
-<p>　　再看一下度娘对图床的解释：图床一般是指储存图片的服务器，有国内和国外之分。国外的图床由于有空间距离等因素决定访问速度很慢影响图片显示速度。国内也分为单线空间、多线空间和cdn加速三种。</p>
-<p>　　具体选用哪个图床，可以自行百度、选择。这里以SM.MS(<a target="_blank" rel="noopener" href="https://sm.ms/">https://sm.ms/</a>, 国外一家免费且免注册的图床)为例，讲一下获取url的流程。</p>
-<p>　　1、进入网站后，点击右下角“Browse…”按钮，即可弹出在本地选择图片界面。选中图片，单击“打开”按钮。</p>
-<p><img src="/2021/08/25/%E5%9B%BE%E7%89%87url%E5%9C%B0%E5%9D%80%E7%9A%84%E7%94%9F%E6%88%90%E8%8E%B7%E5%8F%96%E6%96%B9%E6%B3%95/1.png"></p>
-<p>　2、单击“打开”后的界面如下所示。再单击“Upload”按钮，即可上传图片。</p>
-<p><img src="/2021/08/25/%E5%9B%BE%E7%89%87url%E5%9C%B0%E5%9D%80%E7%9A%84%E7%94%9F%E6%88%90%E8%8E%B7%E5%8F%96%E6%96%B9%E6%B3%95/2.png"></p>
-<p>　　3、上传成功，即可在网页靠下部分生成该图片的url地址。大功告成！</p>
-<p><img src="/2021/08/25/%E5%9B%BE%E7%89%87url%E5%9C%B0%E5%9D%80%E7%9A%84%E7%94%9F%E6%88%90%E8%8E%B7%E5%8F%96%E6%96%B9%E6%B3%95/3.png"></p>
-<p>谢谢您的观看！</p>
-<p>转载自：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/HL-space/p/10893613.html">https://www.cnblogs.com/HL-space/p/10893613.html</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/08/25/%E5%9B%BE%E7%89%87url%E5%9C%B0%E5%9D%80%E7%9A%84%E7%94%9F%E6%88%90%E8%8E%B7%E5%8F%96%E6%96%B9%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-如何使用github +github-pages+hexo来写一篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/24/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8github%20+github-pages+hexo%E6%9D%A5%E5%86%99%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">如何使用github +github-pages+hexo来写一篇博客</a>
-    </h1>
-  
-
-        
-        <a href="/2021/08/24/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8github%20+github-pages+hexo%E6%9D%A5%E5%86%99%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2021-08-23T16:46:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>首先，你需要搭建一个Hexo博客网站…<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wavky/p/HexoBlog.html">使用Hexo搭建GitHub博客（2018年Mac版）</a></p>
-<p>一直想做个博客网站，去网上查了一下，最先查出来的是云服务器+WordPress，不过又要买服务器，又要买域名，还得备案。</p>
-<p>后来发现每个Github账户都可以开一个自己的静态网站（域名为 username.github.io），非常简单。</p>
-<p>静态网站的定义参见<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1">维基百科-网页设计</a>，虽然方便，但是也有一些功能上的限制，最显著的特点就是不能运行php和asp，不能自动读写站内的文件。</p>
-<p>不过静态网页依然可以实现个人博客需要的所有功能，而我也只是学习一下做网页、博客什么的，这个方案已经是最好的了。</p>
-<p>这篇博客介绍搭建一个基于html的网站框架的过程。</p>
-<h3 id="第一步-注册"><a href="#第一步-注册" class="headerlink" title="第一步 注册"></a>第一步 注册</h3><p>没啥好说的，进入<a target="_blank" rel="noopener" href="https://github.com,然后注册一个账户就可以了./">https://github.com，然后注册一个账户就可以了。</a></p>
-<h3 id="第二步-确保可以自由地创建-修改-下载-上传一个库（repository）"><a href="#第二步-确保可以自由地创建-修改-下载-上传一个库（repository）" class="headerlink" title="第二步 确保可以自由地创建/修改/下载/上传一个库（repository）"></a>第二步 确保可以自由地创建/修改/下载/上传一个库（repository）</h3><p>网页是由很多html，css，js等文件组成的，对github pages来说，一个repository就是存放这些文件的文件夹，所以确保可以随心所欲的管理一个库是最基本的。</p>
-<p>这里是第一个官方教程：<a target="_blank" rel="noopener" href="https://guides.github.com/activities/hello-world/">GitHub:Hello world</a>。可以通过按钮来理解一个库的构造和维护，不过这只能让你创建修改一个Readme文件。</p>
-<p>这里你会意识到每个库是可以创建分支(branch)的，实际操作中，如果对版本要求没那么严格（做个网页而已），你可以忽略branch的存在，只用master一个默认branch即可。</p>
-<p>这个时候你已经可以用网页看到这么一个库了，这个图是我自己博客的库，而到这一步你的库应该只有一个Readme：</p>
-<p><img src="/2021/08/24/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8github%20+github-pages+hexo%E6%9D%A5%E5%86%99%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/zmz2.jpg"></p>
-<p>Github的关键就是可以用Git来控制（<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Git">维基百科-Git</a>），这是一个版本工具（我的理解是一个每次上传都备份一个版本，并且可以协调多人同时修改的公用网盘）。当在确定自己的终端可以使用 <code>git --version</code> 命令（Mac+Xcode自带），并且安装了SSH-Key 之后，你就可以使用如下的基本命令来控制你的库了：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git clone 你的SSH地址 （下载你的reposity，这个地址可以用网页浏览的Clone-or-Download-use SSH按钮看到，比如说git@github.com:uername/reposity.git）</span><br><span class="line">git pull （联系服务器，更新本地文件夹）</span><br><span class="line">git add --all （写入本地的所有新文件）</span><br><span class="line">git commit -am &quot;随便说点啥&quot; （在本地进行一次有记录地更新，包括本地所有文件的修改）</span><br><span class="line">git push origin master （把本地的更新推送到服务器）</span><br></pre></td></tr></table></figure>
-
-<p>SSH-Key决定了你的电脑有没有权限进行这些操作，这里有另一个官方教程：<a target="_blank" rel="noopener" href="https://help.github.com/articles/connecting-to-github-with-ssh/">GitHub:SSH</a>，这个是必须一步步跟下来的，Mac的重要命令包括：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls -al ~/.ssh (查一下是不是已经有key了)</span><br><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot; （产生一个key，不单独设密码的话一路回车就行）</span><br><span class="line">pbcopy &lt; ~/.ssh/id_rsa.pub （把你的key复制到粘贴板，不这么复制可能太长了复制不下来）</span><br></pre></td></tr></table></figure>
-
-<p>Linux和Windows进入刚才的教程看就行，如下图，在点击“右上头像”+“Settings”+“SSH and GPG Keys” 这里添加了你刚刚复制的public Key之后，你就有权限进行上述的Git操作了。<br><img src="/2021/08/24/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8github%20+github-pages+hexo%E6%9D%A5%E5%86%99%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/zmz3.png"></p>
-<h2 id="搭建Github-Page网站"><a href="#搭建Github-Page网站" class="headerlink" title="搭建Github Page网站"></a>搭建Github Page网站</h2><h3 id="第一步-创建一个Github-Pages-repository"><a href="#第一步-创建一个Github-Pages-repository" class="headerlink" title="第一步 创建一个Github Pages repository"></a>第一步 创建一个Github Pages repository</h3><p>GitHub Pages repository跟普通的repository是一样的，唯一的区别就是他的名字必须叫做username.gihub.io。这个官方教程 <a target="_blank" rel="noopener" href="https://pages.github.com/">GitHub Pages</a> 写的十分好懂，按这个做完之后你就有了一个你的网址 username.github.io，里面有一句 Hello World！</p>
-<h3 id="第二步-最基础的网站框架"><a href="#第二步-最基础的网站框架" class="headerlink" title="第二步 最基础的网站框架"></a>第二步 最基础的网站框架</h3><p>现在离一个好网站只差一步了，就是把某个好网站的所有文件拷贝到你的库里面。</p>
-<p>GitHub官方建议你使用博客生成工具 <a target="_blank" rel="noopener" href="https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/">Jekyll</a> 。GitHub在库的设置里面还提供Jekyll主题选择。而我的博客使用了<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a>生成工具，具体见我的博客<a target="_blank" rel="noopener" href="https://hans2936.github.io/2018/06/06/HexoLog/">Github Pages(三)：使用Hexo博客生成工具</a>。<br> 强烈推荐使用网站工具，这样可以直接用markdown格式编辑文章，而且使用简单的命令实现预览，生成和发布，从而节省大量的时间。</p>
-<p>我一开始并不了解博客工具，所以去了一个模版网站 <a target="_blank" rel="noopener" href="https://html5up.net/">HTML5 UP</a>，然后下载了其中一个模版，直接在本地打开 index.html，就看到了网站预览，如图：</p>
-<p><img src="/2021/08/24/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8github%20+github-pages+hexo%E6%9D%A5%E5%86%99%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/zmz4.png"></p>
-<p>然后我再手动<code>git add</code> 所有的文件到我的网站中。当你<code>git push</code>之后，你的域名就会变成这样一个网站了。这也就是一个最基础的网站了。<br>不用博客工具的好处是有利于学习网页知识，当博客不多的时候，对习惯使用bash+vim的人来说，这样编辑网站是可以接受的。坏处是写一个博客就多一个html，如果有比如超过50篇博客，每篇博客的公共部分就很麻烦了。</p>
-<h3 id="第三步-开始发挥吧"><a href="#第三步-开始发挥吧" class="headerlink" title="第三步 开始发挥吧"></a>第三步 开始发挥吧</h3><p>不管是使用博客工具，还是直接手动添加html，都离不开对 html/css/JavaScript的基本理解。比如上述简单的网站模版，很多按钮，搜索框等都是空的，需要简单的填充。而即使用了博客工具，想要添加“关于”，或者侧边栏等各种元素，也是需要运用网页语言的。</p>
-<p>下面就是自由发挥了，继续进入<a target="_blank" rel="noopener" href="https://hans2936.github.io/2018/06/06/HexoLog/">Github Pages(三)：使用Hexo博客生成工具</a>使用博客生成工具，并且到<a target="_blank" rel="noopener" href="https://hans2936.github.io/2017/10/21/PageLog/">Github Pages(二):个人网站的功能插件</a>寻找想要使用的插件吧。</p>
-<h2 id="HEXO方式新建文章"><a href="#HEXO方式新建文章" class="headerlink" title="HEXO方式新建文章"></a>HEXO方式新建文章</h2><p>Hexo的项目结构是在网站根目录的source/_posts目录下存放你的博客文档，以.md文档格式存储，默认已存在一个hello-world.md文章</p>
-<p><img src="/2021/08/24/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8github%20+github-pages+hexo%E6%9D%A5%E5%86%99%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/zmz.png"></p>
-<p>新建文章可用Hexo命令创建：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &lt;title&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>也可以指定一个layout属性，指定文章作为其他形式存放在别的目录，例如page新页面、draft草稿等。详细参考 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/writing">写作 | Hexo</a></p>
-<p>新建的文章除了标准Markdown语法外，也支持一些增强功能的标签代码段，用于插入视频、引用、限定尺寸图片等。<br>[标签插件（Tag Plugins） | Hexo](</p>
-<h3 id="关于图片素材"><a href="#关于图片素材" class="headerlink" title="关于图片素材"></a>关于图片素材</h3><p>图片素材按官方教程说法，可统一放置在source/images目录中，并以 <code>![](/images/image.jpg)</code> 方式引用</p>
-<p>或者在 _config.yml 打开 post_asset_folder 功能，将当前文章所用的图片放置到source目录下的文章同名资源目录下，以 <code>![](image.jpg)</code> 方式引用</p>
-<p>另外一些文章中提到建议使用第三方的专业图床来存放这些静态图片素材 。</p>
-<h3 id="使用-Hexo-Admin-插件"><a href="#使用-Hexo-Admin-插件" class="headerlink" title="使用 Hexo Admin 插件"></a>使用 Hexo Admin 插件</h3><p>Hexo Admin](<a target="_blank" rel="noopener" href="https://github.com/jaredly/hexo-admin">https://github.com/jaredly/hexo-admin</a>) 是一个本地在线式文章管理器，可以用直观可视化的方式新建、编辑博客文章、page页面，添加标签、分类等，并且支持剪贴板粘贴图片（自动在source_images_目录中创建文件）</p>
-<h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><ul>
-<li><p>在Hexo网站目录下，安装Hexo Admin 插件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-admin</span><br></pre></td></tr></table></figure></li>
-<li><p>启动本地服务器并打开管理界面，即可以使用</p>
-</li>
-<li><pre><code>hexo server -d
-open http://localhost:4000/admin/
-</code></pre>
-<h5 id="不足之处"><a href="#不足之处" class="headerlink" title="不足之处"></a>不足之处</h5></li>
-</ul>
-<p> Hexo Admin 暂时并不支持按 _config.yml 中设定的 new_post_name 属性命名新建的  文章，似乎也不支持 post_asset_folder 作为图像文件夹（该功能在2周前被提出issue，但管理员表示无意开发 ?）</p>
-<p>转载于:<a target="_blank" rel="noopener" href="https://www.cnblogs.com/wavky/p/NewArticleWithHexo.html">https://www.cnblogs.com/wavky/p/NewArticleWithHexo.html</a></p>
-<p>相关资源：<a target="_blank" rel="noopener" href="https://download.csdn.net/download/shikunss/10927311?spm=1001.2101.3001.5697"><em>Hexo**博客</em>搭建脚本-Javascript代码类资源</a></p>
-<h1 id><a href="#" class="headerlink" title></a></h1>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/08/24/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8github%20+github-pages+hexo%E6%9D%A5%E5%86%99%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -742,8 +327,8 @@ open http://localhost:4000/admin/
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

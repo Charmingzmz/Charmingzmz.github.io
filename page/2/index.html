@@ -145,6 +145,89 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Hexo-yilia添加helper-live2d插件宠物动画" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/25/Hexo-yilia%E6%B7%BB%E5%8A%A0helper-live2d%E6%8F%92%E4%BB%B6%E5%AE%A0%E7%89%A9%E5%8A%A8%E7%94%BB/">Hexo+yilia添加helper-live2d插件宠物动画</a>
+    </h1>
+  
+
+        
+        <a href="/2021/08/25/Hexo-yilia%E6%B7%BB%E5%8A%A0helper-live2d%E6%8F%92%E4%BB%B6%E5%AE%A0%E7%89%A9%E5%8A%A8%E7%94%BB/" class="archive-article-date">
+  	<time datetime="2021-08-25T14:22:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Hexo-yilia添加helper-live2d插件宠物动画"><a href="#Hexo-yilia添加helper-live2d插件宠物动画" class="headerlink" title="Hexo+yilia添加helper-live2d插件宠物动画"></a>Hexo+yilia添加helper-live2d插件宠物动画</h2><p>个人主页：<a href="https://charmingzmz.github.io/">https://charmingzmz.github.io/</a></p>
+<p><img src="/2021/08/25/Hexo-yilia%E6%B7%BB%E5%8A%A0helper-live2d%E6%8F%92%E4%BB%B6%E5%AE%A0%E7%89%A9%E5%8A%A8%E7%94%BB/1.png"></p>
+<h3 id="安装模块"><a href="#安装模块" class="headerlink" title="安装模块:"></a>安装模块:</h3><p>博客根目录选择<code>cmd</code>命令窗口或者<code>git bash</code> 输入以下代码，安装插件</p>
+<h4 id="操作："><a href="#操作：" class="headerlink" title="操作："></a>操作：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-helper-live2d</span><br></pre></td></tr></table></figure>
+
+<h3 id="下载模型"><a href="#下载模型" class="headerlink" title="下载模型"></a>下载模型</h3><p>作者动画展示网站<a target="_blank" rel="noopener" href="https://huaji8.top/post/live2d-plugin-2.0/">https://huaji8.top/post/live2d-plugin-2.0/</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">live2d-widget-model-chitose</span><br><span class="line">live2d-widget-model-epsilon2_1</span><br><span class="line">live2d-widget-model-gf</span><br><span class="line">live2d-widget-model-haru/01 (use npm install --save live2d-widget-model-haru)</span><br><span class="line">live2d-widget-model-haru/02 (use npm install --save live2d-widget-model-haru)</span><br><span class="line">live2d-widget-model-haruto</span><br><span class="line">live2d-widget-model-hibiki</span><br><span class="line">live2d-widget-model-hijiki</span><br><span class="line">live2d-widget-model-izumi</span><br><span class="line">live2d-widget-model-koharu</span><br><span class="line">live2d-widget-model-miku</span><br><span class="line">live2d-widget-model-ni-j</span><br><span class="line">live2d-widget-model-nico</span><br><span class="line">live2d-widget-model-nietzsche</span><br><span class="line">live2d-widget-model-nipsilon</span><br><span class="line">live2d-widget-model-nito</span><br><span class="line">live2d-widget-model-shizuku</span><br><span class="line">live2d-widget-model-tororo</span><br><span class="line">live2d-widget-model-tsumiki</span><br><span class="line">live2d-widget-model-unitychan</span><br><span class="line">live2d-widget-model-wanko</span><br><span class="line">live2d-widget-model-z16</span><br></pre></td></tr></table></figure>
+
+<p>选好对应的模型，使用 <code>npm install 模型的包名</code>来安装</p>
+<p>比如我选择的的是<code>live2d-widget-model-hijiki</code> 模型包</p>
+<p>在hexo博客根目录选择<code>cmd</code>命令窗口或者<code>git bash</code> 输入以下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install live2d-widget-model-hijiki</span><br></pre></td></tr></table></figure>
+
+<p>执行安装就完事了</p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>请向<code>Hexo</code>的 <code>_config.yml</code> 文件添加配置.</p>
+<h4 id="操作：-1"><a href="#操作：-1" class="headerlink" title="操作："></a>操作：</h4><p>打开个人Hexo博客文件根目录下的 <code>_config.yml</code> 文件，在最后添加一下代码<br>示例:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">live2d:</span><br><span class="line">  enable: true</span><br><span class="line">  scriptFrom: local</span><br><span class="line">  pluginRootPath: live2dw/</span><br><span class="line">  pluginJsPath: lib/</span><br><span class="line">  pluginModelPath: assets/</span><br><span class="line">  tagMode: false</span><br><span class="line">  debug: false</span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-hijiki</span><br><span class="line">  display:</span><br><span class="line">    position: right</span><br><span class="line">    width: 150</span><br><span class="line">    height: 300</span><br><span class="line">  mobile:</span><br><span class="line">    show: true</span><br></pre></td></tr></table></figure>
+
+
+
+<p>插件部署与应用就完成了，接下来就是部署hexo博客和个人主页</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/25/Hexo-yilia%E6%B7%BB%E5%8A%A0helper-live2d%E6%8F%92%E4%BB%B6%E5%AE%A0%E7%89%A9%E5%8A%A8%E7%94%BB/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-图片url地址的生成获取方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

@@ -6,30 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://charmingzmz.github.io">
-  <title>Java中的RPC分布式范例：RMI | Charmingzmz的个人博客</title>
+  <title>Thymeleaf | Charmingzmz的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Java中的RPC分布式范例：RMI •从刚才的示例可以看出，分布式的定义及解决问题的方式非常简单，即业务服务器接收到用户的计算请求后根据特定的算法，将计算的不同部分交由后台的不同主机处理，待结果汇总后，由业务服务器反馈给客户端。 •在这个过程中，开发人员最为关注的就是计算的分发调度方式，因为这涉及到对网络通讯和并发的控制。 •如果有一种方式能够将网络通讯和并发控制对程序开发人员透明化，那么将极度">
+  <meta name="description" content="Thymeleaf Thymeleaf 是一个服务器端 Java 模板引擎，能够处理 HTML、XML、CSS、JAVASCRIPT 等模板文件。Thymeleaf 模板可以直接当作静态原型来使用，它主要目标是为开发者的开发工作流程带来优雅的自然模板，也是 Java 服务器端 HTML5 开发的理想选择。  官网： https:&#x2F;&#x2F;www.thymeleaf.org&#x2F;  使用文档： https:&#x2F;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java中的RPC分布式范例：RMI">
-<meta property="og:url" content="https://charmingzmz.github.io/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/index.html">
+<meta property="og:title" content="Thymeleaf">
+<meta property="og:url" content="https://charmingzmz.github.io/2021/09/15/Thymeleaf/index.html">
 <meta property="og:site_name" content="Charmingzmz的个人博客">
-<meta property="og:description" content="Java中的RPC分布式范例：RMI •从刚才的示例可以看出，分布式的定义及解决问题的方式非常简单，即业务服务器接收到用户的计算请求后根据特定的算法，将计算的不同部分交由后台的不同主机处理，待结果汇总后，由业务服务器反馈给客户端。 •在这个过程中，开发人员最为关注的就是计算的分发调度方式，因为这涉及到对网络通讯和并发的控制。 •如果有一种方式能够将网络通讯和并发控制对程序开发人员透明化，那么将极度">
+<meta property="og:description" content="Thymeleaf Thymeleaf 是一个服务器端 Java 模板引擎，能够处理 HTML、XML、CSS、JAVASCRIPT 等模板文件。Thymeleaf 模板可以直接当作静态原型来使用，它主要目标是为开发者的开发工作流程带来优雅的自然模板，也是 Java 服务器端 HTML5 开发的理想选择。  官网： https:&#x2F;&#x2F;www.thymeleaf.org&#x2F;  使用文档： https:&#x2F;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://charmingzmz.github.io/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/1.png">
-<meta property="og:image" content="https://charmingzmz.github.io/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/2.png">
-<meta property="og:image" content="https://charmingzmz.github.io/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/3.png">
-<meta property="og:image" content="https://charmingzmz.github.io/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/4.png">
-<meta property="og:image" content="https://charmingzmz.github.io/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/5.png">
-<meta property="og:image" content="https://charmingzmz.github.io/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/6.PNG">
-<meta property="og:image" content="https://charmingzmz.github.io/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/7.png">
-<meta property="og:image" content="https://charmingzmz.github.io/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/8.png">
-<meta property="og:image" content="https://charmingzmz.github.io/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/9.png">
-<meta property="og:image" content="https://charmingzmz.github.io/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/10.png">
-<meta property="article:published_time" content="2021-09-14T12:25:34.000Z">
-<meta property="article:modified_time" content="2021-09-14T13:07:36.871Z">
+<meta property="article:published_time" content="2021-09-15T09:34:45.000Z">
+<meta property="article:modified_time" content="2021-09-15T09:35:46.412Z">
 <meta property="article:author" content="郑铭哲">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://charmingzmz.github.io/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Charmingzmz的个人博客" type="application/atom+xml">
   
@@ -156,103 +145,446 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java中的RPC分布式范例：RMI" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Thymeleaf" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java中的RPC分布式范例：RMI
+      Thymeleaf
     </h1>
   
 
         
-        <a href="/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/" class="archive-article-date">
-  	<time datetime="2021-09-14T12:25:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-14</time>
+        <a href="/2021/09/15/Thymeleaf/" class="archive-article-date">
+  	<time datetime="2021-09-15T09:34:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Java中的RPC分布式范例：RMI"><a href="#Java中的RPC分布式范例：RMI" class="headerlink" title="Java中的RPC分布式范例：RMI"></a>Java中的RPC分布式范例：RMI</h1><p><img src="/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/1.png"></p>
-<p>•从刚才的示例可以看出，分布式的定义及解决问题的方式非常简单，即业务服务器接收到用户的计算请求后根据特定的算法，<strong>将计算的不同部分交由后台的不同主机处理，待结果汇总后，由业务服务器反馈给客户端</strong>。</p>
-<p>•在这个过程中，开发人员最为关注的就是计算的分发调度方式，因为这涉及到对网络通讯和并发的控制。</p>
-<p>•如果有一种方式能够<strong>将网络通讯和并发控制对程序开发人员透明化</strong>，那么将极度简化此类应用的开发成本，<strong>RMI****就是这样一个范例</strong>。</p>
-<p><img src="/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/2.png"></p>
-<p>•RPC(Remote Procedure Call Protocol)：远程过程调用：</p>
-<p>•两台服务器A、B，分别部署不同的应用a,b。当A服务器想要调用B服务器上应用b提供的函数或方法的时候，由于不在一个内存空间，不能直接调用，需要通过网络来表达调用的语义传达调用的数据。 </p>
-<p>•即在远程端的机器上写了一个程序，客户端这边是无法直接调用的，这个时候就出现了一个远程服务调用的概念。</p>
-<p>•RPC是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。在OSI网络通信模型中，RPC跨越了传输层和应用层。RPC使得开发包括网络分布式多程序在内的应用程序更加容易。RPC采用客户端/服务器模式。请求程序就是一个客户机，而服务提供程序就是一个服务器。首先，客户机调用进程发送一个有进程参数的调用信息到服务进程，然后等待应答信息。在服务器端，进程保持睡眠状态直到调用信息到达为止。当一个调用信息到达，服务器获得进程参数，计算结果，发送答复信息，然后等待下一个调用信息，最后，客户端调用进程接收答复信息，获得进程结果，然后调用执行继续进行。</p>
-<p>•RPC需要解决的问题</p>
-<p>•<strong>通讯问题</strong> : </p>
-<p>•主要是通过在客户端和服务器之间建立TCP连接，远程过程调用的所有交换的数据都在这个连接里传输。连接可以是按需连接，调用结束后就断掉，也可以是长连接，多个远程过程调用共享同一个连接。</p>
-<p>•<strong>寻址问题</strong> ： </p>
-<p>•A服务器上的应用怎么告诉底层的RPC框架，如何连接到B服务器（如主机或IP地址）以及特定的端口，方法的名称名称是什么，这样才能完成调用。比如基于Web服务协议栈的RPC，就要提供一个endpoint URI，或者是从UDDI服务上查找。如果是RMI调用(将网络通讯和并发控制对程序开发人员透明化)的话，还需要一个RMI Registry来注册服务的地址。</p>
-<p>•<strong>序列化与反序列化</strong> ： </p>
-<p>•当A服务器上的应用发起远程过程调用时，方法的参数需要通过底层的网络协议如TCP传递到B服务器，由于网络协议是基于二进制的，内存中的参数的值要序列化成二进制的形式，也就是序列化或编组，通过寻址和传输将序列化的二进制发送给B服务器。同理，B服务器接收参数要将参数反序列化。B服务器应用调用自己的方法处理后返回的结果也要序列化给A服务器，A服务器接收也要经过反序列化的过程。</p>
-<p><img src="/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/3.png"></p>
-<p>•RMI是Java的一组拥护开发分布式应用程序的API。RMI使用Java语言接口定义了远程对象，它集合了Java序列化和Java远程方法协议(Java Remote Method Protocol)。简单地说，这样使原先的程序在同一操作系统的方法调用，变成了不同操作系统之间程序的方法调用，由于J2EE是分布式程序平台，它以RMI机制实现程序组件在不同操作系统之间的通信。</p>
-<p>•RMI大大增强了Java开发分布式应用的能力,是开发百分之百纯Java的网络分布式应用系统的核心解决方案之一。其实它可以被看作是RPC的Java版本。但是传统RPC并不能很好地应用于分布式对象系统。而Java RMI 则支持存储于不同地址空间的程序级对象之间彼此进行通信，实现远程对象之间的无缝远程调用,用RMI开发的应用系统可以部署在任何支持JRE的平台上。</p>
-<p>•RMI使用的一般流程:</p>
-<p>•1，客户对象调用客户端辅助对象上的方法；</p>
-<p>•2，客户端辅助对象打包调用信息（变量，方法名），通过网络发送给服务端辅助对象；</p>
-<p>•3，服务端辅助对象将客户端辅助对象发送来的信息解包，找出真正被调用的方法以及该方法所在对象；</p>
-<p>•4，调用真正服务对象上的真正方法，并将结果返回给服务端辅助对象；</p>
-<p>•5，服务端辅助对象将结果打包，发送给客户端辅助对象；</p>
-<p>•6，客户端辅助对象将返回值解包，返回给客户对象；</p>
-<p>•7，客户对象获得返回值。</p>
-<p>•<strong>对于客户对象来说，步骤<strong><strong>2-6</strong></strong>是完全透明的</strong>，也就意味着，<strong>开发人员无需关注任何的网络数据传输处理</strong>。</p>
-<p><img src="/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/4.png"></p>
-<p><img src="/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/5.png"></p>
-<p><img src="/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/6.PNG"></p>
-<p>•RMI提供了一个非常优秀的分布式任务调度思想，将系统开发实施人员从繁重的网络连接、数据传输流程中解放出来。但是在系统中直接应用可能会存在一些缺陷，是否直接使用其在项目中完成分布式网络计算调度取决于这些缺陷是否影响项目的整成执行。比较典型的问题主要体现在以下方面：</p>
-<p>• RMI的一个优势也是其缺陷的体现：为了满足计算任务调度的开发规范性和统一的异常处理，<strong>RMI<strong><strong>对开发的流程规范比较严格，因此需要在业务代码中侵入较多的</strong></strong>RMI<strong><strong>特定</strong></strong>API</strong>，而某些API在无异常情况下对业务几乎无实际作用，如业务接口必须继承自Remote，每个方法都需要抛出RemoteException，业务实现还需要继承自特定的类等等，这对于很多习惯了快速开发，不愿意被太多的系统框架结果限制的开发团队来说需要极大的成本去适应这个开发过程，而且容易由于习惯性的忽略导致最终系统运行的异常。</p>
-<p>•RMI使用了通用统一的网络通讯方式，<strong>客户端参数传递即服务器端计算完成后的返回值传递使用了通用的序列化方式，这对于一些需要在完成分布式调度时对数据进行自定义的安全加密流程的项目来说，无疑是一个不好的消息</strong>，另一方面，<strong>RMI<strong><strong>采用了标准的</strong></strong>Socket****通讯，这对于系统建立在其他网络通讯协议上的业务系统来说也是一个很大的障碍</strong>。</p>
-<p>•由于JRMP的数据序列化部分是专为Java对象制定的，因此，<strong>RMI<strong><strong>对于用非</strong></strong>Java****语言开发的应用系统的支持不足</strong>。不能与用非Java语言书写的对象进行通信。</p>
-<p>•如果在项目中因为上述原因不愿意选择原生RMI完成网络计算任务调度，那么可以根据RMI的基本实现原理自行实现一套无需太多开发规范限制并能够自由扩展加密方式、底层网络协议实现方式的PRC调度模块。</p>
-<p>•RMI应用程序通常包括两个独立的程序：<strong>服务器程序和客户端程序</strong>。典型的服务器应用程序将创建多个远程对象，使这些远程对象能够被引用，然后等待客户机调用这些远程对象的方法。而典型的客户端程序则从服务器中得到一个或多个远程对象的引用，然后调用远程对象的方法。RMI为服务器和客户端进行通信和信息传递提供了一种机制。</p>
-<p>•在与远程对象的通信过程中，<strong>RMI<strong><strong>使用标准机制：</strong></strong>stub<strong><strong>和</strong></strong>skeleton</strong>。远程对象的stub担当远程对象的客户本地代表或代理人角色。调用程序将调用本地stub的方法，而本地stub将负责执行对远程对象的方法调用。在RMI中，远程对象的stub与该远程对象所实现的远程接口集相同。调用stub的方法时将执行下列操作：</p>
-<p>•(1) 初始化与包含远程对象的远程虚拟机的连接；</p>
-<p>•(2) 对远程虚拟机的参数进行编组（写入并传输）；</p>
-<p>•(3) 等待方法调用结果；</p>
-<p>•(4) 解编（读取）返回值或返回的异常；</p>
-<p>•(5) 将值返回给调用程序。为了向调用程序展示比较简单的调用机制，stub将参数的序列化和网络级通信等细节隐藏了起来。在远程虚拟机中，每个远程对象都可以有相应的skeleton（在JDK1.2以后的环境中便无需开发人员编写具体Stub和skeleton，而是自动生成）。</p>
-<p>•Skeleton负责将调用分配给实际的远程对象实现。它在接收方法调用时执行下列操作：</p>
-<p>•(1) 解编（读取）远程方法的参数；</p>
-<p>•(2) 调用实际远程对象实现上的方法；</p>
-<p>•(3) 将结果（返回值或异常）编组（写入并传输）给调用程序。</p>
-<p>•stub和skeleton由rmic编译器生成。</p>
-<p>•利用RMI编写分布式对象应用程序需要完成以下工作：</p>
-<p>•(1) 定位远程对象。应用程序可使用两种机制中的一种得到对远程对象的引用。它既可用RMI的简单命名工具rmiregistry来注册它的远程对象，也可以将远程对象引用作为常规操作的一部分来进行传递和返回。</p>
-<p>•(2)与远程对象通信。远程对象间通信的细节由RMI处理，对于程序员来说，远程通信看起来就像标准的Java方法调用。</p>
-<p>•(3)给作为参数或返回值传递的对象加载类字节码。因为RMI允许调用程序将纯Java对象传给远程对象，所以，RMI将提供必要的机制，既可以加载对象的代码又可以传输对象的数据。在RMI分布式应用程序运行时，服务器调用注册服务程序以使名字与远程对象相关联。客户机在服务器上的注册服务程序中用远程对象的名字查找该远程对象，然后调用它的方法。</p>
-<p>•根据对RMI任务调度的过程和基本实现原理的分析，可以看出，如果借鉴原生RMI的思想自行实现一套自定义的PRC组件主要需要借助Java的以下几个特征或功能：</p>
-<p>•1.Java网络开发</p>
-<p>•2.Java反射机制</p>
-<p>•3.重要的常用设计模式：Java动态代理</p>
-<p>•反射</p>
-<p>•JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意方法和属性；这种动态获取信息以及动态调用对象方法的功能称为java语言的反射机制。Java反射机制主要提供了以下功能：</p>
-<p>•在运行时判断任意一个对象所属的类；</p>
-<p>•在运行时构造任意一个类的对象；</p>
-<p>•在运行时判断任意一个类所具有的成员变量和方法；在运行时调用任意一个对象的方法；生成动态代理。</p>
-<p>•有关反射的详细内容请参见前序的专门章节</p>
-<p>•代理模式</p>
-<p>•代理模式是一种常用的设计模式，其目的就是为其他对象提供一个代理以控制对某个真实对象的访问。代理类负责为委托类预处理消息，过滤消息并转发消息，以及进行消息被委托类执行后的后续处理。通过使用代理，通常有两个优点：</p>
-<p>•1.可以隐藏委托类的实现;</p>
-<p>•2.可以实现客户与委托类间的解耦，在不修改委托类代码的情况下能够做一些额外的处理。</p>
-<p>•代理模式是为了提供额外或不同的操作，而插入的用来替代”实际”对象的对象，这些操作涉及到与”实际”对象的通信，因此代理通常充当中间人角色。Java的动态代理比代理的思想更前进了一步，它可以动态地创建并代理并动态地处理对所代理方法的调用。在动态代理上所做的所有调用都会被重定向到单一的调用处理器上，它的工作是揭示调用的类型并确定相应的策略。</p>
-<p><img src="/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/7.png"></p>
-<p><img src="/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/8.png"></p>
-<p><img src="/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/9.png"></p>
-<p>•常见的修改字节码实现动态代理的库：</p>
-<p>•CGLib</p>
-<p>•Javassist</p>
-<p>•更多动态代理相关内容参见前序专门章节</p>
-<p><img src="/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/10.png"></p>
-<p>•Java中通常使用什么方式实现网络和并发透明的便捷分布式RPC调用？</p>
-<p>•Java中通常使用动态代理模式在代理处理器中完成分布式RPC调用的网络连接、数据传输和并发控制处理，由于Java的反射机制和部分动态特性，使用动态代理后，这些操作可以完全对用户（开发人员）透明，用户可以方便的以本地方法调用的方式调用远程端声明实现的业务方法（计算过程在远程端实现）</p>
+        <h1 id="Thymeleaf"><a href="#Thymeleaf" class="headerlink" title="Thymeleaf"></a>Thymeleaf</h1><h1 id><a href="#" class="headerlink" title></a></h1><p> Thymeleaf 是一个服务器端 Java 模板引擎，能够处理 HTML、XML、CSS、JAVASCRIPT 等模板文件。Thymeleaf 模板可以直接当作静态原型来使用，它主要目标是为开发者的开发工作流程带来优雅的自然模板，也是 Java 服务器端 HTML5 开发的理想选择。 </p>
+<p>官网： <a target="_blank" rel="noopener" href="https://www.thymeleaf.org/">https://www.thymeleaf.org/</a> </p>
+<p>使用文档： <a target="_blank" rel="noopener" href="https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html">https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html</a> </p>
+<h4 id="1、创建模板文件"><a href="#1、创建模板文件" class="headerlink" title="1、创建模板文件"></a>1、创建模板文件</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span> <span class="attr">xmlns:th</span>=<span class="string">&quot;http://www.thymeleaf.org&quot;</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;msg&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 方式1 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;&#x27;提示：&#x27;+$&#123;msg&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">     <span class="comment">&lt;!-- 方式2 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span> 提示：[[$&#123;person.name&#125;]] <span class="tag">&lt;/<span class="name">p</span>&gt;</span>   </span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>&lt;html xmlns:th=&quot;http://www.thymeleaf.org&quot;&gt;</code>是引入thymeleaf的命名空间，必须。</p>
+</li>
+<li><p>可以在原来的任何属性前面加上前缀<code>th:*</code>来表示thymeleaf的定义。<code>data-th-*</code>效果一样。</p>
+</li>
+<li><p>在标签内拼接字符串比较麻烦，可以在里面通过[[]]来显示跟拼接。</p>
+</li>
+</ul>
+<h4 id="2、简单表达式"><a href="#2、简单表达式" class="headerlink" title="2、简单表达式"></a>2、简单表达式</h4><p> Thymeleaf 提供了非常丰富的标准表达式语法，总共有 8 大类： </p>
+<ul>
+<li><p>简单表达式</p>
+</li>
+<li><p>字面值</p>
+</li>
+<li><p>文本操作</p>
+</li>
+<li><p>算术运算</p>
+</li>
+<li><p>布尔运算</p>
+</li>
+<li><p>比较和相等</p>
+</li>
+<li><p>条件运算</p>
+</li>
+<li><p>无操作符</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>语法</strong></th>
+<th align="center"><strong>名称</strong></th>
+<th align="center"><strong>描述</strong></th>
+<th align="center"><strong>作用</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">${…}</td>
+<td align="center">Variable Expressions</td>
+<td align="center">变量表达式</td>
+<td align="center">取出上下文变量的值</td>
+</tr>
+<tr>
+<td align="center">*{…}</td>
+<td align="center">Selection Variable Expressions</td>
+<td align="center">选择变量表达式</td>
+<td align="center">取出选择的对象的属性值</td>
+</tr>
+<tr>
+<td align="center">#{…}</td>
+<td align="center">Message Expressions</td>
+<td align="center">消息表达式</td>
+<td align="center">使文字消息国际化，I18N</td>
+</tr>
+<tr>
+<td align="center">@{…}</td>
+<td align="center">Link URL Expressions</td>
+<td align="center">链接表达式</td>
+<td align="center">用于表示各种超链接地址</td>
+</tr>
+<tr>
+<td align="center">~{…}</td>
+<td align="center">Fragment Expressions</td>
+<td align="center">片段表达式</td>
+<td align="center">引用一段公共的代码片段</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>${…}</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;/hello&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">welcome</span><span class="params">(Model model)</span></span>&#123;</span><br><span class="line">    model.addAttribute(<span class="string">&quot;msg&quot;</span>,<span class="string">&quot;Welcome to bailiban!!&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;hello&quot;</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;msg&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>*{…}</p>
+<p>变量表达式<code>$&#123;&#125;</code>是面向整个上下文的，而选择变量表达式<code>*&#123;&#125;</code>的上下文是父标签（<code>th:object</code>）所选择的对象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Person bean</span></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="meta">@ToString</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> String name ;</span><br><span class="line">	<span class="keyword">private</span> String sex ;</span><br><span class="line">	<span class="keyword">private</span> Integer age ;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// controller</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/hello&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">welcome</span><span class="params">(Model model)</span></span>&#123;</span><br><span class="line">    Person person = <span class="keyword">new</span> Person(<span class="string">&quot;seven&quot;</span>,<span class="string">&quot;男&quot;</span>,<span class="number">18</span>);</span><br><span class="line">    model.addAttribute(<span class="string">&quot;person&quot;</span>,person);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;hello&quot;</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">th:object</span>=<span class="string">&quot;$&#123;person&#125;&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;*&#123;name&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;*&#123;sex&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;*&#123;age&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 跟下面效果等效 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;person.name&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;person.sex&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;person.age&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<ul>
+<li><p>#{…} ，消息表达式，具体用法参考国际化的实现。</p>
+</li>
+<li><p>@{…} 链表表达式</p>
+<ul>
+<li><p>绝对地址</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">th:href</span>=<span class="string">&quot;@&#123;http://www.baidu.com&#125;&quot;</span> <span class="attr">th:text</span>=<span class="string">&quot;baidu&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>相对地址</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 不带参数 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">th:href</span>=<span class="string">&quot;@&#123;hello2&quot;</span> <span class="attr">th:text</span>=<span class="string">&quot;hello2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span>  <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 带参数 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">th:href</span>=<span class="string">&quot;@&#123;hello2(name=$&#123;person.name&#125;,password=&#x27;123&#x27;)&#125;&quot;</span> <span class="attr">th:text</span>=<span class="string">&quot;hello2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span>  <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>页面跳转必须通过后台controller</li>
+<li>参数都放在<code>（）</code>括号内，参数之间用<code>，</code>号隔开</li>
+<li>参数值变量通过<code>$&#123;&#125;</code>引用</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>~{…}片段表达式主要用来引用一段可重复使用的代码片段。</p>
+<ul>
+<li><p>base/common.html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">th:fragment</span>=<span class="string">&quot;foot-copy&quot;</span> &gt;</span></span><br><span class="line">    Copyright © 2012-2019 管理系统 - Version V1.1</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>hello.html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">th:insert</span>=<span class="string">&quot;~&#123;base/common::foot-copy&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>base/common</code>是文件路径，<code>foot-copy</code>是定义的<code>th:fragment</code>值，用<code>::</code>分割。</li>
+</ul>
+</li>
+<li><p><code>~&#123;&#125;</code>可以省略。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>除了使用<code>th:fragment</code>还可以通过选择器来引用。</strong></p>
+<ul>
+<li><p>base/common.html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;foot-copy&quot;</span> &gt;</span></span><br><span class="line">    Copyright © 2012-2019 管理系统 - Version V1.1</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>hello.html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">th:insert</span>=<span class="string">&quot;~&#123;base/common::.foot-copy&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>  <code>.foot-copy</code>是CSS选择器去匹配。</p>
+</li>
+</ul>
+<p>  <strong>我们定义代码片段时还可以声明一组参数：</strong></p>
+<ul>
+<li><p>base/common.html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">th:fragment</span>=<span class="string">&quot;menu(menuName1, menuName2)&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;menuName1&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;menuName2&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>hello.html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">th:insert</span>=<span class="string">&quot;~&#123;base/common::menu(&#x27;用户中心&#x27;, &#x27;我的订单&#x27;)&#125;&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong><code>th:insert</code>跟<code>th:replace</code>的区别？</strong></p>
+<p>​    他们都是用来使用代码片段， th:insert 如同插入的字面意思，将指定的代码片段插入主标签内 。 th:replace 如同替换的字面意思，将主标签替换为指定的代码片段。 </p>
+<p>​        </p>
+<h4 id="3、内置对象"><a href="#3、内置对象" class="headerlink" title="3、内置对象"></a>3、内置对象</h4><table>
+<thead>
+<tr>
+<th align="center"><strong>对象</strong></th>
+<th align="center"><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">#ctx</td>
+<td align="center">上下文对象</td>
+</tr>
+<tr>
+<td align="center">#vars</td>
+<td align="center">同 #ctx，表示上下文变量</td>
+</tr>
+<tr>
+<td align="center">#locale</td>
+<td align="center">上下文本地化（特定的地理区域）变量，可参考 java.util.Locale</td>
+</tr>
+<tr>
+<td align="center">#request</td>
+<td align="center">HttpServletRequest 对象，可参考 javax.servlet.http.HttpServletRequest</td>
+</tr>
+<tr>
+<td align="center">#response</td>
+<td align="center">HttpServletResponse 对象，可参考 javax.servlet.http.HttpServletResponse</td>
+</tr>
+<tr>
+<td align="center">#session</td>
+<td align="center">HttpSession 对象，可参考 javax.servlet.http.HttpSession</td>
+</tr>
+<tr>
+<td align="center">#servletContext</td>
+<td align="center">ServletContext 对象，可参考 javax.servlet.ServletContext</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p><code>#ctx</code>示例 </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- zh_CN --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#ctx.getLocale()&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- welcome to bailiban. --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#ctx.getVariable(&#x27;msg&#x27;)&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- true --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#ctx.containsVariable(&#x27;msg&#x27;)&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p><code>#locale</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- CN --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#locale.country&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- zh --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#locale.language&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p><code>#request</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- HTTP/1.1 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#request.protocol&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- http --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#request.scheme&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- localhost端口 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#request.serverName&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 8080 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#request.serverPort&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- GET --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#request.method&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- /hello --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#request.requestURI&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- http://localhost:8080/hello --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#request.requestURL&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- /hello --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#request.servletPath&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- java.util.Collections$3@613abae --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#request.parameterNames&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- org.apache.catalina.util.ParameterMap@746cef23 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#request.parameterMap&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--   --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#request.queryString&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p><code>#response</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 200 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#response.status&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 8192 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#response.bufferSize&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- UTF-8 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#response.characterEncoding&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- text/html;charset=UTF-8 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#response.contentType&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p><code>#session</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 需要在后台开启会话，存入person数据 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- BFE8F9E54C863E128B107532A902E921 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#session.id&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 1499786693244 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#session.lastAccessedTime&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- seven --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#session.getAttribute(&#x27;person&#x27;).name&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p><code>#servletContext</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Apache Tomcat/9.0.33 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#servletContext.serverInfo &#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- java.util.Collections$3@afb7fc0 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#servletContext.servletNames&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"> <span class="comment">&lt;!-- Person(name=seven, sex=男, age=18) --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#servletContext.getAttribute(&#x27;person&#x27;)&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="4、字面值"><a href="#4、字面值" class="headerlink" title="4、字面值"></a>4、字面值</h4><p>​    所谓字面值，首先它不是一个变量，它是一个具体的确切的值，通常这些值是比较简单的，例如：<code>18</code>、<code>&#39;welcome&#39;</code>等，它们没有名称，以至于我们只能用值来称呼它们，因此我们称其为字面值。 </p>
+<h5 id="4-1-文字字面值"><a href="#4-1-文字字面值" class="headerlink" title="4.1 文字字面值"></a>4.1 文字字面值</h5><ul>
+<li><p>文字字面值是用单引号引起来的任何字符内容，如果字符内容里面含有单引号，则需要进行转义 。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;&#x27;Welcome to bailiban...&#x27;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="4-2-数字字面值"><a href="#4-2-数字字面值" class="headerlink" title="4.2 数字字面值"></a>4.2 数字字面值</h5><ul>
+<li>```html<!-- 2019 -->
+<p th:text="2019"></p>
+<!-- 2020 -->
+<p th:text="2019 + 1"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">##### 4.3 布尔字面值</span><br><span class="line"></span><br><span class="line">- ```html</span><br><span class="line">  &lt;!-- true --&gt;</span><br><span class="line">  &lt;p th:text=&quot;true&quot;&gt;&lt;/p&gt;</span><br><span class="line">  &lt;!-- false --&gt;</span><br><span class="line">  &lt;p th:text=&quot;1 &gt; 2&quot;&gt;&lt;/p&gt;</span><br><span class="line">  &lt;!-- 否 --&gt;</span><br><span class="line">  &lt;p th:text=&quot;1 &gt; 2 ? &#x27;是&#x27; : &#x27;否&#x27;&quot;&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="4-4-空字面值"><a href="#4-4-空字面值" class="headerlink" title="4.4 空字面值"></a>4.4 空字面值</h5><ul>
+<li>```html<!-- false -->
+<p th:text="${user == null}"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">#### 5、文本操作</span><br><span class="line"></span><br><span class="line">##### 5.1 字符串连接</span><br><span class="line"></span><br><span class="line">- 不管是字面值还是表达式的结果，我们都可以使用`+`符号将它们连接起来： </span><br><span class="line"></span><br><span class="line">  ```html</span><br><span class="line">  &lt;p th:text=&quot;&#x27;Welcome to &#x27; + $&#123;msg&#125; + &#x27;!&#x27;&quot;&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="5-2-字面值替换"><a href="#5-2-字面值替换" class="headerlink" title="5.2 字面值替换"></a>5.2 字面值替换</h5><ul>
+<li><p>符号<code>||</code>可以用来将字面值和表达式包裹起来，这样就能方便的替换变量的值，而不需要使用<code>+</code>连接符： </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;|Welcome to $&#123;msg&#125; !|&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="6、算术运算"><a href="#6、算术运算" class="headerlink" title="6、算术运算"></a>6、算术运算</h4><p> 支持<code>+</code>（加）、<code>-</code>（减）、<code>*</code>（乘）、<code>/</code>（除）、<code>%</code>（模）运算。</p>
+<ul>
+<li>```html<!-- 6 -->
+<p th:text="4 + 2"></p>
+<!-- 2 -->
+<p th:text="4 - 2"></p>
+<!-- 8 -->
+<p th:text="4 * 2"></p>
+<!-- 2 -->
+<p th:text="4 / 2"></p>
+<!-- 0 -->
+<p th:text="4 % 2"></p>
+<!-- 2 -->
+<p th:text="${page + 1}"></p>
+<!-- 2 -->
+<p th:text="${page} + 1"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">#### 7、布尔运算</span><br><span class="line"></span><br><span class="line"> 支持`and`（且）、`or`（或）、`!`（非）、`not`（非）运算 。</span><br><span class="line"></span><br><span class="line">- ```html</span><br><span class="line">  &lt;!--true--&gt;</span><br><span class="line">  &lt;p th:text=&quot;$&#123;true and true&#125;&quot;&gt;&lt;/p&gt;</span><br><span class="line">  &lt;!--true--&gt;</span><br><span class="line">  &lt;p th:text=&quot;$&#123;true or false&#125;&quot;&gt;&lt;/p&gt;</span><br><span class="line">  &lt;!--false--&gt;</span><br><span class="line">  &lt;p th:text=&quot;$&#123;!true&#125;&quot;&gt;&lt;/p&gt;</span><br><span class="line">  &lt;!--true--&gt;</span><br><span class="line">  &lt;p th:text=&quot;$&#123;not false&#125;&quot;&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="8、比较运算"><a href="#8、比较运算" class="headerlink" title="8、比较运算"></a>8、比较运算</h4><p> 支持<code>&lt;</code>（<code>lt</code>）、<code>&gt;</code>（<code>gt</code>）、<code>&lt;=</code>（<code>le</code>）、<code>&gt;=</code>（<code>ge</code>）、<code>==</code>（<code>eq</code>）、<code>!=</code>（<code>ne</code>）</p>
+<ul>
+<li>```html<p th:text="${person.age < 60}"></p>
+<p th:text="${person.age <= 60}"></p>
+<p th:text="${person.age > 18}"></p>
+<p th:text="${person.age >= 18}"></p>
+<p th:text="${person.age == 18}"></p>
+<p th:text="${person.age != 18}"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">#### 9、条件运算</span><br><span class="line"></span><br><span class="line">##### 9.1  三元运算符</span><br><span class="line"></span><br><span class="line">##### `(if) ? (then) : (else)` </span><br><span class="line"></span><br><span class="line">- ```html</span><br><span class="line">  &lt;p &gt;[[$&#123;person.age &gt;= 18?&#x27;成年&#x27;:&#x27;未成年&#x27;&#125;]]&lt;/p&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="9-2-二元运算符"><a href="#9-2-二元运算符" class="headerlink" title="9.2  二元运算符"></a>9.2  二元运算符</h5><p><code>(value) ?: (defaultValue)</code>   其中，<code>value</code>非空（null）即真，条件为真时输出<code>value</code>，否则输出<code>defaultValue</code>。 </p>
+<ul>
+<li>```html<p th:text="${person.name}?:'用户名不能为空'"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">也可以使用无操作符达到相同效果。`_`表示显示标签体内的内容。</span><br><span class="line"></span><br><span class="line">```html</span><br><span class="line">&lt;p th:text=&quot;$&#123;person.name&#125;?:_&quot;&gt;用户名不能为空&lt;/p&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="10、使用文本"><a href="#10、使用文本" class="headerlink" title="10、使用文本"></a>10、使用文本</h4><h5 id="10-1-th-text"><a href="#10-1-th-text" class="headerlink" title="10.1 th:text"></a>10.1 th:text</h5><p> 在标签体中展示表达式评估结果的文本内容 </p>
+<ul>
+<li>```html<p th:text="${message}">Welcome to bailiban!</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  当它作为静态文件直接运行时，浏览器会自动忽略它不能识别的`th:text`属性，而显示标签体的文本内容`Welcome to bailiban!`当它作为模板文件运行在服务器端时，`th:text`属性的具体值将会替换标签体的文本内容。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">##### 10.2 th:utext</span><br><span class="line"></span><br><span class="line">`utext`跟`text`的区别是utext会解析html标签，而`text`不会。</span><br><span class="line"></span><br><span class="line">假设`model.addAttribute(&quot;msg&quot;,&quot;&lt;b&gt;welcome to bailiban ...&lt;/b&gt; &quot;);`</span><br><span class="line"></span><br><span class="line">- ```html</span><br><span class="line">  &lt;!--&lt;b&gt;welcome to bailiban ...&lt;/b&gt; --&gt;</span><br><span class="line">  &lt;p th:text=&quot;$&#123;msg&#125;&quot;&gt;&lt;/p&gt;</span><br><span class="line">  &lt;!-- 显示welcome to bailiban ...，字体变粗,解析b标签的结果--&gt;</span><br><span class="line">  &lt;p th:utext=&quot;$&#123;msg&#125;&quot;&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="11、设置属性"><a href="#11、设置属性" class="headerlink" title="11、设置属性"></a>11、设置属性</h4><p> 在 Thymeleaf 模板文件中，你可以使用<code>th:*</code>（或者使用<code>th:attr</code>属性）来设置任意的 HTML5 标签属性的值。不仅如此，你还可以<code>th:*-*</code>来同时为多个不同的标签属性设置相同的一个值，甚至你可以使用<code>th:attrappend</code>和<code>th:attrprepend</code>来追加新的值到现有的标签属性值中。 </p>
+<h5 id="11-1-th-attr"><a href="#11-1-th-attr" class="headerlink" title="11.1 th:attr"></a>11.1 th:attr</h5><p> 这种方式是不被推荐的，了解一下就行。下面是用<code>th:attr=&quot;href=...&quot;</code>来设置标签<code>href</code>属性的值 。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">th:attr</span>=<span class="string">&quot;href=@&#123;https://www.google.com.hk&#125;&quot;</span>&gt;</span>谷歌一下你就知道<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="11-2-th"><a href="#11-2-th" class="headerlink" title="11.2 th:*"></a>11.2 th:*</h5><p><code>th:attr</code>不够简洁，我们推荐下面的方式</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">th:href</span>=<span class="string">&quot;@&#123;https://www.google.com.hk&#125;&quot;</span>&gt;</span>谷歌一下你就知道<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>其中的<code>*</code>可以是HTML5中的任意属性。</p>
+<h5 id="11-3-th"><a href="#11-3-th" class="headerlink" title="11.3 th:*-*"></a>11.3 th:*-*</h5><p> 如果想要同时为标签的多个不同属性设置相同的一个值，可以使用<code>th:*-*</code>的语法 </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;logo.png&quot;</span> <span class="attr">th:alt-title</span>=<span class="string">&quot;LOGO图片&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p> 它相当于： </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;logo.png&quot;</span> <span class="attr">th:alt</span>=<span class="string">&quot;LOGO图片&quot;</span> <span class="attr">th:title</span>=<span class="string">&quot;LOGO图片&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="11-4-th-attrappend-amp-th-attrprepend"><a href="#11-4-th-attrappend-amp-th-attrprepend" class="headerlink" title="11.4 th:attrappend &amp; th:attrprepend"></a>11.4 th:attrappend &amp; th:attrprepend</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- &lt;button class=&quot;btn  disable &quot;&gt;购买&lt;/button&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn&quot;</span> <span class="attr">th:attrappend</span>=<span class="string">&quot;class=&#x27; disable &#x27;&quot;</span>&gt;</span>购买<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- &lt;button class=&quot; disable btn&quot;&gt;购买&lt;/button&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn&quot;</span> <span class="attr">th:attrprepend</span>=<span class="string">&quot;class=&#x27; disable &#x27;&quot;</span>&gt;</span>购买<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="11-5-布尔属性-th-checked"><a href="#11-5-布尔属性-th-checked" class="headerlink" title="11.5 布尔属性 th:checked"></a>11.5 布尔属性 th:checked</h5><p> 在 HTML 中有些属性是布尔属性，布尔属性是指没有值的属性，如<code>readonly</code>、<code>checked</code>、<code>selected</code>等。它们若存在那就意味着值为 true。 Thymeleaf 也允许我们通过<code>th:*</code>（这里的<code>*</code>表示任意的布尔属性） 来选择是否使用这些布尔属性。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">th:checked</span>=<span class="string">&quot;$&#123;remember&#125;&quot;</span> /&gt;</span> 记住我</span><br></pre></td></tr></table></figure>
+
+<p>当<code>$&#123;remember&#125;</code>为null就不会默认选中，不为null则会默认勾选上。</p>
+<h4 id="12、遍历"><a href="#12、遍历" class="headerlink" title="12、遍历"></a>12、遍历</h4><ul>
+<li>遍历（迭代）的语法<code>th:each=&quot;自定义的元素变量名称 : $&#123;集合变量名称&#125;&quot;</code> 。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--personList是集合对象，person是迭代单体对象 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">th:each</span>=<span class="string">&quot;person:$&#123;personList&#125;&quot;</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;person.name&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><p>属性<code>th:each</code>提供了一个用于跟踪迭代的状态变量， 状态变量的使用语法：<code>th:each=&quot;自定义的元素变量名称, 自定义的状态变量名称 : $&#123;集合变量名称&#125;&quot;</code> 。 它包含以下几个属性 ：</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>属性</strong></th>
+<th align="center"><strong>类型</strong></th>
+<th align="center"><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">index</td>
+<td align="center">int</td>
+<td align="center">当前迭代的索引，从 0 开始</td>
+</tr>
+<tr>
+<td align="center">count</td>
+<td align="center">int</td>
+<td align="center">当前迭代的计数，从 1 开始</td>
+</tr>
+<tr>
+<td align="center">size</td>
+<td align="center">int</td>
+<td align="center">集合中元素的总个数</td>
+</tr>
+<tr>
+<td align="center">current</td>
+<td align="center">int</td>
+<td align="center">当前的元素对象</td>
+</tr>
+<tr>
+<td align="center">even</td>
+<td align="center">boolean</td>
+<td align="center">当前迭代的计数是否是偶数</td>
+</tr>
+<tr>
+<td align="center">odd</td>
+<td align="center">boolean</td>
+<td align="center">当前迭代的计数是否是奇数</td>
+</tr>
+<tr>
+<td align="center">first</td>
+<td align="center">boolean</td>
+<td align="center">当前元素是否是集合的第一个元素</td>
+</tr>
+<tr>
+<td align="center">last</td>
+<td align="center">boolean</td>
+<td align="center">当前元素是否是集合的最后一个元素</td>
+</tr>
+</tbody></table>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">&quot;1&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>姓名<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>性别<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>年龄<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>序号<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>总人数<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span> <span class="attr">th:each</span>=<span class="string">&quot;person,status:$&#123;personList&#125;&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>[[$&#123;person.name&#125;]]<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>[[$&#123;person.sex&#125;]]<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>[[$&#123;person.age&#125;]]<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>[[$&#123;status.count&#125;]]<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>[[$&#123;status.size&#125;]]<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="13、条件判断"><a href="#13、条件判断" class="headerlink" title="13、条件判断"></a>13、条件判断</h4><p> 条件判断语句有三种，分别是：<code>th:if</code>、<code>th:unless</code>、<code>th:swith</code>。 </p>
+<h5 id="13-1-th-if"><a href="#13-1-th-if" class="headerlink" title="13.1 th:if"></a>13.1 th:if</h5><p> 当表达式的评估结果为真时则显示内容，否则不显示 </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:if</span>=<span class="string">&quot;$&#123;msg&#125;&quot;</span>&gt;</span>hello ...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="13-2-th-unless"><a href="#13-2-th-unless" class="headerlink" title="13.2 th:unless"></a>13.2 th:unless</h5><p> <code>th:unless</code>与<code>th:if</code>判断恰好相反，当表达式的评估结果为假时则显示内容，否则不显示 </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:unless</span>=<span class="string">&quot;$&#123;msg&#125;&quot;</span>&gt;</span>hello ...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="13-3-th-swith"><a href="#13-3-th-swith" class="headerlink" title="13.3 th:swith"></a>13.3 th:swith</h5><p> 多路选择语句，它需要搭配<code>th:case</code>来使用： </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">div</span> <span class="attr">th:switch</span>=<span class="string">&quot;$&#123;person.sex&#125;&quot;</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">p</span> <span class="attr">th:case</span>=<span class="string">&quot;男&quot;</span>&gt;</span>man<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">p</span> <span class="attr">th:case</span>=<span class="string">&quot;女&quot;</span>&gt;</span>girl<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="14、定义局部变量"><a href="#14、定义局部变量" class="headerlink" title="14、定义局部变量"></a>14、定义局部变量</h4><p> 使用<code>th:with</code>属性可以定义局部变量 </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">span</span> <span class="attr">th:with</span>=<span class="string">&quot;myName=&#x27;seven&#x27;&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;myName&#125;&quot;</span> &gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p> 同时定义多个局部变量时，用英文<code>,</code>号分隔开 </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:with</span>=<span class="string">&quot;name=$&#123;user.name&#125;,age=$&#123;user.age&#125;&quot;</span>&gt;</span></span><br><span class="line">    ......</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="15、注释"><a href="#15、注释" class="headerlink" title="15、注释"></a>15、注释</h4><h5 id="15-1-标准注释"><a href="#15-1-标准注释" class="headerlink" title="15.1 标准注释"></a>15.1 标准注释</h5><ul>
+<li>标准注释会在文件源代码中显示出来。</li>
+</ul>
+<p><code>&lt;!--   --&gt;</code></p>
+<h5 id="15-2-析器级注释"><a href="#15-2-析器级注释" class="headerlink" title="15.2 析器级注释"></a>15.2 析器级注释</h5><ul>
+<li><p>注释的代码块会在引擎解析的时候抹去。 </p>
+<p><code>&lt;!--/* ... */--&gt; </code></p>
+</li>
+</ul>
+<h4 id="16、内联表达式"><a href="#16、内联表达式" class="headerlink" title="16、内联表达式"></a>16、内联表达式</h4><p> 内联表达式允许我们直接在 HTML 文本中使用标准表达式，而不需要使用<code>th:*</code>标签属性。 </p>
+<h5 id="16-1"><a href="#16-1" class="headerlink" title="16.1 [[ ]]"></a>16.1 [[ ]]</h5><p> <code>[[]]</code>相当于<code>th:text</code>，对含有 HTML 标签的内容自动进行字符转义 </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>[[$&#123;msg&#125;]]<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="16-2"><a href="#16-2" class="headerlink" title="16.2 [( )]"></a>16.2 [( )]</h5><p> <code>[()]</code>相当于<code>th:utext</code>，对含有 HTML 标签的内容不进行字符转义 </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>[($&#123;msg&#125;)]<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​    </p>
+<h5 id="16-3-th-inline"><a href="#16-3-th-inline" class="headerlink" title="16.3 th:inline"></a>16.3 th:inline</h5><p> 我们已经了解到，使用<code>[[]]</code>和<code>[()]</code>语法可以直接在 HTML 文本中使用标准表达式，如果想要使用更多高级的功能，需要使用<code>th:inline</code>属性来激活，它的取值如下 </p>
+<table>
+<thead>
+<tr>
+<th><strong>值</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>none</td>
+<td>禁止内联表达式，可以原样输出 [[]] 和 [()] 字符串</td>
+</tr>
+<tr>
+<td>text</td>
+<td>文本内联，可以使用 th:each 等高级语法</td>
+</tr>
+<tr>
+<td>css</td>
+<td>样式内联，如<code>&lt;style th:inline=&quot;css&quot;&gt;</code></td>
+</tr>
+<tr>
+<td>javascript</td>
+<td>脚本内联，如：<code>&lt;style th:inline=&quot;javascript&quot;&gt;</code></td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>none</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- [[ ]]不会被解析，原字符串输出 --&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:inline</span>=<span class="string">&quot;none&quot;</span>&gt;</span>[[asdfsafd]]<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<ul>
+<li><p>text</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:inline</span>=<span class="string">&quot;text&quot;</span>&gt;</span>[[$&#123;msg&#125;]]<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<ul>
+<li><p>css  //运用后</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">th:inline</span>=<span class="string">&quot;css&quot;</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">    <span class="selector-tag">body</span> &#123;</span></span><br><span class="line"><span class="css">        <span class="attribute">background-color</span>:[[$&#123;bgColor&#125;]];</span></span><br><span class="line"><span class="css">    &#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<ul>
+<li><p>javascript</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">th:inline</span>=<span class="string">&quot;javascript&quot;</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> message = [[$&#123;msg&#125;]];</span></span><br><span class="line"><span class="javascript">    alert(<span class="string">&quot;hello：&quot;</span> + message);</span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
 
       
 
@@ -337,7 +669,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://charmingzmz.github.io/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://charmingzmz.github.io/2021/09/15/Thymeleaf/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -351,18 +683,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/09/15/Thymeleaf/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Thymeleaf
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/09/13/%E4%BB%80%E4%B9%88%E6%98%AFQPS%EF%BC%8CTPS%EF%BC%8C%E5%90%9E%E5%90%90%E9%87%8F/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">什么是QPS，TPS，吞吐量</div>
+    <a href="/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java中的RPC分布式范例：RMI</div>
       <i class="icon-circle-right"></i>
     </a>
   

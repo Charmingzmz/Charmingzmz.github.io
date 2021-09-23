@@ -145,6 +145,110 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JAVA经典面试题附答案" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/23/JAVA%E7%BB%8F%E5%85%B8%E9%9D%A2%E8%AF%95%E9%A2%98%E9%99%84%E7%AD%94%E6%A1%88/">JAVA经典面试题附答案</a>
+    </h1>
+  
+
+        
+        <a href="/2021/09/23/JAVA%E7%BB%8F%E5%85%B8%E9%9D%A2%E8%AF%95%E9%A2%98%E9%99%84%E7%AD%94%E6%A1%88/" class="archive-article-date">
+  	<time datetime="2021-09-23T10:18:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="JAVA经典面试题附答案"><a href="#JAVA经典面试题附答案" class="headerlink" title="JAVA经典面试题附答案"></a>JAVA经典面试题附答案</h1><ul>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43495390/article/details/86533482#_1">前言</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43495390/article/details/86533482#1JAVA_9">1.JAVA基础</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43495390/article/details/86533482#2JVM__360">2.JVM 知识</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43495390/article/details/86533482#3_447">3.开源框架知识</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43495390/article/details/86533482#4_588">4.操作系统</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43495390/article/details/86533482#5_646">5.多线程</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43495390/article/details/86533482#6_1243">6.数据库知识</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43495390/article/details/86533482#7_1590">7.最后附一遍持续整理的博客</a></p>
+</li>
+<li><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前言:<br>少年易老学难成，一寸光阴不可轻。未觉池塘春草梦，阶前梧叶已秋声 。—朱熹《劝学诗》<br>勤奋才是改变你命运的唯一捷径。<br>整理不易,各位看官点赞再看更舒适，养成好习惯(●´∀｀●)</p>
+</li>
+</ul>
+<h4 id="1-JAVA中的几种基本类型，各占用多少字节？"><a href="#1-JAVA中的几种基本类型，各占用多少字节？" class="headerlink" title="1.JAVA中的几种基本类型，各占用多少字节？"></a>1.JAVA中的几种基本类型，各占用多少字节？</h4><p><img src="/2021/09/23/JAVA%E7%BB%8F%E5%85%B8%E9%9D%A2%E8%AF%95%E9%A2%98%E9%99%84%E7%AD%94%E6%A1%88/1.png"></p>
+<p>下图单位是bit,非字节 1B=8bit</p>
+<p><img src="/2021/09/23/JAVA%E7%BB%8F%E5%85%B8%E9%9D%A2%E8%AF%95%E9%A2%98%E9%99%84%E7%AD%94%E6%A1%88/2.jpg"></p>
+<p>下图单位是bit,非字节 1B=8bit</p>
+<p><img src="/2021/09/23/JAVA%E7%BB%8F%E5%85%B8%E9%9D%A2%E8%AF%95%E9%A2%98%E9%99%84%E7%AD%94%E6%A1%88/4.jpg"></p>
+<h4 id="2-String能被继承吗？为什么？"><a href="#2-String能被继承吗？为什么？" class="headerlink" title="2.String能被继承吗？为什么？**"></a>2.String能被继承吗？为什么？**</h4><p>不可以，因为String类有final修饰符，而final修饰的类是不能被继承的，实现细节不允许改变。平常我们定义的String str=”abc”(直接赋一个字面量);其实和String str=new String(“abc”)(通过构造器构造)还是有差异的。</p>
+<p><img src="/2021/09/23/JAVA%E7%BB%8F%E5%85%B8%E9%9D%A2%E8%AF%95%E9%A2%98%E9%99%84%E7%AD%94%E6%A1%88/5.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String str=“abc”和String str=new String(“abc”); 产生几个对象？</span><br><span class="line">    1.前者1或0，后者2或1，先看字符串常量池，如果字符串常量池中没有，都在常量池中创建一个，如果有，前者直接引用，后者在堆内存中还需创建一个“abc”实例对象。</span><br><span class="line">	2.对于基础类型的变量和常量：变量和引用存储在栈中，常量存储在常量池中。</span><br><span class="line">	3.为了提升jvm（JAVA虚拟机）性能和减少内存开销，避免字符的重复创建 项目中还是不要使用new String去创建字符串，最好使用String直接赋值。</span><br><span class="line">————————————————</span><br><span class="line">版权声明：本文为CSDN博主「是华仔呀」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。</span><br><span class="line">原文链接：https://blog.csdn.net/weixin_43495390/article/details/86533482</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="3-String，-Stringbuffer，-StringBuilder-的区别。"><a href="#3-String，-Stringbuffer，-StringBuilder-的区别。" class="headerlink" title="3.String， Stringbuffer， StringBuilder 的区别。"></a>3.String， Stringbuffer， StringBuilder 的区别。</h4><p>String 字符串常量(final修饰，不可被继承)，String是常量，当创建之后即不能更改。(可以通过StringBuffer和StringBuilder创建String对象(常用的两个字符串操作类)。)<br>==StringBuffer 字符串变量（线程安全）,==其也是final类别的，不允许被继承，其中的绝大多数方法都进行了同步处理，包括常用的Append方法也做了同步处理(synchronized修饰)。其自jdk1.0起就已经出现。其toString方法会进行对象缓存，以减少元素复制开销。<br>————————————————<br>版权声明：本文为CSDN博主「是华仔呀」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43495390/article/details/86533482">https://blog.csdn.net/weixin_43495390/article/details/86533482</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public synchronized String toString() &#123;</span><br><span class="line">	if (toStringCache == null) &#123;</span><br><span class="line">		toStringCache = Arrays.copyOfRange(value, 0, count);</span><br><span class="line">	&#125;</span><br><span class="line">	return new String(toStringCache, true);</span><br><span class="line">&#125;</span><br><span class="line">————————————————</span><br><span class="line">版权声明：本文为CSDN博主「是华仔呀」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。</span><br><span class="line">原文链接：https://blog.csdn.net/weixin_43495390/article/details/86533482</span><br></pre></td></tr></table></figure>
+
+<p>==StringBuilder 字符串变量（非线程安全）==其自jdk1.5起开始出现。与StringBuffer一样都继承和实现了同样的接口和类，方法除了没使用synch修饰以外基本一致，不同之处在于最后toString的时候，会直接返回一个新对象。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public String toString() &#123;</span><br><span class="line">*// Create a copy, don’t share the array*</span><br><span class="line">return new String(value, 0, count);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-ArrayList-和-LinkedList-有什么区别。"><a href="#4-ArrayList-和-LinkedList-有什么区别。" class="headerlink" title="4.ArrayList 和 LinkedList 有什么区别。"></a><strong>4.ArrayList 和 LinkedList 有什么区别。</strong></h4><p>ArrayList和LinkedList都实现了List接口，有以下的不同点：<br>1、ArrayList是基于索引的数据接口，它的底层是数组。它可以以O(1)时间复杂度对元素进行随机访问。与此对应，LinkedList是以元素列表的形式存储它的数据，每一个元素都和它的前一个和后一个元素链接在一起，在这种情况下，查找某个元素的时间复杂度是O(n)。<br>2、相对于ArrayList，LinkedList的插入，添加，删除操作速度更快，因为当元素被添加到集合任意位置的时候，不需要像数组那样重新计算大小或者是更新索引。<br>3、LinkedList比ArrayList更占内存，因为LinkedList为每一个节点存储了两个引用，一个指向前一个元素，一个指向下一个元素。<br>————————————————<br>版权声明：本文为CSDN博主「是华仔呀」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43495390/article/details/86533482">https://blog.csdn.net/weixin_43495390/article/details/86533482</a></p>
+<h4 id="5-讲讲类的实例化顺序，比如父类静态数据，构造函数，字段，子类静态数据，构造函数，字段，当-new-的时候，-他们的执行顺序。"><a href="#5-讲讲类的实例化顺序，比如父类静态数据，构造函数，字段，子类静态数据，构造函数，字段，当-new-的时候，-他们的执行顺序。" class="headerlink" title="5.讲讲类的实例化顺序，比如父类静态数据，构造函数，字段，子类静态数据，构造函数，字段，当 new 的时候， 他们的执行顺序。"></a><strong>5.讲讲类的实例化顺序，比如父类静态数据，构造函数，字段，子类静态数据，构造函数，字段，当 new 的时候， 他们的执行顺序。</strong></h4><p>此题考察的是类加载器实例化时进行的操作步骤（加载–&gt;连接-&gt;初始化）。<br>父类静态代变量、<br>父类静态代码块、<br>子类静态变量、<br>子类静态代码块、<br>父类非静态变量（父类实例成员变量）、<br>父类构造函数、<br>子类非静态变量（子类实例成员变量）、<br>子类构造函数。<br>测试demo<br>参阅博客《深入理解类加载》<br>————————————————<br>版权声明：本文为CSDN博主「是华仔呀」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43495390/article/details/86533482">https://blog.csdn.net/weixin_43495390/article/details/86533482</a></p>
+<p><strong>6.用过哪些 Map 类，都有什么区别，HashMap 是线程安全的吗,并发下使用的 Map 是什么，他们内部原理分别是什么，比如存储方式， hashcode，扩容， 默认容量等。</strong>****</p>
+<p>hashMap是线程不安全的，HashMap是数组+链表+红黑树（JDK1.8增加了红黑树部分）实现的，采用哈希表来存储的，<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/21673805">参考链接</a><br>JAVA8 的 ConcurrentHashMap 为什么放弃了分段锁，有什么问题吗，如果你来设计，你如何设计。<br><a target="_blank" rel="noopener" href="https://yq.aliyun.com/articles/36781">参考链接</a></p>
+<h4 id="7-有没有有顺序的-Map-实现类，-如果有，-他们是怎么保证有序的。"><a href="#7-有没有有顺序的-Map-实现类，-如果有，-他们是怎么保证有序的。" class="headerlink" title="7.有没有有顺序的 Map 实现类， 如果有， 他们是怎么保证有序的。"></a>7.有没有有顺序的 Map 实现类， 如果有， 他们是怎么保证有序的。</h4><p>TreeMap和LinkedHashMap是有序的（TreeMap默认升序，LinkedHashMap则记录了插入顺序）。<br><a target="_blank" rel="noopener" href="http://uule.iteye.com/blog/1522291">参考链接</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/09/23/JAVA%E7%BB%8F%E5%85%B8%E9%9D%A2%E8%AF%95%E9%A2%98%E9%99%84%E7%AD%94%E6%A1%88/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-String、StringBuffer与StringBuilder之间区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1883,143 +1987,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/09/02/Java%E4%B8%ADString%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-如何使用css伪类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/30/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8css%E4%BC%AA%E7%B1%BB/">如何使用css伪类</a>
-    </h1>
-  
-
-        
-        <a href="/2021/08/30/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8css%E4%BC%AA%E7%B1%BB/" class="archive-article-date">
-  	<time datetime="2021-08-30T14:53:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="如何使用css伪类"><a href="#如何使用css伪类" class="headerlink" title="如何使用css伪类"></a>如何使用css伪类</h2><ul>
-<li><h5 id="CSS-伪类-Pseudo-classes"><a href="#CSS-伪类-Pseudo-classes" class="headerlink" title="CSS 伪类(Pseudo-classes)"></a>CSS 伪类(Pseudo-classes)</h5></li>
-</ul>
-<p>​     <em>语法</em></p>
-<p>​     伪类的语法：</p>
-<p>​     </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">selector:pseudo-class &#123;property:value;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>​     CSS类也可以使用伪类：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">selector.class:pseudo-class &#123;property:value;&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h5 id="anchor伪类"><a href="#anchor伪类" class="headerlink" title="anchor伪类"></a>anchor伪类</h5><p>在支持 CSS 的浏览器中，链接的不同状态都可以以不同的方式显示</p>
-<p><strong>实例</strong></p>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a:link &#123;color:#FF0000;&#125; /* 未访问的链接 */</span><br><span class="line">a:visited &#123;color:#00FF00;&#125; /* 已访问的链接 */</span><br><span class="line">a:hover &#123;color:#FF00FF;&#125; /* 鼠标划过链接 */</span><br><span class="line">a:active &#123;color:#0000FF;&#125; /* 已选中的链接 */</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><strong>注意：</strong> 在CSS定义中，a:hover 必须被置于 a:link 和 a:visited 之后，才是有效的。</p>
-<p><strong>注意：</strong> 在 CSS 定义中，a:active 必须被置于 a:hover 之后，才是有效的。</p>
-<p><strong>注意：</strong>伪类的名称不区分大小写。</p>
-<ul>
-<li><h5 id="伪类和CSS类"><a href="#伪类和CSS类" class="headerlink" title="伪类和CSS类"></a>伪类和CSS类</h5></li>
-</ul>
-<p> 伪类可以与 CSS 类配合使用：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a.red:visited &#123;color:#FF0000;&#125;</span><br><span class="line"> </span><br><span class="line">&lt;a class=&quot;red&quot; href=&quot;css-syntax.html&quot;&gt;CSS 语法&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-
-<p> 如果在上面的例子的链接已被访问，它会显示为红色。</p>
-<ul>
-<li><h5 id="CSS-first-child-伪类"><a href="#CSS-first-child-伪类" class="headerlink" title="CSS :first-child 伪类"></a>CSS :first-child 伪类</h5></li>
-</ul>
-<p>您可以使用 :first-child 伪类来选择父元素的第一个子元素。</p>
-<p><strong>注意：</strong>在IE8的之前版本必须声明<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-doctype.html"></a> ，这样 :first-child 才能生效。</p>
-<ul>
-<li><h5 id="匹配第一个-元素"><a href="#匹配第一个-元素" class="headerlink" title="匹配第一个  元素"></a>匹配第一个 <p> 元素</p></h5></li>
-</ul>
-<p>在下面的例子中，选择器匹配作为任何元素的第一个子元素的 </p><p> 元素：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">p:first-child</span><br><span class="line">&#123;</span><br><span class="line">    color:blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h5 id="匹配所有作为第一个子元素的-元素中的所有-元素"><a href="#匹配所有作为第一个子元素的-元素中的所有-元素" class="headerlink" title="匹配所有作为第一个子元素的  元素中的所有  元素"></a>匹配所有作为第一个子元素的 <p> 元素中的所有 <i> 元素</i></p></h5></li>
-</ul>
-<p>在下面的例子中，选择器匹配所有作为元素的第一个子元素的 </p><p> 元素中的所有 <i> 元素：</i></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">p &gt; i:first-child</span><br><span class="line">&#123;</span><br><span class="line">    color:blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p> <strong>匹配所有作为第一个子元素的 <p> 元素中的所有 <i> 元素</i></p></strong></p>
-<p>在下面的例子中，选择器匹配所有作为元素的第一个子元素的 </p><p> 元素中的所有 <i> 元素：</i></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">p:first-child i</span><br><span class="line">&#123;</span><br><span class="line">    color:blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li><h5 id="CSS-lang-伪类"><a href="#CSS-lang-伪类" class="headerlink" title="CSS - :lang 伪类"></a>CSS - :lang 伪类</h5></li>
-</ul>
-<p>:lang 伪类使你有能力为不同的语言定义特殊的规则</p>
-<p><strong>注意：</strong>IE8必须声明<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/tag-doctype.html"></a>才能支持;lang伪类。</p>
-<p>在下面的例子中，:lang 类为属性值为 no 的q元素定义引号的类型：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">q:lang(no) &#123;quotes: &quot;~&quot; &quot;~&quot;;&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://www.runoob.com/images/tryitimg.gif" alt="Examples">更多实例</p>
-<p> <a target="_blank" rel="noopener" href="https://www.runoob.com/try/try.php?filename=trycss_link2">为超链接添加不同样式</a><br>这个例子演示了如何为超链接添加其他样式。</p>
-<p><a target="_blank" rel="noopener" href="https://www.runoob.com/try/try.php?filename=trycss_link_focus">使用 :focus</a><br>这个例子演示了如何使用 :focus伪类</p>
-<ul>
-<li><h5 id="所有CSS伪类-元素"><a href="#所有CSS伪类-元素" class="headerlink" title="所有CSS伪类/元素"></a>所有CSS伪类/元素</h5></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">选择器	示例	示例说明</span><br><span class="line">:checked	input:checked	选择所有选中的表单元素</span><br><span class="line">:disabled	input:disabled	选择所有禁用的表单元素</span><br><span class="line">:empty	    p:empty	            选择所有没有子元素的p元素</span><br><span class="line">:enabled	input:enabled	选择所有启用的表单元素</span><br><span class="line">:first-of-type	p:first-of-type	选择的每个 p 元素是其父元素的第一个 p 元素</span><br><span class="line">:in-range	input:in-range	选择元素指定范围内的值</span><br><span class="line">:invalid	input:invalid	选择所有无效的元素</span><br><span class="line">:last-child	p:last-child	选择所有p元素的最后一个子元素</span><br><span class="line">:last-of-type	p:last-of-type	选择每个p元素是其母元素的最后一个p元素</span><br><span class="line">:not(selector)	:not(p)	选择所有p以外的元素</span><br><span class="line">:nth-child(n)	p:nth-child(2)	选择所有 p 元素的父元素的第二个子元素</span><br><span class="line">:nth-last-child(n)	p:nth-last-child(2)	选择所有p元素倒数的第二个子元素</span><br><span class="line">:nth-last-of-type(n)	p:nth-last-of-type(2)	选择所有p元素倒数的第二个为p的子元素</span><br><span class="line">:nth-of-type(n)	p:nth-of-type(2)	选择所有p元素第二个为p的子元素</span><br><span class="line">:only-of-type	p:only-of-type	选择所有仅有一个子元素为p的元素</span><br><span class="line">:only-child	p:only-child	选择所有仅有一个子元素的p元素</span><br><span class="line">:optional	input:optional	选择没有&quot;required&quot;的元素属性</span><br><span class="line">:out-of-range	input:out-of-range	选择指定范围以外的值的元素属性</span><br><span class="line">:read-only	input:read-only	选择只读属性的元素属性</span><br><span class="line">:read-write	input:read-write	选择没有只读属性的元素属性</span><br><span class="line">:required	input:required	选择有&quot;required&quot;属性指定的元素属性</span><br><span class="line">:root	root	选择文档的根元素</span><br><span class="line">:target	#news:target	选择当前活动#news元素(点击URL包含锚的名字)</span><br><span class="line">:valid	input:valid	选择所有有效值的属性</span><br><span class="line">:link	a:link	选择所有未访问链接</span><br><span class="line">:visited	a:visited	选择所有访问过的链接</span><br><span class="line">:active	a:active	选择正在活动链接</span><br><span class="line">:hover	a:hover	把鼠标放在链接上的状态</span><br><span class="line">:focus	input:focus	选择元素输入后具有焦点</span><br><span class="line">:first-letter	p:first-letter	选择每个&lt;p&gt; 元素的第一个字母</span><br><span class="line">:first-line	p:first-line	选择每个&lt;p&gt; 元素的第一行</span><br><span class="line">:first-child	p:first-child	选择器匹配属于任意元素的第一个子元素的 &lt;p&gt; 元素</span><br><span class="line">:before	p:before	在每个&lt;p&gt;元素之前插入内容</span><br><span class="line">:after	p:after	在每个&lt;p&gt;元素之后插入内容</span><br><span class="line">:lang(language)	p:lang(it)	为&lt;p&gt;元素的lang属性选择一个开始值</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p>伪类可以看作以选中元素为基准点，此元素的一些状态或属性。</p>
-<p>chrome消除 div 滚动条的宽度，通过箭头键直接控制滚动：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#divContainer &#123;</span><br><span class="line">  overflow: auto;</span><br><span class="line">  height: 160px;</span><br><span class="line">  width: 260px;</span><br><span class="line">  background-color:red;</span><br><span class="line">&#125;</span><br><span class="line">#divContainer::-webkit-scrollbar &#123;</span><br><span class="line">    border-width:1px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/08/30/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8css%E4%BC%AA%E7%B1%BB/">展开全文 >></a>
         </p>
       
 

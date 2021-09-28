@@ -145,6 +145,73 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java中String对象的存储位置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/02/Java%E4%B8%ADString%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/">Java中String对象的存储位置</a>
+    </h1>
+  
+
+        
+        <a href="/2021/09/02/Java%E4%B8%ADString%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/" class="archive-article-date">
+  	<time datetime="2021-09-02T15:28:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Java中String对象的存储位置"><a href="#Java中String对象的存储位置" class="headerlink" title="Java中String对象的存储位置"></a>Java中String对象的存储位置</h2><h5 id="Java中String对象的存储位置（学习笔记）"><a href="#Java中String对象的存储位置（学习笔记）" class="headerlink" title="Java中String对象的存储位置（学习笔记）"></a>Java中String对象的存储位置（学习笔记）</h5><p><img src="/2021/09/02/Java%E4%B8%ADString%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/1.png"></p>
+<p>首先，String是final修饰的、immutable对象，它以一个个字符的方式存储在字符数组中。<br>其次，String类型创建对象有两种方式：①通过字面量赋值：会先去常量池中查找是否存在相同的字符串，若存在，栈中引用直接指定该字符串；若不存在，在常量池中进行缓存，再将栈中引用指向它。②通过new关键字：每次new出来的都是一个新的对象，在堆中开辟空间进行存储。</p>
+<p>test直接演示String对象的创建位置：****</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">public class Main &#123;</span><br><span class="line">    </span><br><span class="line">    /** </span><br><span class="line">     * 创建了三个对象，&quot;helloworld对象创建在常量池中&quot;，每次new String()都会创建一个对象在堆内存中。</span><br><span class="line">     */</span><br><span class="line">    void test() &#123;</span><br><span class="line">　　　　 String s1=&quot;helloworld&quot;;</span><br><span class="line">        String s2= new String(&quot;helloworld&quot;);</span><br><span class="line">        String s3= new String(&quot;helloworld&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * 程序只创建一个字符串对象“Java”，存放在常量池中，所以s1==s2 为true</span><br><span class="line">     */</span><br><span class="line">    void test1()&#123;</span><br><span class="line">        String s1=&quot;Java&quot;;</span><br><span class="line">        String s2=&quot;Java&quot;;</span><br><span class="line">        System.out.println(s1==s2);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /** 第一个new String(&quot;Java&quot;):创建了两个对象，Java创建于常量池中，String对象创建于堆内存中。</span><br><span class="line">     * 第二个new String(&quot;Java&quot;):由于常量池中有Java对象，所以只需创建一个对象，String对象创建于堆内存中。</span><br><span class="line">     * s1与s2分别指向String对象堆内存，所以s1==s2 为false</span><br><span class="line">     */</span><br><span class="line">    void test2() &#123;</span><br><span class="line">        String s1=new String(&quot;Java&quot;);</span><br><span class="line">        String s2= new String(&quot;Java&quot;);</span><br><span class="line">        System.out.println(s1==s2);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /** 常量的值在编译的时候就确定了，&quot;hello&quot;、&quot;world&quot;都是常量，因此s2的值在编译的时候也确定了，</span><br><span class="line">     * s2指向常量池中的&quot;hello world&quot;,所以s1==s2为true</span><br><span class="line">     * </span><br><span class="line">     */</span><br><span class="line">    void test3() &#123;</span><br><span class="line">        String s1=&quot;hello world&quot;;</span><br><span class="line">        String s2=&quot;hello &quot;+&quot;world&quot;;</span><br><span class="line">        System.out.println(s1==s2);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /** s4由两个String变量相加得到，不能再编译时就确定下来，不能直接引用常量池中的&quot;helloworld&quot;对象，而是在堆内存中创建一个新的String对象并由s4指向</span><br><span class="line">     * 所以s1==s4为false</span><br><span class="line">     * </span><br><span class="line">     */</span><br><span class="line">    void test4() &#123;</span><br><span class="line">        String s1=&quot;helloworld&quot;;</span><br><span class="line">        String s2=&quot;hello&quot;;</span><br><span class="line">        String s3=&quot;world&quot;;</span><br><span class="line">        String s4=s2+s3;</span><br><span class="line">        System.out.println(s1==s4);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /** s2与s3被final修饰为宏变量，不可更改，编译器在程序使用该变量的地方直接使用该变量的值进行替代，所以s4的值在编译的时候就为&quot;helloworld&quot;</span><br><span class="line">     * 指向常量池中的&quot;helloworld&quot;对象</span><br><span class="line">     * 所以s1==s4为true</span><br><span class="line">     * </span><br><span class="line">     */</span><br><span class="line">    void test5() &#123;</span><br><span class="line">        String s1=&quot;helloworld&quot;;</span><br><span class="line">        final String s2=&quot;hello&quot;;</span><br><span class="line">        final String s3=&quot;world&quot;;</span><br><span class="line">        String s4=s2+s3;</span><br><span class="line">        System.out.println(s1==s4);</span><br><span class="line">    &#125;</span><br><span class="line">    这个时候把字符串c赋值给d就是c在常量池中创建了一个对象&quot;1&quot; c的地址指向&quot;1&quot;,c再把地址给d,此时c和d的地址相同指向同一个常量池中的对象&quot;1&quot;,所以返回值为true,但是此时如果把d的值改变，使地址指向了&quot;2&quot;，此时变量c的地址不会改变仍然指向&quot;1&quot;,输出c=d就会返回false,因为比较的是地址，地址值不一样。</span><br><span class="line">     String c=&quot;1&quot;;</span><br><span class="line">        String d=c ;</span><br><span class="line">        System.out.print(c==d);</span><br><span class="line">         d=&quot;2&quot;;</span><br><span class="line">        System.out.println(c==d);</span><br><span class="line">        System.out.println(&quot;变量C&quot;+c+&quot;变量d&quot;+d);</span><br><span class="line">         System.out.println(c==d);</span><br><span class="line">        </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Main o = new Main();</span><br><span class="line">        o.test1();</span><br><span class="line">        o.test2();</span><br><span class="line">        o.test3();</span><br><span class="line">        o.test4();</span><br><span class="line">        o.test5();</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/09/02/Java%E4%B8%ADString%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-如何使用css伪类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -810,11 +877,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             </li>
           
             <li class="search-li">
-              <a href="https://gitee.com/zmz15697176362/dashboard/projects" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4（码云工作台）</a>
+              <a href="https://luff.cloud" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4（云龙的博客）</a>
             </li>
           
             <li class="search-li">
-              <a href="https://www.baidu.com/?tn=27082910_5_hao_pg" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5 （度娘）</a>
+              <a href="https://blog.csdn.net/weixin_43495390/article/details/86533482#_1" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5 （面试题）</a>
             </li>
           
             <li class="search-li">

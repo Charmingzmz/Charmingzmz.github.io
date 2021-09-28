@@ -6,17 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://charmingzmz.github.io">
-  <title>Archives: 2021/9 | Charmingzmz的个人博客</title>
+  <title>将本地项目上传到码云或者GitHub上 | Charmingzmz的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="学习的动力在于此">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Charmingzmz的个人博客">
-<meta property="og:url" content="https://charmingzmz.github.io/archives/2021/09/index.html">
+  <meta name="description" content="将本地项目上传到码云或者GitHub上准备阶段：    添加SSH公钥 ​     第1步：创建SSH Key。在windows下查看[c盘-&gt;用户-&gt;自己的用户名-&gt;.ssh]下是否有id_rsa、id_rsa.pub文       件，如果没有需要手动生成。 ​     第2步：打开git bash，在控制台中输入以下命令。 1$ ssh-keygen -t rsa -C &amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="将本地项目上传到码云或者GitHub上">
+<meta property="og:url" content="https://charmingzmz.github.io/2021/09/28/%E5%B0%86%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E5%88%B0%E7%A0%81%E4%BA%91%E6%88%96%E8%80%85GitHub%E4%B8%8A/index.html">
 <meta property="og:site_name" content="Charmingzmz的个人博客">
-<meta property="og:description" content="学习的动力在于此">
+<meta property="og:description" content="将本地项目上传到码云或者GitHub上准备阶段：    添加SSH公钥 ​     第1步：创建SSH Key。在windows下查看[c盘-&gt;用户-&gt;自己的用户名-&gt;.ssh]下是否有id_rsa、id_rsa.pub文       件，如果没有需要手动生成。 ​     第2步：打开git bash，在控制台中输入以下命令。 1$ ssh-keygen -t rsa -C &amp;">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/09/28/%E5%B0%86%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E5%88%B0%E7%A0%81%E4%BA%91%E6%88%96%E8%80%85GitHub%E4%B8%8A/1.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/09/28/%E5%B0%86%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E5%88%B0%E7%A0%81%E4%BA%91%E6%88%96%E8%80%85GitHub%E4%B8%8A/2.png">
+<meta property="article:published_time" content="2021-09-28T13:31:06.000Z">
+<meta property="article:modified_time" content="2021-09-28T13:41:05.021Z">
 <meta property="article:author" content="郑铭哲">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://charmingzmz.github.io/2021/09/28/%E5%B0%86%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E5%88%B0%E7%A0%81%E4%BA%91%E6%88%96%E8%80%85GitHub%E4%B8%8A/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Charmingzmz的个人博客" type="application/atom+xml">
   
@@ -143,319 +148,187 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-将本地项目上传到码云或者GitHub上" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      将本地项目上传到码云或者GitHub上
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/09/28/%E5%B0%86%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E5%88%B0%E7%A0%81%E4%BA%91%E6%88%96%E8%80%85GitHub%E4%B8%8A/" class="archive-article-date">
+
+        
+        <a href="/2021/09/28/%E5%B0%86%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E5%88%B0%E7%A0%81%E4%BA%91%E6%88%96%E8%80%85GitHub%E4%B8%8A/" class="archive-article-date">
   	<time datetime="2021-09-28T13:31:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-28</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/09/28/%E5%B0%86%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E5%88%B0%E7%A0%81%E4%BA%91%E6%88%96%E8%80%85GitHub%E4%B8%8A/">将本地项目上传到码云或者GitHub上</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="将本地项目上传到码云或者GitHub上"><a href="#将本地项目上传到码云或者GitHub上" class="headerlink" title="将本地项目上传到码云或者GitHub上"></a>将本地项目上传到码云或者GitHub上</h1><p>准备阶段：<br>    添加SSH公钥</p>
+<p>​     第1步：创建SSH Key。在windows下查看[c盘-&gt;用户-&gt;自己的用户名-&gt;.ssh]下是否有id_rsa、id_rsa.pub文       件，如果没有需要手动生成。</p>
+<p>​     第2步：打开git bash，在控制台中输入以下命令。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;github用户名&quot;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<p>版权声明：本文为CSDN博主「轻狂书生FS」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/LookForDream_/article/details/103736380">https://blog.csdn.net/LookForDream_/article/details/103736380</a></p>
+<p> 密钥类型可以用 -t选项指定。如果没有指定则默认生成用于SSH-2的RSA密钥。这里使用的是rsa。同时在密钥中有一个注释字段，用-C来指定所指定的注释，可以方便用户标识这个密钥，指出密钥的用途或其他有用的信息。所以在这里输入自己的github用户名。输入完毕后程序同时要求输入一个密语字符串(passphrase)，空表示没有密语。接着会让输入2次口令(password)，空表示没有口令。3次回车即可完成当前步骤，此时[c盘&gt;用户&gt;自己的用户名&gt;.ssh]目录下已经生成好了。<br>————————————————<br>版权声明：本文为CSDN博主「轻狂书生FS」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/LookForDream_/article/details/103736380">https://blog.csdn.net/LookForDream_/article/details/103736380</a></p>
+<p><img src="/2021/09/28/%E5%B0%86%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E5%88%B0%E7%A0%81%E4%BA%91%E6%88%96%E8%80%85GitHub%E4%B8%8A/1.png"></p>
+<p>  第3步：登陆GitHub或者码云设置SSH公钥：将id_rsa.pub里面的内容复制过去</p>
+<p><img src="/2021/09/28/%E5%B0%86%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E5%88%B0%E7%A0%81%E4%BA%91%E6%88%96%E8%80%85GitHub%E4%B8%8A/2.png"></p>
+<p>开始上传阶段<br>1、码云上创建一个项目 testgit (名字随你)</p>
+<p>2、本地创建一个文件夹D:/testgit，然后使用git bash</p>
+<p>3、cd 到本地文件夹中D:/testgit，</p>
+<p>4、使用 git init 命令 ，初始化一个git 本地仓库（项目）,会在本地创建一个 .git 的文件夹</p>
+<p>5、使用git remote add origin <a target="_blank" rel="noopener" href="https://gitee.com/%E4%BD%A0%E7%9A%84%E7%A0%81%E4%BA%91%E7%94%A8%E6%88%B7%E5%90%8D/testgit">https://gitee.com/你的码云用户名/testgit</a> //添加远程仓库</p>
+<p>git remote add origin <a target="_blank" rel="noopener" href="https://gitee.com/zmz15697176362/zmz.git">https://gitee.com/zmz15697176362/zmz.git</a></p>
+<pre><code>   注：这一步报错就用git remote add origin git@gitee.com:你的码云用户名/test.git
+   
+</code></pre>
+<p>————————————————<br>版权声明：本文为CSDN博主「轻狂书生FS」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/LookForDream_/article/details/103736380">https://blog.csdn.net/LookForDream_/article/details/103736380</a></p>
+<p>6、使用 git pull origin master 命令，将码云上的仓库pull到本地文件夹</p>
+<p>7、将要上传的文件，添加到刚刚创建的文件夹</p>
+<p>8、使用git add . 或者 git add + 文件名 (将文件保存到缓存区)</p>
+<p>9、使用git commit -m ‘描述新添加的文件内容’ (就是注释) （文件保存到本地仓库）</p>
+<p>10、使用git push origin master ，将本地仓库推送到远程仓库<br>————————————————<br>版权声明：本文为CSDN博主「轻狂书生FS」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/LookForDream_/article/details/103736380">https://blog.csdn.net/LookForDream_/article/details/103736380</a></p>
+<h1 id="如何将远程仓库项目克隆岛本地？"><a href="#如何将远程仓库项目克隆岛本地？" class="headerlink" title="如何将远程仓库项目克隆岛本地？"></a>如何将远程仓库项目克隆岛本地？</h1><p>1、cd 到你想要保存远程仓库项目的文件夹</p>
+<p>2、使用 git clone 远程仓库地址。</p>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://i.loli.net/2021/08/25/QHZPTmdWkoI6Jqy.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://charmingzmz.github.io/2021/09/28/%E5%B0%86%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E5%88%B0%E7%A0%81%E4%BA%91%E6%88%96%E8%80%85GitHub%E4%B8%8A/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/09/23/JAVA%E7%BB%8F%E5%85%B8%E9%9D%A2%E8%AF%95%E9%A2%98%E9%99%84%E7%AD%94%E6%A1%88/" class="archive-article-date">
-  	<time datetime="2021-09-23T10:18:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-23</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/09/23/JAVA%E7%BB%8F%E5%85%B8%E9%9D%A2%E8%AF%95%E9%A2%98%E9%99%84%E7%AD%94%E6%A1%88/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JAVA经典面试题附答案</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/09/23/JAVA%E7%BB%8F%E5%85%B8%E9%9D%A2%E8%AF%95%E9%A2%98%E9%99%84%E7%AD%94%E6%A1%88/">JAVA经典面试题附答案</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/09/19/String%E3%80%81StringBuffer%E4%B8%8EStringBuilder%E4%B9%8B%E9%97%B4%E5%8C%BA%E5%88%AB/" class="archive-article-date">
-  	<time datetime="2021-09-19T10:40:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/09/19/String%E3%80%81StringBuffer%E4%B8%8EStringBuilder%E4%B9%8B%E9%97%B4%E5%8C%BA%E5%88%AB/">String、StringBuffer与StringBuilder之间区别</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/09/15/Springboot%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E4%BA%8C/" class="archive-article-date">
-  	<time datetime="2021-09-15T12:13:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/09/15/Springboot%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E4%BA%8C/">Springboot学习资料</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/09/15/YAML%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" class="archive-article-date">
-  	<time datetime="2021-09-15T11:54:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/09/15/YAML%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/">YAML学习资料</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/09/15/github%E5%A4%AA%E5%8D%A1%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3/" class="archive-article-date">
-  	<time datetime="2021-09-15T11:17:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/09/15/github%E5%A4%AA%E5%8D%A1%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3/">github太卡怎么解决</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/09/15/MySQL%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" class="archive-article-date">
-  	<time datetime="2021-09-15T10:39:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/09/15/MySQL%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/">MySQL学习资料</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/09/15/Thymeleaf%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" class="archive-article-date">
-  	<time datetime="2021-09-15T09:34:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/09/15/Thymeleaf%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/">Thymeleaf学习资料</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/" class="archive-article-date">
-  	<time datetime="2021-09-14T12:25:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/">Java中的RPC分布式范例：RMI</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/09/13/%E4%BB%80%E4%B9%88%E6%98%AFQPS%EF%BC%8CTPS%EF%BC%8C%E5%90%9E%E5%90%90%E9%87%8F/" class="archive-article-date">
-  	<time datetime="2021-09-13T04:15:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/09/13/%E4%BB%80%E4%B9%88%E6%98%AFQPS%EF%BC%8CTPS%EF%BC%8C%E5%90%9E%E5%90%90%E9%87%8F/">什么是QPS，TPS，吞吐量</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/09/02/Java%E4%B8%ADString%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2021-09-02T15:28:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/09/02/Java%E4%B8%ADString%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/">Java中String对象的存储位置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -478,8 +351,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

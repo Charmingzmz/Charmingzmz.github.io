@@ -6,17 +6,67 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://charmingzmz.github.io">
-  <title>Archives | Charmingzmz的个人博客</title>
+  <title>Redis教程 | Charmingzmz的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="学习的动力在于此">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Charmingzmz的个人博客">
-<meta property="og:url" content="https://charmingzmz.github.io/archives/page/2/index.html">
+  <meta name="description" content="Redis教程一，入门1，什么是NoSqlNoSQL一词最早出现于1998年，是Carlo Strozzi开发的一个轻量、开源、不提供SQL功能的关系数据库。2009年，Last.fm的Johan Oskarsson发起了一次关于分布式开源数据库的讨论，来自Rackspace的Eric Evans再次提出了NoSQL的概念，这时的NoSQL主要指非关系型、分布式、不提供ACID的数据库设计模式。它">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis教程">
+<meta property="og:url" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Charmingzmz的个人博客">
-<meta property="og:description" content="学习的动力在于此">
+<meta property="og:description" content="Redis教程一，入门1，什么是NoSqlNoSQL一词最早出现于1998年，是Carlo Strozzi开发的一个轻量、开源、不提供SQL功能的关系数据库。2009年，Last.fm的Johan Oskarsson发起了一次关于分布式开源数据库的讨论，来自Rackspace的Eric Evans再次提出了NoSQL的概念，这时的NoSQL主要指非关系型、分布式、不提供ACID的数据库设计模式。它">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/1.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/2.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/4.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/5.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/6.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/7.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/3.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/8.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/9.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/10.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/11.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/12.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/13.PNG">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/15.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/16.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/17.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/18.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/19.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/20.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/21.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/22.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/23.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/24.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/25.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/26.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/27.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/28.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/29.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/30.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/31.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/32.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/33.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/34.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/35.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B//Redis%E6%95%99%E7%A8%8B/36.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/37.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/38.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/39.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/40.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/41.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/42.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/43.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/44.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/45.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/47.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/46.png">
+<meta property="og:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/48.png">
+<meta property="article:published_time" content="2021-10-11T07:41:12.000Z">
+<meta property="article:modified_time" content="2021-10-11T14:32:49.811Z">
 <meta property="article:author" content="郑铭哲">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Charmingzmz的个人博客" type="application/atom+xml">
   
@@ -143,187 +193,319 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Redis教程" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Redis教程
+    </h1>
+  
+
+        
+        <a href="/2021/10/11/Redis%E6%95%99%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2021-10-11T07:41:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-11</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Redis教程"><a href="#Redis教程" class="headerlink" title="Redis教程"></a>Redis教程</h1><h1 id="一，入门"><a href="#一，入门" class="headerlink" title="一，入门"></a>一，入门</h1><h2 id="1，什么是NoSql"><a href="#1，什么是NoSql" class="headerlink" title="1，什么是NoSql"></a>1，什么是NoSql</h2><p>NoSQL一词最早出现于1998年，是Carlo Strozzi开发的一个轻量、开源、不提供SQL功能的关系数据库。2009年，Last.fm的Johan Oskarsson发起了一次关于分布式开源数据库的讨论，来自Rackspace的Eric Evans再次提出了NoSQL的概念，这时的<strong>NoSQL主要指非关系型、分布式、不提供ACID的数据库设计模式</strong>。它不同于传统的关系数据库，两者存在许多显著的不同点，其中最重要的是<strong>NoSQL不使用SQL作为查询语言。</strong>其<strong>数据存储可以不需要固定的表格模式</strong>。<br>————————<br>版权声明：本文为CSDN博主「张国亲」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangguoqin66/article/details/88050767">https://blog.csdn.net/zhangguoqin66/article/details/88050767</a></p>
+<h2 id="二，Redis简介"><a href="#二，Redis简介" class="headerlink" title="二，Redis简介"></a>二，Redis简介</h2><p>2008年，意大利的一家创业公司Merzia推出了一款基于MySQL的网站实时统计系统LLOOGG，然而没过多久该公司的创始人 Salvatore Sanfilippo便 对MySQL的性能感到失望，于是他决定亲自为LLOOGG量身定做一个数据库，并于2009年开发完成，这个数据库就是Redis。 不过Salvatore Sanfilippo并不满足只将Redis用于LLOOGG这一款产品，而是希望更多的人使用它，于是在同一年Salvatore Sanfilippo将Redis开源发布，并开始和Redis的另一名主要的代码贡献者Pieter Noordhuis一起继续着Redis的开发，直到今天。短短的几年时间，Redis就拥有了庞大的用户群体。Hacker News在2012年发布了一份数据库的使用情况调查，结果显示有近12%的公司在使用Redis。国内如新浪微博、街旁网、知乎网，国外如GitHub、Stack Overflow、Flickr等都是Redis的用户。VMware公司从2010年开始赞助Redis的开发， Salvatore Sanfilippo和Pieter Noordhuis也分别在3月和5月加入VMware，全职开发Redis。</p>
+<p>Redis是使用<strong>c语言</strong>开发的一个<strong>高性能键值数据库</strong>。常用于分布式系统中的缓存、电商秒杀、排行榜、访问量统计、分布式会话共享等高并发应用场景。Redis可以通过一些键值类型来存储数据。其<strong>数据类型包括字符类型、散列类型、列表类型、集合类型、有序集合类型。</strong></p>
+<p>三，Redis安装<br>————————————————<br>版权声明：本文为CSDN博主「张国亲」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangguoqin66/article/details/88050767">https://blog.csdn.net/zhangguoqin66/article/details/88050767</a></p>
+<h1 id="三，Redis安装"><a href="#三，Redis安装" class="headerlink" title="三，Redis安装"></a>三，Redis安装</h1><p>访问Redis官网<a target="_blank" rel="noopener" href="https://redis.io/download%E4%B8%8B%E8%BD%BD%E6%9C%80%E6%96%B0%E7%9A%84%E7%89%88%E6%9C%AC">https://redis.io/download下载最新的版本</a> 。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/1.png"></p>
+<p>解压并编译安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ tar xzf redis-5.0.3.tar.gz</span><br><span class="line">$ cd redis-5.0.3</span><br><span class="line">$ make install</span><br></pre></td></tr></table></figure>
+
+<p>Redis官网并没有提供windows版本，但可以前往<a target="_blank" rel="noopener" href="https://github.com/tporadowski/redis/releases%E4%B8%8B%E8%BD%BDwindows%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BC%96%E8%AF%91%E7%89%88%E6%9C%AC%EF%BC%88%E6%B3%A8%E6%84%8F%EF%BC%9A%E5%B9%B6%E4%B8%8D%E6%98%AF%E6%9C%80%E6%96%B0%E7%9A%84%E7%89%88%E6%9C%AC%EF%BC%89%E3%80%82">https://github.com/tporadowski/redis/releases下载windows的个人编译版本（注意：并不是最新的版本）。</a></p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/2.png"></p>
+<h1 id="Redis下载及安装-windows版"><a href="#Redis下载及安装-windows版" class="headerlink" title="Redis下载及安装(windows版)"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xing-nb/p/12146449.html">Redis下载及安装(windows版)</a></h1><p>下载地址<br>1、Github下载地址：<a target="_blank" rel="noopener" href="https://github.com/MicrosoftArchive/redis/releases">https://github.com/MicrosoftArchive/redis/releases</a><br>2、百度网盘下载地址 <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1z1_OdNVbtgyEjiktqgB83g">https://pan.baidu.com/s/1z1_OdNVbtgyEjiktqgB83g</a> 密码：kdfq</p>
+<p>安装过程<br>1.首先先把下载的压缩包解压到一个文件夹中</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/4.png"></p>
+<p>2.打开cmd指令窗口<br>3.输入你刚才解压的文件路径<br>4.然后输入redis-server redis.windows.conf 命令</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/5.png"></p>
+<p>接下来部署Redis为windows下的服务 首先关掉上一个窗口再打开一个新的cmd命令窗口</p>
+<p>然后输入指令redis-server –service-install redis.windows.conf</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/6.png"></p>
+<p>随后,进入右击此电脑–管理–服务和应用程序–服务 启动服务</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/7.png"></p>
+<p>Redis常用的指令<br>卸载服务：redis-server –service-uninstall<br>开启服务：redis-server –service-start<br>停止服务：redis-server –service-stop<br>测试redis,通过cd到我们解压的目录,输入指令通过Set get指令查看是否成功</p>
+<h1 id="4，启动服务"><a href="#4，启动服务" class="headerlink" title="4，启动服务"></a>4，启动服务</h1><h2 id="4-1-前端启动"><a href="#4-1-前端启动" class="headerlink" title="4.1 前端启动"></a>4.1 前端启动</h2><p>在redis的src目录有一个redis-server文件，用于启动一个redis服务。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/3.png"></p>
+<p>redis的默认端口为6379，当客户端需要连接到redis服务时，就通过服务端的IP地址以及这个端口进行连接。也可以修改这个默认端口。在redis的根目录下有一个redis.conf文件，它是redis的核心配置文件，redis的所有配置信息都在此文件中。如果需要修改端口，我们在配置文件中找到port配置，并将6379改为其他的端口号。<br>————————————————<br>版权声明：本文为CSDN博主「张国亲」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangguoqin66/article/details/88050767">https://blog.csdn.net/zhangguoqin66/article/details/88050767</a></p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/8.png"></p>
+<p>修改完后需要重新启动redis服务，需要注意的是，在使用redis-server启动服务时需要指定redis.conf文件的绝对路径，否则redis将以默认的配置启动一个服务实例。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/9.png"></p>
+<h2 id="4-2-后端启动"><a href="#4-2-后端启动" class="headerlink" title="4.2 后端启动"></a>4.2 后端启动</h2><p>所谓后端启动，就是以一个独立的进程来运行一个redis服务。首先修改redis.conf文件，找到daemonize选项并设置为yes，如下图：</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/10.png"></p>
+<p>保存退出后重新启动redis服务，此时redis将以后台进程的方式启动服务。终端没有显示相关的启动信息，并且启动完成后，终端可以继续执行其他的操作。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/11.png"></p>
+<h2 id="5，客户端连接"><a href="#5，客户端连接" class="headerlink" title="5，客户端连接"></a>5，客户端连接</h2><p>5.1 Redis客户端<br>在redis的src目录下有一个redis-cli命令，这个就是官方提供的redis客户端，可以使用它来连接和操作redis。当然，这仅仅只是一个命令行的客户端程序，在实际的开发中会有不同的平台语言，因此官网也提供了对各种语言的客户端实现，在实际的项目开发中使用不同语言的客户端来操作redis。例如官网提供了一个Java的客户端Jedis。<br>————————————————<br>版权声明：本文为CSDN博主「张国亲」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangguoqin66/article/details/88050767">https://blog.csdn.net/zhangguoqin66/article/details/88050767</a></p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/12.png"></p>
+<p>1）使用redis-cli</p>
+<p>可以使用官方自带的redis-cli客户端来连接redis服务。参数-h为连接redis服务器的IP地址，-p为redis的端口号。连接完成后就可以对redis进行操作了，我们使用简单的set和get命令来进行存储和访问操作。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/13.PNG"></p>
+<p>2）退出客户端</p>
+<p>如果想要退出客户端的连接只需要在连接的状态下输入quit或者exit即可。</p>
+<p>3）身份认证</p>
+<p>默认连接Redis时是不需要认证密码的，我们可以为其设置一个连接的认证密码。首先在redis.conf中找到requirepass配置项，取消注释并设置一个密码。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/15.png"></p>
+<p>保存后重启服务，在连接客户端时加上-a参数并输入配置的密码。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/16.png"></p>
+<p>连接时也可以不指定密码也可以正常连接，但在操作Redis时候会提示一个错误，要求输入认证密码。这时使用auth命令来输入密码即可。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/17.png"></p>
+<p>如果设置了认证密码，在关闭客户端时也同样需要指定</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/18.png"></p>
+<h1 id="5-2-可视化客户端"><a href="#5-2-可视化客户端" class="headerlink" title="5.2 可视化客户端"></a>5.2 可视化客户端</h1><p>也可以使用第三方的redis的可视化客户端RDM（redis-desktop-manager），它同时提供了各种系统平台的编译版本，安装后即可使用。下载地址：</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/19.png"></p>
+<p>点击左上角的Connect to Redis Server，在弹出的窗口中填写相关的Name（连接名称）、Address（连接地址）、端口号以及认证密码（Auth），点击OK即可。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/20.png"></p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/21.png"></p>
+<p>这里我们看到连接redis后默认有16个库（0 ~ 15），这是redis默认的配置，可以在redis.conf中可以找到相应的选项并修改默认数量。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/22.png"></p>
+<p>当我们使用客户端连接redis时，默认选择的是index为0的数据库，然而也可以使用select命令选择其他数据库。例如选择index为15的数据库，如下操作：</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/23.png"></p>
+<p>6，停止服务<br>如果使用前端启动redis，可以使用control+c或者kill命令来杀掉进程的方式关闭redis（注意：control+c并不能停止后端启动的redis），但这些方式都是强制性的关闭redis，由于redis保存的数据先会存储在内存，如果此时强制关闭，将导致redis还没将数据持久化到文件中就退出，可能会照成部分的数据丢失。因此，应该使用正常的退出方式来停止redis服务，正常退出redis同样使用redis-cli客户端。<br>————————————————<br>版权声明：本文为CSDN博主「张国亲」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangguoqin66/article/details/88050767">https://blog.csdn.net/zhangguoqin66/article/details/88050767</a></p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/24.png"></p>
+<p>上面的命令表示关闭本机端口为6379的redis服务。</p>
+<h1 id="二，基础"><a href="#二，基础" class="headerlink" title="二，基础"></a>二，基础</h1><h2 id="1-数据类型及常用的API"><a href="#1-数据类型及常用的API" class="headerlink" title="1.数据类型及常用的API"></a>1.数据类型及常用的API</h2><p>Redis支持五种数据类型：string（字符串），hash（哈希），list（列表），set（集合）及sorted set(zset：有序集合)。</p>
+<h2 id="1，字符串-String"><a href="#1，字符串-String" class="headerlink" title="1，字符串(String)"></a>1，字符串(String)</h2><p>String 是 redis 最基本的类型，<strong>一个 key 对应一个 value</strong>。它是二进制安全的，可以包含任何数据，如jpg图片或者序列化的对象。</p>
+<p>1）SET</p>
+<p><em>语法：set key value</em></p>
+<p>赋值操作。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/25.png"></p>
+<p>2）GET</p>
+<p><em>语法：get key</em></p>
+<p>取值操作。</p>
+<p>3）GETSET</p>
+<p><em>语法：getset key value</em></p>
+<p>取值并赋值。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/26.png"></p>
+<p>4）MSET</p>
+<p><em>语法：mset key value [key value …]</em></p>
+<p>同时设置多个键值。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/27.png"></p>
+<p>5）MGET</p>
+<p><em>语法：mget key [key …]</em></p>
+<p>获取多个键值。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/28.png"></p>
+<p>6）DEL</p>
+<p><em>语法：del key [key …]</em></p>
+<p>删除一个或多个键值对。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/29.png"></p>
+<p>7）INCR</p>
+<p><em>语法：incr key</em></p>
+<p>当存储的字符串是整数时，让当前键值递增，并返回递增或增加后的值。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/30.png"></p>
+<p>8）INCRBY</p>
+<p>语法：incrby key increment*</p>
+<p>当存储的字符串是整数时，让当前键值增加指定的数值，并返回递增或增加后的值</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/31.png"></p>
+<p>9）DECR</p>
+<p><em>语法：decr key</em></p>
+<p>让当前键值递减，并返回递减或减少后的值。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/32.png"></p>
+<p>10）DECRBY</p>
+<p><em>语法：decrby key decrement</em></p>
+<p>让当前键值减少指定的数值，并返回递减或减少后的值。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/33.png"></p>
+<p>11）APPEND</p>
+<p><em>语法：append key value</em></p>
+<p>向键值的末尾追加value。如果键不存在则将该键的值设置为value，即相当于 SETkey value。返回值是追加后字符串的总长度。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/34.png"></p>
+<p>12）获取字符串长度（STRLEN）</p>
+<p>STRLEN命令返回键值的长度，如果键不存在则返回0</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/35.png"></p>
+<h1 id="1-2-hash-哈希"><a href="#1-2-hash-哈希" class="headerlink" title="1.2 hash(哈希)"></a>1.2 hash(哈希)</h1><p>hash是一个string类型的field和value的映射表，而field只能是String类型，hash特别适合用于存储对象。</p>
+<p><img src=".//Redis%E6%95%99%E7%A8%8B/36.png"></p>
+<p>1）HSET</p>
+<p><em>语法：HSET key field value</em></p>
+<p>HSET一次只能设置一个字段值。HSET命令不区分插入和更新操作，当执行插入操作时HSET命令返回1，当执行更新操作时返回0。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/37.png"></p>
+<p>2）HMSET</p>
+<p><em>语法：HMSET key field value [field value …]</em></p>
+<p>HMSET和HSET作用一样，只不过一次可以设置多个字段值。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/38.png"></p>
+<p>3）HSETNX</p>
+<p>语法：HSETNX key field value</p>
+<p>当字段不存在时赋值，类似HSET。区别在于如果字段存在，该命令不执行任何操作。</p>
+<p>例如：hsetnx user name zing</p>
+<p>说明：如果user中不存在name字段则设置name的值为zing，否则不做任何操作。<br>————————————————<br>版权声明：本文为CSDN博主「张国亲」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangguoqin66/article/details/88050767">https://blog.csdn.net/zhangguoqin66/article/details/88050767</a></p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/39.png"></p>
+<p>4）HGET</p>
+<p><em>语法：HGET key field</em></p>
+<p>HGET一次只能获取一个字段值。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/40.png"></p>
+<p>）HMGET</p>
+<p><em>语法：HMGET key field [field …]</em></p>
+<p>HMGET一次可以获取多个字段值。****</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/41.png"></p>
+<p>6）HGETALL</p>
+<p><em>语法：HGETALL key</em></p>
+<p>获取所有字段值。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/42.png"></p>
+<p>7）HDEL</p>
+<p><em>语法：HDEL key field [field…]</em></p>
+<p>可以删除一个或多个字段，返回值是被删除的字段个数。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/43.png"></p>
+<p>8）HINCRBY</p>
+<p><em>语法：HINCRBY key field increment</em></p>
+<p>为某个字段增加数值。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/44.png"></p>
+<p>9）HEXISTS</p>
+<p><em>语法：HEXISTS key field</em></p>
+<p>判断字段是否存在，存在则返回1，否则返回0。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/45.png"></p>
+<p>10）HKEYS</p>
+<p><em>语法：HKEYS key</em></p>
+<p>获取所有的字段名。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/47.png"></p>
+<p>11）HVALS</p>
+<p><em>语法：HVALS key</em></p>
+<p>获取所有字段的值。。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/46.png"></p>
+<p>12）HLEN</p>
+<p><em>语法：HLEN key</em></p>
+<p>获取字段数量。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/48.png"></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://i.loli.net/2021/08/25/QHZPTmdWkoI6Jqy.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/09/02/Java%E4%B8%ADString%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2021-09-02T15:28:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/09/02/Java%E4%B8%ADString%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/">Java中String对象的存储位置</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://charmingzmz.github.io/2021/10/11/Redis%E6%95%99%E7%A8%8B/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/08/30/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8css%E4%BC%AA%E7%B1%BB/" class="archive-article-date">
-  	<time datetime="2021-08-30T14:53:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-30</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/10/09/JPA%E7%9A%84%E8%AF%A6%E8%A7%A3%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JPA的详解及使用方法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/08/30/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8css%E4%BC%AA%E7%B1%BB/">如何使用css伪类</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/08/28/HTML%E9%87%8C%E9%9D%A2%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8%E5%9B%BE%E6%A0%87%E5%BA%93%E5%BC%95%E7%94%A8%E5%9B%BE%E6%A0%87/" class="archive-article-date">
-  	<time datetime="2021-08-28T14:26:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/08/28/HTML%E9%87%8C%E9%9D%A2%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8%E5%9B%BE%E6%A0%87%E5%BA%93%E5%BC%95%E7%94%A8%E5%9B%BE%E6%A0%87/">HTML里面怎么使用图标库引用图标</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/08/25/Hexo-yilia%E6%B7%BB%E5%8A%A0helper-live2d%E6%8F%92%E4%BB%B6%E5%AE%A0%E7%89%A9%E5%8A%A8%E7%94%BB/" class="archive-article-date">
-  	<time datetime="2021-08-25T14:22:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/08/25/Hexo-yilia%E6%B7%BB%E5%8A%A0helper-live2d%E6%8F%92%E4%BB%B6%E5%AE%A0%E7%89%A9%E5%8A%A8%E7%94%BB/">Hexo+yilia添加helper-live2d插件宠物动画</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/08/25/%E5%9B%BE%E7%89%87url%E5%9C%B0%E5%9D%80%E7%9A%84%E7%94%9F%E6%88%90%E8%8E%B7%E5%8F%96%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2021-08-24T18:48:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/08/25/%E5%9B%BE%E7%89%87url%E5%9C%B0%E5%9D%80%E7%9A%84%E7%94%9F%E6%88%90%E8%8E%B7%E5%8F%96%E6%96%B9%E6%B3%95/">图片url地址的生成获取方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/08/24/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8github%20+github-pages+hexo%E6%9D%A5%E5%86%99%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2021-08-23T16:46:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/08/24/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8github%20+github-pages+hexo%E6%9D%A5%E5%86%99%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">如何使用github +github-pages+hexo来写一篇博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -347,8 +529,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

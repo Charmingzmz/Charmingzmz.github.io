@@ -145,6 +145,95 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-将本地项目上传到码云或者GitHub上" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/28/%E5%B0%86%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E5%88%B0%E7%A0%81%E4%BA%91%E6%88%96%E8%80%85GitHub%E4%B8%8A/">将本地项目上传到码云或者GitHub上</a>
+    </h1>
+  
+
+        
+        <a href="/2021/09/28/%E5%B0%86%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E5%88%B0%E7%A0%81%E4%BA%91%E6%88%96%E8%80%85GitHub%E4%B8%8A/" class="archive-article-date">
+  	<time datetime="2021-09-28T13:31:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="将本地项目上传到码云或者GitHub上"><a href="#将本地项目上传到码云或者GitHub上" class="headerlink" title="将本地项目上传到码云或者GitHub上"></a>将本地项目上传到码云或者GitHub上</h1><p>准备阶段：<br>    添加SSH公钥</p>
+<p>​     第1步：创建SSH Key。在windows下查看[c盘-&gt;用户-&gt;自己的用户名-&gt;.ssh]下是否有id_rsa、id_rsa.pub文       件，如果没有需要手动生成。</p>
+<p>​     第2步：打开git bash，在控制台中输入以下命令。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;github用户名&quot;</span><br></pre></td></tr></table></figure>
+
+<p>版权声明：本文为CSDN博主「轻狂书生FS」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/LookForDream_/article/details/103736380">https://blog.csdn.net/LookForDream_/article/details/103736380</a></p>
+<p> 密钥类型可以用 -t选项指定。如果没有指定则默认生成用于SSH-2的RSA密钥。这里使用的是rsa。同时在密钥中有一个注释字段，用-C来指定所指定的注释，可以方便用户标识这个密钥，指出密钥的用途或其他有用的信息。所以在这里输入自己的github用户名。输入完毕后程序同时要求输入一个密语字符串(passphrase)，空表示没有密语。接着会让输入2次口令(password)，空表示没有口令。3次回车即可完成当前步骤，此时[c盘&gt;用户&gt;自己的用户名&gt;.ssh]目录下已经生成好了。<br>————————————————<br>版权声明：本文为CSDN博主「轻狂书生FS」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/LookForDream_/article/details/103736380">https://blog.csdn.net/LookForDream_/article/details/103736380</a></p>
+<p><img src="/2021/09/28/%E5%B0%86%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E5%88%B0%E7%A0%81%E4%BA%91%E6%88%96%E8%80%85GitHub%E4%B8%8A/1.png"></p>
+<p>  第3步：登陆GitHub或者码云设置SSH公钥：将id_rsa.pub里面的内容复制过去</p>
+<p><img src="/2021/09/28/%E5%B0%86%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E5%88%B0%E7%A0%81%E4%BA%91%E6%88%96%E8%80%85GitHub%E4%B8%8A/2.png"></p>
+<p>开始上传阶段<br>1、码云上创建一个项目 testgit (名字随你)</p>
+<p>2、本地创建一个文件夹D:/testgit，然后使用git bash</p>
+<p>3、cd 到本地文件夹中D:/testgit，</p>
+<p>4、使用 git init 命令 ，初始化一个git 本地仓库（项目）,会在本地创建一个 .git 的文件夹</p>
+<p>5、使用git remote add origin <a target="_blank" rel="noopener" href="https://gitee.com/%E4%BD%A0%E7%9A%84%E7%A0%81%E4%BA%91%E7%94%A8%E6%88%B7%E5%90%8D/testgit">https://gitee.com/你的码云用户名/testgit</a> //添加远程仓库</p>
+<p>git remote add origin <a target="_blank" rel="noopener" href="https://gitee.com/zmz15697176362/zmz.git">https://gitee.com/zmz15697176362/zmz.git</a></p>
+<pre><code>   注：这一步报错就用git remote add origin git@gitee.com:你的码云用户名/test.git
+   
+</code></pre>
+<p>————————————————<br>版权声明：本文为CSDN博主「轻狂书生FS」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/LookForDream_/article/details/103736380">https://blog.csdn.net/LookForDream_/article/details/103736380</a></p>
+<p>6、使用 git pull origin master 命令，将码云上的仓库pull到本地文件夹</p>
+<p>7、将要上传的文件，添加到刚刚创建的文件夹</p>
+<p>8、使用git add . 或者 git add + 文件名 (将文件保存到缓存区)</p>
+<p>9、使用git commit -m ‘描述新添加的文件内容’ (就是注释) （文件保存到本地仓库）</p>
+<p>10、使用git push origin master ，将本地仓库推送到远程仓库<br>————————————————<br>版权声明：本文为CSDN博主「轻狂书生FS」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/LookForDream_/article/details/103736380">https://blog.csdn.net/LookForDream_/article/details/103736380</a></p>
+<h1 id="如何将远程仓库项目克隆岛本地？"><a href="#如何将远程仓库项目克隆岛本地？" class="headerlink" title="如何将远程仓库项目克隆岛本地？"></a>如何将远程仓库项目克隆岛本地？</h1><p>1、cd 到你想要保存远程仓库项目的文件夹</p>
+<p>2、使用 git clone 远程仓库地址。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/09/28/%E5%B0%86%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E5%88%B0%E7%A0%81%E4%BA%91%E6%88%96%E8%80%85GitHub%E4%B8%8A/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JAVA经典面试题附答案" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1949,73 +2038,6 @@
 
 
   
-    <article id="post-Java中String对象的存储位置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/02/Java%E4%B8%ADString%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/">Java中String对象的存储位置</a>
-    </h1>
-  
-
-        
-        <a href="/2021/09/02/Java%E4%B8%ADString%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2021-09-02T15:28:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Java中String对象的存储位置"><a href="#Java中String对象的存储位置" class="headerlink" title="Java中String对象的存储位置"></a>Java中String对象的存储位置</h2><h5 id="Java中String对象的存储位置（学习笔记）"><a href="#Java中String对象的存储位置（学习笔记）" class="headerlink" title="Java中String对象的存储位置（学习笔记）"></a>Java中String对象的存储位置（学习笔记）</h5><p><img src="/2021/09/02/Java%E4%B8%ADString%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/1.png"></p>
-<p>首先，String是final修饰的、immutable对象，它以一个个字符的方式存储在字符数组中。<br>其次，String类型创建对象有两种方式：①通过字面量赋值：会先去常量池中查找是否存在相同的字符串，若存在，栈中引用直接指定该字符串；若不存在，在常量池中进行缓存，再将栈中引用指向它。②通过new关键字：每次new出来的都是一个新的对象，在堆中开辟空间进行存储。</p>
-<p>test直接演示String对象的创建位置：****</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">public class Main &#123;</span><br><span class="line">    </span><br><span class="line">    /** </span><br><span class="line">     * 创建了三个对象，&quot;helloworld对象创建在常量池中&quot;，每次new String()都会创建一个对象在堆内存中。</span><br><span class="line">     */</span><br><span class="line">    void test() &#123;</span><br><span class="line">　　　　 String s1=&quot;helloworld&quot;;</span><br><span class="line">        String s2= new String(&quot;helloworld&quot;);</span><br><span class="line">        String s3= new String(&quot;helloworld&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * 程序只创建一个字符串对象“Java”，存放在常量池中，所以s1==s2 为true</span><br><span class="line">     */</span><br><span class="line">    void test1()&#123;</span><br><span class="line">        String s1=&quot;Java&quot;;</span><br><span class="line">        String s2=&quot;Java&quot;;</span><br><span class="line">        System.out.println(s1==s2);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /** 第一个new String(&quot;Java&quot;):创建了两个对象，Java创建于常量池中，String对象创建于堆内存中。</span><br><span class="line">     * 第二个new String(&quot;Java&quot;):由于常量池中有Java对象，所以只需创建一个对象，String对象创建于堆内存中。</span><br><span class="line">     * s1与s2分别指向String对象堆内存，所以s1==s2 为false</span><br><span class="line">     */</span><br><span class="line">    void test2() &#123;</span><br><span class="line">        String s1=new String(&quot;Java&quot;);</span><br><span class="line">        String s2= new String(&quot;Java&quot;);</span><br><span class="line">        System.out.println(s1==s2);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /** 常量的值在编译的时候就确定了，&quot;hello&quot;、&quot;world&quot;都是常量，因此s2的值在编译的时候也确定了，</span><br><span class="line">     * s2指向常量池中的&quot;hello world&quot;,所以s1==s2为true</span><br><span class="line">     * </span><br><span class="line">     */</span><br><span class="line">    void test3() &#123;</span><br><span class="line">        String s1=&quot;hello world&quot;;</span><br><span class="line">        String s2=&quot;hello &quot;+&quot;world&quot;;</span><br><span class="line">        System.out.println(s1==s2);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /** s4由两个String变量相加得到，不能再编译时就确定下来，不能直接引用常量池中的&quot;helloworld&quot;对象，而是在堆内存中创建一个新的String对象并由s4指向</span><br><span class="line">     * 所以s1==s4为false</span><br><span class="line">     * </span><br><span class="line">     */</span><br><span class="line">    void test4() &#123;</span><br><span class="line">        String s1=&quot;helloworld&quot;;</span><br><span class="line">        String s2=&quot;hello&quot;;</span><br><span class="line">        String s3=&quot;world&quot;;</span><br><span class="line">        String s4=s2+s3;</span><br><span class="line">        System.out.println(s1==s4);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /** s2与s3被final修饰为宏变量，不可更改，编译器在程序使用该变量的地方直接使用该变量的值进行替代，所以s4的值在编译的时候就为&quot;helloworld&quot;</span><br><span class="line">     * 指向常量池中的&quot;helloworld&quot;对象</span><br><span class="line">     * 所以s1==s4为true</span><br><span class="line">     * </span><br><span class="line">     */</span><br><span class="line">    void test5() &#123;</span><br><span class="line">        String s1=&quot;helloworld&quot;;</span><br><span class="line">        final String s2=&quot;hello&quot;;</span><br><span class="line">        final String s3=&quot;world&quot;;</span><br><span class="line">        String s4=s2+s3;</span><br><span class="line">        System.out.println(s1==s4);</span><br><span class="line">    &#125;</span><br><span class="line">    这个时候把字符串c赋值给d就是c在常量池中创建了一个对象&quot;1&quot; c的地址指向&quot;1&quot;,c再把地址给d,此时c和d的地址相同指向同一个常量池中的对象&quot;1&quot;,所以返回值为true,但是此时如果把d的值改变，使地址指向了&quot;2&quot;，此时变量c的地址不会改变仍然指向&quot;1&quot;,输出c=d就会返回false,因为比较的是地址，地址值不一样。</span><br><span class="line">     String c=&quot;1&quot;;</span><br><span class="line">        String d=c ;</span><br><span class="line">        System.out.print(c==d);</span><br><span class="line">         d=&quot;2&quot;;</span><br><span class="line">        System.out.println(c==d);</span><br><span class="line">        System.out.println(&quot;变量C&quot;+c+&quot;变量d&quot;+d);</span><br><span class="line">         System.out.println(c==d);</span><br><span class="line">        </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Main o = new Main();</span><br><span class="line">        o.test1();</span><br><span class="line">        o.test2();</span><br><span class="line">        o.test3();</span><br><span class="line">        o.test4();</span><br><span class="line">        o.test5();</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/09/02/Java%E4%B8%ADString%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
@@ -2111,6 +2133,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">如何用图形工具上传代码到码云</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -2173,7 +2199,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             </li>
           
             <li class="search-li">
-              <a href="https://luff.cloud" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4（云龙的博客）</a>
+              <a href="https://thelongi.cn" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4（云龙的博客）</a>
             </li>
           
             <li class="search-li">

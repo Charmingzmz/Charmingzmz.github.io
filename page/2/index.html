@@ -145,6 +145,510 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Redis教程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/10/11/Redis%E6%95%99%E7%A8%8B/">Redis教程</a>
+    </h1>
+  
+
+        
+        <a href="/2021/10/11/Redis%E6%95%99%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2021-10-11T07:41:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Redis教程"><a href="#Redis教程" class="headerlink" title="Redis教程"></a>Redis教程</h1><h1 id="一，入门"><a href="#一，入门" class="headerlink" title="一，入门"></a>一，入门</h1><h2 id="1，什么是NoSql"><a href="#1，什么是NoSql" class="headerlink" title="1，什么是NoSql"></a>1，什么是NoSql</h2><p>NoSQL一词最早出现于1998年，是Carlo Strozzi开发的一个轻量、开源、不提供SQL功能的关系数据库。2009年，Last.fm的Johan Oskarsson发起了一次关于分布式开源数据库的讨论，来自Rackspace的Eric Evans再次提出了NoSQL的概念，这时的<strong>NoSQL主要指非关系型、分布式、不提供ACID的数据库设计模式</strong>。它不同于传统的关系数据库，两者存在许多显著的不同点，其中最重要的是<strong>NoSQL不使用SQL作为查询语言。</strong>其<strong>数据存储可以不需要固定的表格模式</strong>。<br>————————<br>版权声明：本文为CSDN博主「张国亲」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangguoqin66/article/details/88050767">https://blog.csdn.net/zhangguoqin66/article/details/88050767</a></p>
+<h2 id="二，Redis简介"><a href="#二，Redis简介" class="headerlink" title="二，Redis简介"></a>二，Redis简介</h2><p>2008年，意大利的一家创业公司Merzia推出了一款基于MySQL的网站实时统计系统LLOOGG，然而没过多久该公司的创始人 Salvatore Sanfilippo便 对MySQL的性能感到失望，于是他决定亲自为LLOOGG量身定做一个数据库，并于2009年开发完成，这个数据库就是Redis。 不过Salvatore Sanfilippo并不满足只将Redis用于LLOOGG这一款产品，而是希望更多的人使用它，于是在同一年Salvatore Sanfilippo将Redis开源发布，并开始和Redis的另一名主要的代码贡献者Pieter Noordhuis一起继续着Redis的开发，直到今天。短短的几年时间，Redis就拥有了庞大的用户群体。Hacker News在2012年发布了一份数据库的使用情况调查，结果显示有近12%的公司在使用Redis。国内如新浪微博、街旁网、知乎网，国外如GitHub、Stack Overflow、Flickr等都是Redis的用户。VMware公司从2010年开始赞助Redis的开发， Salvatore Sanfilippo和Pieter Noordhuis也分别在3月和5月加入VMware，全职开发Redis。</p>
+<p>Redis是使用<strong>c语言</strong>开发的一个<strong>高性能键值数据库</strong>。常用于分布式系统中的缓存、电商秒杀、排行榜、访问量统计、分布式会话共享等高并发应用场景。Redis可以通过一些键值类型来存储数据。其<strong>数据类型包括字符类型、散列类型、列表类型、集合类型、有序集合类型。</strong></p>
+<p>三，Redis安装<br>————————————————<br>版权声明：本文为CSDN博主「张国亲」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangguoqin66/article/details/88050767">https://blog.csdn.net/zhangguoqin66/article/details/88050767</a></p>
+<h1 id="三，Redis安装"><a href="#三，Redis安装" class="headerlink" title="三，Redis安装"></a>三，Redis安装</h1><p>访问Redis官网<a target="_blank" rel="noopener" href="https://redis.io/download%E4%B8%8B%E8%BD%BD%E6%9C%80%E6%96%B0%E7%9A%84%E7%89%88%E6%9C%AC">https://redis.io/download下载最新的版本</a> 。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/1.png"></p>
+<p>解压并编译安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ tar xzf redis-5.0.3.tar.gz</span><br><span class="line">$ cd redis-5.0.3</span><br><span class="line">$ make install</span><br></pre></td></tr></table></figure>
+
+<p>Redis官网并没有提供windows版本，但可以前往<a target="_blank" rel="noopener" href="https://github.com/tporadowski/redis/releases%E4%B8%8B%E8%BD%BDwindows%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BC%96%E8%AF%91%E7%89%88%E6%9C%AC%EF%BC%88%E6%B3%A8%E6%84%8F%EF%BC%9A%E5%B9%B6%E4%B8%8D%E6%98%AF%E6%9C%80%E6%96%B0%E7%9A%84%E7%89%88%E6%9C%AC%EF%BC%89%E3%80%82">https://github.com/tporadowski/redis/releases下载windows的个人编译版本（注意：并不是最新的版本）。</a></p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/2.png"></p>
+<h1 id="Redis下载及安装-windows版"><a href="#Redis下载及安装-windows版" class="headerlink" title="Redis下载及安装(windows版)"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xing-nb/p/12146449.html">Redis下载及安装(windows版)</a></h1><p>下载地址<br>1、Github下载地址：<a target="_blank" rel="noopener" href="https://github.com/MicrosoftArchive/redis/releases">https://github.com/MicrosoftArchive/redis/releases</a><br>2、百度网盘下载地址 <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1z1_OdNVbtgyEjiktqgB83g">https://pan.baidu.com/s/1z1_OdNVbtgyEjiktqgB83g</a> 密码：kdfq</p>
+<p>安装过程<br>1.首先先把下载的压缩包解压到一个文件夹中</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/4.png"></p>
+<p>2.打开cmd指令窗口<br>3.输入你刚才解压的文件路径<br>4.然后输入redis-server redis.windows.conf 命令</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/5.png"></p>
+<p>接下来部署Redis为windows下的服务 首先关掉上一个窗口再打开一个新的cmd命令窗口</p>
+<p>然后输入指令redis-server –service-install redis.windows.conf</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/6.png"></p>
+<p>随后,进入右击此电脑–管理–服务和应用程序–服务 启动服务</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/7.png"></p>
+<p>Redis常用的指令<br>卸载服务：redis-server –service-uninstall<br>开启服务：redis-server –service-start<br>停止服务：redis-server –service-stop<br>测试redis,通过cd到我们解压的目录,输入指令通过Set get指令查看是否成功</p>
+<h1 id="4，启动服务"><a href="#4，启动服务" class="headerlink" title="4，启动服务"></a>4，启动服务</h1><h2 id="4-1-前端启动"><a href="#4-1-前端启动" class="headerlink" title="4.1 前端启动"></a>4.1 前端启动</h2><p>在redis的src目录有一个redis-server文件，用于启动一个redis服务。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/3.png"></p>
+<p>redis的默认端口为6379，当客户端需要连接到redis服务时，就通过服务端的IP地址以及这个端口进行连接。也可以修改这个默认端口。在redis的根目录下有一个redis.conf文件，它是redis的核心配置文件，redis的所有配置信息都在此文件中。如果需要修改端口，我们在配置文件中找到port配置，并将6379改为其他的端口号。<br>————————————————<br>版权声明：本文为CSDN博主「张国亲」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangguoqin66/article/details/88050767">https://blog.csdn.net/zhangguoqin66/article/details/88050767</a></p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/8.png"></p>
+<p>修改完后需要重新启动redis服务，需要注意的是，在使用redis-server启动服务时需要指定redis.conf文件的绝对路径，否则redis将以默认的配置启动一个服务实例。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/9.png"></p>
+<h2 id="4-2-后端启动"><a href="#4-2-后端启动" class="headerlink" title="4.2 后端启动"></a>4.2 后端启动</h2><p>所谓后端启动，就是以一个独立的进程来运行一个redis服务。首先修改redis.conf文件，找到daemonize选项并设置为yes，如下图：</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/10.png"></p>
+<p>保存退出后重新启动redis服务，此时redis将以后台进程的方式启动服务。终端没有显示相关的启动信息，并且启动完成后，终端可以继续执行其他的操作。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/11.png"></p>
+<h2 id="5，客户端连接"><a href="#5，客户端连接" class="headerlink" title="5，客户端连接"></a>5，客户端连接</h2><p>5.1 Redis客户端<br>在redis的src目录下有一个redis-cli命令，这个就是官方提供的redis客户端，可以使用它来连接和操作redis。当然，这仅仅只是一个命令行的客户端程序，在实际的开发中会有不同的平台语言，因此官网也提供了对各种语言的客户端实现，在实际的项目开发中使用不同语言的客户端来操作redis。例如官网提供了一个Java的客户端Jedis。<br>————————————————<br>版权声明：本文为CSDN博主「张国亲」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangguoqin66/article/details/88050767">https://blog.csdn.net/zhangguoqin66/article/details/88050767</a></p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/12.png"></p>
+<p>1）使用redis-cli</p>
+<p>可以使用官方自带的redis-cli客户端来连接redis服务。参数-h为连接redis服务器的IP地址，-p为redis的端口号。连接完成后就可以对redis进行操作了，我们使用简单的set和get命令来进行存储和访问操作。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/13.PNG"></p>
+<p>2）退出客户端</p>
+<p>如果想要退出客户端的连接只需要在连接的状态下输入quit或者exit即可。</p>
+<p>3）身份认证</p>
+<p>默认连接Redis时是不需要认证密码的，我们可以为其设置一个连接的认证密码。首先在redis.conf中找到requirepass配置项，取消注释并设置一个密码。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/15.png"></p>
+<p>保存后重启服务，在连接客户端时加上-a参数并输入配置的密码。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/16.png"></p>
+<p>连接时也可以不指定密码也可以正常连接，但在操作Redis时候会提示一个错误，要求输入认证密码。这时使用auth命令来输入密码即可。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/17.png"></p>
+<p>如果设置了认证密码，在关闭客户端时也同样需要指定</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/18.png"></p>
+<h1 id="5-2-可视化客户端"><a href="#5-2-可视化客户端" class="headerlink" title="5.2 可视化客户端"></a>5.2 可视化客户端</h1><p>也可以使用第三方的redis的可视化客户端RDM（redis-desktop-manager），它同时提供了各种系统平台的编译版本，安装后即可使用。下载地址：</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/19.png"></p>
+<p>点击左上角的Connect to Redis Server，在弹出的窗口中填写相关的Name（连接名称）、Address（连接地址）、端口号以及认证密码（Auth），点击OK即可。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/20.png"></p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/21.png"></p>
+<p>这里我们看到连接redis后默认有16个库（0 ~ 15），这是redis默认的配置，可以在redis.conf中可以找到相应的选项并修改默认数量。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/22.png"></p>
+<p>当我们使用客户端连接redis时，默认选择的是index为0的数据库，然而也可以使用select命令选择其他数据库。例如选择index为15的数据库，如下操作：</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/23.png"></p>
+<p>6，停止服务<br>如果使用前端启动redis，可以使用control+c或者kill命令来杀掉进程的方式关闭redis（注意：control+c并不能停止后端启动的redis），但这些方式都是强制性的关闭redis，由于redis保存的数据先会存储在内存，如果此时强制关闭，将导致redis还没将数据持久化到文件中就退出，可能会照成部分的数据丢失。因此，应该使用正常的退出方式来停止redis服务，正常退出redis同样使用redis-cli客户端。<br>————————————————<br>版权声明：本文为CSDN博主「张国亲」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangguoqin66/article/details/88050767">https://blog.csdn.net/zhangguoqin66/article/details/88050767</a></p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/24.png"></p>
+<p>上面的命令表示关闭本机端口为6379的redis服务。</p>
+<h1 id="二，基础"><a href="#二，基础" class="headerlink" title="二，基础"></a>二，基础</h1><h2 id="1-数据类型及常用的API"><a href="#1-数据类型及常用的API" class="headerlink" title="1.数据类型及常用的API"></a>1.数据类型及常用的API</h2><p>Redis支持五种数据类型：string（字符串），hash（哈希），list（列表），set（集合）及sorted set(zset：有序集合)。</p>
+<h2 id="1，字符串-String"><a href="#1，字符串-String" class="headerlink" title="1，字符串(String)"></a>1，字符串(String)</h2><p>String 是 redis 最基本的类型，<strong>一个 key 对应一个 value</strong>。它是二进制安全的，可以包含任何数据，如jpg图片或者序列化的对象。</p>
+<p>1）SET</p>
+<p><em>语法：set key value</em></p>
+<p>赋值操作。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/25.png"></p>
+<p>2）GET</p>
+<p><em>语法：get key</em></p>
+<p>取值操作。</p>
+<p>3）GETSET</p>
+<p><em>语法：getset key value</em></p>
+<p>取值并赋值。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/26.png"></p>
+<p>4）MSET</p>
+<p><em>语法：mset key value [key value …]</em></p>
+<p>同时设置多个键值。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/27.png"></p>
+<p>5）MGET</p>
+<p><em>语法：mget key [key …]</em></p>
+<p>获取多个键值。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/28.png"></p>
+<p>6）DEL</p>
+<p><em>语法：del key [key …]</em></p>
+<p>删除一个或多个键值对。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/29.png"></p>
+<p>7）INCR</p>
+<p><em>语法：incr key</em></p>
+<p>当存储的字符串是整数时，让当前键值递增，并返回递增或增加后的值。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/30.png"></p>
+<p>8）INCRBY</p>
+<p>语法：incrby key increment*</p>
+<p>当存储的字符串是整数时，让当前键值增加指定的数值，并返回递增或增加后的值</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/31.png"></p>
+<p>9）DECR</p>
+<p><em>语法：decr key</em></p>
+<p>让当前键值递减，并返回递减或减少后的值。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/32.png"></p>
+<p>10）DECRBY</p>
+<p><em>语法：decrby key decrement</em></p>
+<p>让当前键值减少指定的数值，并返回递减或减少后的值。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/33.png"></p>
+<p>11）APPEND</p>
+<p><em>语法：append key value</em></p>
+<p>向键值的末尾追加value。如果键不存在则将该键的值设置为value，即相当于 SETkey value。返回值是追加后字符串的总长度。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/34.png"></p>
+<p>12）获取字符串长度（STRLEN）</p>
+<p>STRLEN命令返回键值的长度，如果键不存在则返回0</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/35.png"></p>
+<h1 id="1-2-hash-哈希"><a href="#1-2-hash-哈希" class="headerlink" title="1.2 hash(哈希)"></a>1.2 hash(哈希)</h1><p>hash是一个string类型的field和value的映射表，而field只能是String类型，hash特别适合用于存储对象。</p>
+<p><img src=".//Redis%E6%95%99%E7%A8%8B/36.png"></p>
+<p>1）HSET</p>
+<p><em>语法：HSET key field value</em></p>
+<p>HSET一次只能设置一个字段值。HSET命令不区分插入和更新操作，当执行插入操作时HSET命令返回1，当执行更新操作时返回0。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/37.png"></p>
+<p>2）HMSET</p>
+<p><em>语法：HMSET key field value [field value …]</em></p>
+<p>HMSET和HSET作用一样，只不过一次可以设置多个字段值。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/38.png"></p>
+<p>3）HSETNX</p>
+<p>语法：HSETNX key field value</p>
+<p>当字段不存在时赋值，类似HSET。区别在于如果字段存在，该命令不执行任何操作。</p>
+<p>例如：hsetnx user name zing</p>
+<p>说明：如果user中不存在name字段则设置name的值为zing，否则不做任何操作。<br>————————————————<br>版权声明：本文为CSDN博主「张国亲」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangguoqin66/article/details/88050767">https://blog.csdn.net/zhangguoqin66/article/details/88050767</a></p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/39.png"></p>
+<p>4）HGET</p>
+<p><em>语法：HGET key field</em></p>
+<p>HGET一次只能获取一个字段值。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/40.png"></p>
+<p>）HMGET</p>
+<p><em>语法：HMGET key field [field …]</em></p>
+<p>HMGET一次可以获取多个字段值。****</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/41.png"></p>
+<p>6）HGETALL</p>
+<p><em>语法：HGETALL key</em></p>
+<p>获取所有字段值。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/42.png"></p>
+<p>7）HDEL</p>
+<p><em>语法：HDEL key field [field…]</em></p>
+<p>可以删除一个或多个字段，返回值是被删除的字段个数。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/43.png"></p>
+<p>8）HINCRBY</p>
+<p><em>语法：HINCRBY key field increment</em></p>
+<p>为某个字段增加数值。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/44.png"></p>
+<p>9）HEXISTS</p>
+<p><em>语法：HEXISTS key field</em></p>
+<p>判断字段是否存在，存在则返回1，否则返回0。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/45.png"></p>
+<p>10）HKEYS</p>
+<p><em>语法：HKEYS key</em></p>
+<p>获取所有的字段名。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/47.png"></p>
+<p>11）HVALS</p>
+<p><em>语法：HVALS key</em></p>
+<p>获取所有字段的值。。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/46.png"></p>
+<p>12）HLEN</p>
+<p><em>语法：HLEN key</em></p>
+<p>获取字段数量。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/48.png"></p>
+<h1 id="1-3-list-集合"><a href="#1-3-list-集合" class="headerlink" title="1.3 list(集合)"></a>1.3 list(集合)</h1><p>Redis的list是采用来链表来存储的，所以对于Redis的list数据类型的操作，是操作list的两端数据来操作的。</p>
+<p>1）LPUSH</p>
+<p><em>语法：LPUSH key value [value …]</em></p>
+<p>向列表左边添加元素。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/49.png"></p>
+<p>2）RPUSH</p>
+<p><em>语法：RPUSH key value [value …]</em></p>
+<p>向列表右边添加元素。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/50.png"></p>
+<p>3）LRANGE</p>
+<p><em>语法：LRANGE key start stop</em></p>
+<p>LRANGE命令是列表类型最常用的命令之一，用于获取列表中的某一片段，将返回start到stop之间的所有元素（包含两端的元素），索引从0开始。索引可以是负数，如：-1代表最后边的一个元素。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/51.png"></p>
+<p>4）LPOP</p>
+<p><em>语法：LPOP key</em></p>
+<p>LPOP命令从列表左边弹出一个元素，会分两步完成：第一步是将列表左边的元素从列表中移除。第二步是返回被移除的元素值。</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/52.png"></p>
+<p>5）RPOP</p>
+<p><em>语法：RPOP key</em></p>
+<p>RPOP命令从列表右边弹出一个元素，步骤与LPOP类似，第一步是将列表右边的元素从列表中移除。第二步是返回被移除的元素值。</p>
+<p>6）LLEN</p>
+<p>语法：LLEN key</p>
+<p>获取列表中元素的个数</p>
+<p>7）LREM</p>
+<p>语法：LREM key count value</p>
+<p>LREM命令会删除列表中前count个值为value的元素，返回实际删除的元素个数。根据count值的不同，该命令的执行方式会有所不同：</p>
+<p>当count&gt;0时， LREM会从列表左边开始删除。</p>
+<p>当count&lt;0时， LREM会从列表右边开始删除。</p>
+<p>当count=0时，LREM删除所有值为value的元素。</p>
+<p>————————————————<br>版权声明：本文为CSDN博主「张国亲」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangguoqin66/article/details/88050767">https://blog.csdn.net/zhangguoqin66/article/details/88050767</a></p>
+<p>8）LINDEX</p>
+<p>语法：LINDEX key index</p>
+<p>获得指定索引的元素值。</p>
+<p>9）LSET</p>
+<p>语法：LSET key index value</p>
+<p>设置指定索引的元素值。</p>
+<p>10）LTRIM</p>
+<p>语法：LTRIM key start stop</p>
+<p>只保留列表的指定片段</p>
+<p>11）LINSERT</p>
+<p>语法：LINSERT key BEFORE|AFTER pivot value</p>
+<p>LINSERT首先会在列表中从左到右查找值为pivot的元素，然后根据第二个参数是BEFORE还是AFTER来决定将value插入到该元素的前面还是后面。</p>
+<p>12）RPOPLPUSH</p>
+<p>语法：RPOPLPUSH source destination</p>
+<p>将一个列表的最后一个元素转移到另一个列表的最前面<br>————————————————<br>版权声明：本文为CSDN博主「张国亲」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangguoqin66/article/details/88050767">https://blog.csdn.net/zhangguoqin66/article/details/88050767</a></p>
+<h1 id="1-4-set-集合"><a href="#1-4-set-集合" class="headerlink" title="1.4 set(集合)"></a>1.4 set(集合)</h1><p>Redis 的 Set 是 String 类型的无序集合。集合成员是唯一的，这就意味着集合中不能出现重复的数据。</p>
+<p>1）SADD                         -sadd</p>
+<p>语法：SADD key member [member …]</p>
+<p>增加一个或多个元素。</p>
+<p>2）SREM                      -srem</p>
+<p>语法：SREM key member [member …]</p>
+<p>移除一个或多个元素。</p>
+<p>3）SMEMBERS            -smembers</p>
+<p>语法：SMEMBERS key</p>
+<p>获得集合中的所有元素。</p>
+<p>4）SISMEMBER              -sismember</p>
+<p>语法：SISMEMBER key member</p>
+<p>判断元素是否存在集合中。存在返回1，否则返回0。</p>
+<p>5）SDIFF                      -sdiff</p>
+<p>语法：SDIFF key [key …]</p>
+<p>查找属于集合A并且不属于集合B的元素。（差集运算）</p>
+<p>6）SINTER                     -sinter</p>
+<p>语法：SINTER key [key …] </p>
+<p>查找属于集合A且属于集合B的元素。（交集运算）</p>
+<p>7）SUNION                      -sunion</p>
+<p>语法：SUNION key [key …]</p>
+<p>查找属于集合A或者属于集合B的元素。（合并运算）</p>
+<p>8）SCARD                     -scard</p>
+<p>语法：SCARD key</p>
+<p>获取集合中元素的个数。</p>
+<p>9）SPOP                           -spop</p>
+<p>语法：SPOP key [count]</p>
+<p>从集合中弹出一个或多个元素，由count指定。如果不指定count，默认弹出一个。由于集合是无序的，所有SPOP命令会从集合中随机选择一个元素弹出。<br>————————————————<br>版权声明：本文为CSDN博主「张国亲」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangguoqin66/article/details/88050767">https://blog.csdn.net/zhangguoqin66/article/details/88050767</a></p>
+<h1 id="1-5-zset（有序集合）"><a href="#1-5-zset（有序集合）" class="headerlink" title="1.5 zset（有序集合）"></a>1.5 zset（有序集合）</h1><p>zset又称sorted set，称之为<strong>有序集合，可排序的，但是唯一</strong>。和set的不同之出在于zset会给集合中的元素添加一个分数，然后通过这个分数进行排序。</p>
+<p>1）ZADD</p>
+<p>语法：ZADD key score member [score member …]</p>
+<p>向有序集合中加入一个或多个元素和该元素的分数，如果该元素已经存在则会用新的分数替换原有的分数。返回值是新加入到集合中的元素个数，不包含之前已经存在的元素。</p>
+<p>2）ZSCORE</p>
+<p>语法：ZSCORE key member</p>
+<p>获取元素的分数。</p>
+<p>3）ZREM</p>
+<p>语法：ZREM key member [member …]</p>
+<p>移除有序集合中的一个或多个成员，不存在的成员将被忽略。</p>
+<p>4）ZRANGE</p>
+<p>语法：ZRANGE key start stop [WITHSCORES]</p>
+<p>按照元素分数从小到大的顺序返回索引从start到stop之间的所有元素（包含两端的元素）。如果需要获得元素的分数可以在命令尾部加上WITHSCORES参数。</p>
+<p>5）ZREVRANGE</p>
+<p>语法：ZREVRANGE key start stop [WITHSCORES]</p>
+<p>按照元素分数从大到小的顺序返回索引从start到stop之间的所有元素（包含两端的元素）。如果需要获得元素的分数的可以在命令尾部加上WITHSCORES参数。</p>
+<p>6）ZRANK      -zrank</p>
+<p>语法：ZRANK key member</p>
+<p>获取元素排名（从小到大）。</p>
+<p>7）ZREVRANK                     -zrevrank</p>
+<p>语法：ZREVRANK key member</p>
+<p>获取元素排名（从大到小）。</p>
+<p>8）ZRANGEBYSCORE                  -zrangebyscore</p>
+<p>语法：ZRANGEBYSCORE key min max WITHSCORES</p>
+<p>获得指定分数范围的元素。</p>
+<p>9）ZINCRBY                                              -zincrby</p>
+<p>语法：ZINCRBY key increment member</p>
+<p>增加某个元素的分数，并返回更改后的分数。</p>
+<p>10）ZCARD                         -zcard</p>
+<p>语法：ZCARD key</p>
+<p>获取集合元素的数量。</p>
+<p>11）ZCOUNT                                       -zcount</p>
+<p>语法：ZCOUNT key min max</p>
+<p>获取指定分数范围内的元素个数。</p>
+<p>12）ZREMRANGEBYRANK                               -zremrangebyrank</p>
+<p>语法：ZREMRANGEBYRANK key start stop</p>
+<p>按照排名范围删除元素。</p>
+<p>13）ZREMRANGEBYSCORE                                   -zremrangebyscore </p>
+<p>语法：ZREMRANGEBYSCORE key min max</p>
+<p>按照分数范围删除元素。<br>————————————————<br>版权声明：本文为CSDN博主「张国亲」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangguoqin66/article/details/88050767">https://blog.csdn.net/zhangguoqin66/article/details/88050767</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangguoqin66/article/details/88050767">https://blog.csdn.net/zhangguoqin66/article/details/88050767</a></p>
+<h1 id="springboot-整合redis：做缓存，做分布式共享session"><a href="#springboot-整合redis：做缓存，做分布式共享session" class="headerlink" title="springboot-整合redis：做缓存，做分布式共享session"></a>springboot-整合redis：做缓存，做分布式共享session</h1><h3 id="文章目录"><a href="#文章目录" class="headerlink" title="文章目录"></a>文章目录</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/yhhyhhyhhyhh/article/details/84134640?ops_request_misc=%7B%22request_id%22:%22163403911316780265484742%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=163403911316780265484742&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-2-84134640.pc_search_ecpm_flag&utm_term=redis%E6%95%B4%E5%90%88springboot%E5%81%9A%E7%BC%93%E5%AD%98&spm=1018.2226.3001.4187#springbootredissession_2">springboot-整合redis：做缓存，做分布式共享session</a></li>
+<li><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/yhhyhhyhhyhh/article/details/84134640?ops_request_misc=%7B%22request_id%22:%22163403911316780265484742%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=163403911316780265484742&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-2-84134640.pc_search_ecpm_flag&utm_term=redis%E6%95%B4%E5%90%88springboot%E5%81%9A%E7%BC%93%E5%AD%98&spm=1018.2226.3001.4187#1redis_19">1.redis应用场景</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/yhhyhhyhhyhh/article/details/84134640?ops_request_misc=%7B%22request_id%22:%22163403911316780265484742%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=163403911316780265484742&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-2-84134640.pc_search_ecpm_flag&utm_term=redis%E6%95%B4%E5%90%88springboot%E5%81%9A%E7%BC%93%E5%AD%98&spm=1018.2226.3001.4187#2_29">2配置</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/yhhyhhyhhyhh/article/details/84134640?ops_request_misc=%7B%22request_id%22:%22163403911316780265484742%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=163403911316780265484742&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-2-84134640.pc_search_ecpm_flag&utm_term=redis%E6%95%B4%E5%90%88springboot%E5%81%9A%E7%BC%93%E5%AD%98&spm=1018.2226.3001.4187#3_135">3.测试</a></li>
+</ul>
+</li>
+</ul>
+<p>完整代码下载链接：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/2010yhh/springBoot-demos/tree/master/springboot-redis">https://github.com/2010yhh/springBoot-demos/tree/master/springboot-redis</a></p>
+<p><strong>环境</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">idea2018，jdk1.8，</span><br><span class="line"></span><br><span class="line">springboot版本：springboot1.5.9.RELEASE,</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-redis应用场景"><a href="#1-redis应用场景" class="headerlink" title="1.redis应用场景"></a>1.redis应用场景</h2><p>参见这篇</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/NiceCui/p/7794659.html"><strong>Redis的7个应用场景</strong></a></p>
+<h2 id="2配置"><a href="#2配置" class="headerlink" title="2配置"></a>2配置</h2><p><strong>pom需要：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.session&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-session-data-redis&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">————————————————</span><br><span class="line">版权声明：本文为CSDN博主「SingleOneMan」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。</span><br><span class="line">原文链接：https://blog.csdn.net/yhhyhhyhhyhh/article/details/84134640</span><br></pre></td></tr></table></figure>
+
+<p><strong>redis配置类：RedisConfig</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">@EnableCaching//开启缓存注解</span><br><span class="line">//maxInactiveIntervalInSeconds:session的统一过期时间,默认是1800秒过期，这里测试修改为60秒</span><br><span class="line">@EnableRedisHttpSession(maxInactiveIntervalInSeconds = 60)//注解，开启redis集中session管理</span><br><span class="line">public class RedisConfig &#123;</span><br><span class="line">    // 以下redisTemplate自由根据场景选择</span><br><span class="line">    //默认的String-String</span><br><span class="line">    //    @Bean</span><br><span class="line">    public RedisTemplate RedisTemplate(RedisConnectionFactory factory) &#123;</span><br><span class="line">        StringRedisTemplate stringRedisTemplate = new StringRedisTemplate();</span><br><span class="line">        stringRedisTemplate.setConnectionFactory(factory);</span><br><span class="line">        return stringRedisTemplate;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    public RedisTemplate&lt;String, Object&gt; RedisTemplate2(RedisConnectionFactory factory) &#123;</span><br><span class="line">        RedisTemplate&lt;String, Object&gt; template = new RedisTemplate&lt;String, Object&gt;();</span><br><span class="line">        template.setConnectionFactory(factory);</span><br><span class="line">        template.setKeySerializer(new StringRedisSerializer());</span><br><span class="line">        //GenericJackson2JsonRedisSerializer方便反序列化，redis中也方便查看json</span><br><span class="line">        template.setValueSerializer(new GenericJackson2JsonRedisSerializer());</span><br><span class="line">        template.setHashKeySerializer(new GenericJackson2JsonRedisSerializer());</span><br><span class="line">        template.setHashValueSerializer(new GenericJackson2JsonRedisSerializer());</span><br><span class="line">        template.afterPropertiesSet();</span><br><span class="line">        return template;</span><br><span class="line">    &#125;</span><br><span class="line">    @Bean</span><br><span class="line">    public RedisTemplate&lt;Object, Object&gt; RedisTemplate3(RedisConnectionFactory factory) &#123;</span><br><span class="line">        RedisTemplate&lt;Object, Object&gt; template = new RedisTemplate&lt;&gt;();</span><br><span class="line">        template.setConnectionFactory(factory);</span><br><span class="line">        //使用Jackson2JsonRedisSerializer来序列化和反序列化redis的value值（默认使用JDK的序列化方式）</span><br><span class="line">        Jackson2JsonRedisSerializer serializer = new Jackson2JsonRedisSerializer(Object.class);</span><br><span class="line"></span><br><span class="line">        ObjectMapper mapper = new ObjectMapper();</span><br><span class="line">        mapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);</span><br><span class="line">        mapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);</span><br><span class="line">        serializer.setObjectMapper(mapper);</span><br><span class="line">        //使用StringRedisSerializer来序列化和反序列化redis的key值</span><br><span class="line">        template.setKeySerializer(new StringRedisSerializer());</span><br><span class="line">        //使用Jackson2JsonRedisSerializer来序列化和反序列化redis的value值（默认使用JDK的序列化方式）</span><br><span class="line">        template.setValueSerializer(serializer);</span><br><span class="line">        // 设置hash key 和value序列化模式</span><br><span class="line">        template.setHashKeySerializer(new StringRedisSerializer());</span><br><span class="line">        template.setHashValueSerializer(serializer);</span><br><span class="line">        template.afterPropertiesSet();</span><br><span class="line">        return template;</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * redis作为缓存</span><br><span class="line">     * @param redisTemplate</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    @Bean</span><br><span class="line">    public CacheManager cacheManager(RedisTemplate&lt;String, Object&gt;  redisTemplate) &#123;</span><br><span class="line">        RedisCacheManager rcm = new RedisCacheManager(redisTemplate);</span><br><span class="line">        // 多个缓存的名称,目前只定义了一个</span><br><span class="line">        rcm.setCacheNames(Arrays.asList(&quot;user&quot;));</span><br><span class="line">        //设置缓存过期时间(秒)</span><br><span class="line">        rcm.setDefaultExpiration(60);</span><br><span class="line">        return rcm;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 在springboot中使用spring-session的时候，</span><br><span class="line">     * 在不同的域名下面需要配置cookie主域否则session共享不生效</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    @Bean</span><br><span class="line">    public CookieSerializer cookieSerializer() &#123;</span><br><span class="line">        DefaultCookieSerializer defaultCookieSerializer = new DefaultCookieSerializer();</span><br><span class="line">        //cookie名字</span><br><span class="line">        defaultCookieSerializer.setCookieName(&quot;sessionId&quot;);</span><br><span class="line">        //不同子域时设置</span><br><span class="line">        //defaultCookieSerializer.setDomainName(&quot;xxx.com&quot;);</span><br><span class="line">        //设置各web应用返回的cookiePath一致</span><br><span class="line">        defaultCookieSerializer.setCookiePath(&quot;/&quot;);</span><br><span class="line">        return defaultCookieSerializer;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">————————————————</span><br><span class="line">版权声明：本文为CSDN博主「SingleOneMan」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。</span><br><span class="line">原文链接：https://blog.csdn.net/yhhyhhyhhyhh/article/details/84134640</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-测试"><a href="#3-测试" class="headerlink" title="3.测试"></a>3.测试</h2><p><strong>3.1redis基本存储</strong></p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/1.jpg"></p>
+<p>新增后：</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/2.jpg"></p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/3.JPG"></p>
+<p><strong>3.2redis结合db做缓存</strong></p>
+<p><strong>1）多次查询结果（设置redis缓存过期时间1分钟：）</strong></p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/4.jpg"></p>
+<p><strong>2）插入后（设置redis缓存过期时间30s：）多次查询结果</strong></p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/5.jpg"></p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/6.jpg"></p>
+<p><strong>3）更新后（设置redis缓存过期时间1分钟：）多次查询结果</strong></p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/7.jpg"></p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/8.jpg"></p>
+<p><strong>3.3redis做分布式session共享</strong><br><strong>1）没有设置spring-session共享时：</strong> 无法共享session</p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/9.jpg"></p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/10.jpg"></p>
+<p><strong>2）设置了spring-session共享时：</strong> 共享了session<br><strong><a target="_blank" rel="noopener" href="http://localhost:8090/testredis/">http://localhost:8090/testredis/</a> 设置session</strong></p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/11.jpg"></p>
+<p><strong><a target="_blank" rel="noopener" href="http://localhost:8090/testredis/">http://localhost:8090/testredis/</a> get session</strong></p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/12.jpg"></p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/13.jpg"></p>
+<p><strong><a target="_blank" rel="noopener" href="http://localhost:8091/testredis1/">http://localhost:8091/testredis1/</a> get session</strong></p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/14.jpg"></p>
+<p><img src="/2021/10/11/Redis%E6%95%99%E7%A8%8B/15.jpg"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/10/11/Redis%E6%95%99%E7%A8%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-JPA的详解及使用方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/10/09/JPA%E7%9A%84%E8%AF%A6%E8%A7%A3%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">JPA的详解及使用方法</a>
+    </h1>
+  
+
+        
+        <a href="/2021/10/09/JPA%E7%9A%84%E8%AF%A6%E8%A7%A3%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2021-10-09T12:29:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="JPA的详解及使用方法"><a href="#JPA的详解及使用方法" class="headerlink" title="JPA的详解及使用方法"></a>JPA的详解及使用方法</h1><p><strong>1.什么是JPA？</strong></p>
+<p>用于对象持久化的API</p>
+<p>JPA规范：JPA本质是一种ORM规范，不是ORM框架，因为JPA并为提供ORM实现，他只是订制一些规范，提供一些编程的API的接口<br>Hibernate是实现：Hibernate除了作为ORM框架以外，它是一种JPA实现<br>功能上说：JPA是Hibernate功能的一个子集<br>————————————————<br>版权声明：本文为CSDN博主「zc1320030382」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zc1320030382/article/details/78366370">https://blog.csdn.net/zc1320030382/article/details/78366370</a></p>
+<p><strong>2.JPA优势：</strong><br>标准化；简单易用，集成方便；可以媲美JDBC的查询能力；支持面向对象的高级特性</p>
+<p><strong>3.JPA三方面的技术：</strong><br>ORM映射元数据；JPA的API；查询语句（JPQL）</p>
+<p>4.使用JPA持久化对象的步骤：<br>创建perisistence.xml文件，在配置文件中配置持久化单元（需要跟那个数据库进行交互，使用那个持久化框架以及配置框架的基本属性）<br>创建实体类，使用annotation来描述实体类跟数据表之间的映射关系<br>使用JPA API完成数据CRUD操作<br>————————————————<br>版权声明：本文为CSDN博主「zc1320030382」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zc1320030382/article/details/78366370">https://blog.csdn.net/zc1320030382/article/details/78366370</a></p>
+<p><img src="/2021/10/09/JPA%E7%9A%84%E8%AF%A6%E8%A7%A3%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/1.png"></p>
+<p>5.JPA 的基本注解：<br>@Entity ：指出该Java类为实体类，将映射到指定的数据库<br>@Transient ：忽略该属性，不需要映射到数据表的一列，否则默认为@Basic<br>@Temporal ：在属性上调整精度，比如Date<br>@Table ：标注常用name属性，用于指定数据库的表明<br>@Id ：映射主键（放在getter方法之前）<br>@GeneratedValue ：用于标注主键的生成策略，通过strategy属性指定<br>@Column ：映射数据表的列名，指定unique，length等<br>@Basic ：基本注解，默认有<br>————————————————<br>版权声明：本文为CSDN博主「zc1320030382」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zc1320030382/article/details/78366370">https://blog.csdn.net/zc1320030382/article/details/78366370</a></p>
+<p>6.JPA   API：<br>Persistence：Persistence类用于获取EntityManagerFactory实列，该类包含一个名为createEntityManagerFactory的静态方法<br>EntityManagerFactory：主要用来创建EntityManager实列 createEntityManager()；创建实体管理对象的实例。close()：关闭EntityManagerFactory<br>refresh() ;clear() ; isOpen() ; close() ;<br>EntityTransaction:接口用来管理资源层实体管理器的事务操作。 getTransaction();获得其实例<br>begin() ; commit() ; rollback() ; setRollbackOnly() ; getRollbackOnly() ; isActive() ;<br>————————————————<br>版权声明：本文为CSDN博主「zc1320030382」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zc1320030382/article/details/78366370">https://blog.csdn.net/zc1320030382/article/details/78366370</a></p>
+<p>7.映射关系：<br>单向多对一：使用@ManyToOne来映射多对一关系映射；使用@JoinColumn来映射外键；建议先保存1的一端，后保存n的一端；可以使用@ManyToOne的fetch来修改默 认的关联属性的加载策略<br>单向一对多：使用@OneToMany来映射一对多关系映射；使用@JoinColumn来映射外键；<br>双向一对一：使用@OneToOne来映射一对一对应关系映射；建议先保存不维护关联关系的一方，既没有外键的一方，<br>双向多对多：使用@ManyToMany来映射多对多关系映射；使用@JoinTable来映射中间表；name：指定外键的列名；rederenedColumnName：指定外键列关联的当期表 的那一列；inverseJoinColumns：映射关联的类所在中间表的外键<br>————————————————<br>版权声明：本文为CSDN博主「zc1320030382」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zc1320030382/article/details/78366370">https://blog.csdn.net/zc1320030382/article/details/78366370</a></p>
+<p><strong>8.Spring整合JPA：</strong></p>
+<p><strong>LocalContainerEntityManagerFactoryBean：</strong></p>
+<p><img src="/2021/10/09/JPA%E7%9A%84%E8%AF%A6%E8%A7%A3%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/2.png"></p>
+<p><img src="/2021/10/09/JPA%E7%9A%84%E8%AF%A6%E8%A7%A3%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/3.png"></p>
+<h1 id="spring-boot-中使用-jpa以及jpa介绍"><a href="#spring-boot-中使用-jpa以及jpa介绍" class="headerlink" title="spring boot 中使用 jpa以及jpa介绍"></a>spring boot 中使用 jpa以及jpa介绍</h1><p>最近在项目中使用了一下jpa，发现还是挺好用的。这里就来讲一下jpa以及在spring boot中的使用。<br>在这里我们先来了解一下jpa。</p>
+<h2 id="1-什么是jpa呢？"><a href="#1-什么是jpa呢？" class="headerlink" title="1.什么是jpa呢？"></a>1.什么是jpa呢？</h2><p>JPA顾名思义就是Java Persistence API的意思，是JDK 5.0注解或XML描述对象－关系表的映射关系，并将运行期的实体对象持久化到数据库中。</p>
+<h2 id="2-jpa具有什么优势？"><a href="#2-jpa具有什么优势？" class="headerlink" title="2.jpa具有什么优势？"></a>2.jpa具有什么优势？</h2><p>2.1标准化<br>JPA 是 JCP 组织发布的 Java EE 标准之一，因此任何声称符合 JPA 标准的框架都遵循同样的架构，提供相同的访问API，这保证了基于JPA开发的企业应用能够经过少量的修改就能够在不同的JPA框架下运行。<br>2.2容器级特性的支持<br>JPA框架中支持大数据集、事务、并发等容器级事务，这使得 JPA 超越了简单持久化框架的局限，在企业应用发挥更大的作用。<br>2.3简单方便<br>JPA的主要目标之一就是提供更加简单的编程模型：在JPA框架下创建实体和创建Java 类一样简单，没有任何的约束和限制，只需要使用 javax.persistence.Entity进行注释，JPA的框架和接口也都非常简单，没有太多特别的规则和设计模式的要求，开发者可以很容易的掌握。JPA基于非侵入式原则设计，因此可以很容易的和其它框架或者容器集成。<br>2.4查询能力<br>JPA的查询语言是面向对象而非面向数据库的，它以面向对象的自然语法构造查询语句，可以看成是Hibernate HQL的等价物。JPA定义了独特的JPQL（Java Persistence Query Language），JPQL是EJB QL的一种扩展，它是针对实体的一种查询语言，操作对象是实体，而不是关系数据库的表，而且能够支持批量更新和修改、JOIN、GROUP BY、HAVING 等通常只有 SQL 才能够提供的高级查询特性，甚至还能够支持子查询。<br>2.4高级特性<br>JPA 中能够支持面向对象的高级特性，如类之间的继承、多态和类之间的复杂关系，这样的支持能够让开发者最大限度的使用面向对象的模型设计企业应用，而不需要自行处理这些特性在关系数据库的持久化。<br>————————————————<br>版权声明：本文为CSDN博主「深存少年梦」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/wujiaqi0921/article/details/78789087">https://blog.csdn.net/wujiaqi0921/article/details/78789087</a></p>
+<h2 id="3-基于注解的使用"><a href="#3-基于注解的使用" class="headerlink" title="3.基于注解的使用"></a>3.基于注解的使用</h2><p>本篇只介绍注解的使用，另一种基于xml方式的使用大家有兴趣可以自行了解一下。</p>
+<h3 id="3-1-JPA拥有哪些注解呢？"><a href="#3-1-JPA拥有哪些注解呢？" class="headerlink" title="3.1 JPA拥有哪些注解呢？"></a>3.1 JPA拥有哪些注解呢？</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">注解	解释</span><br><span class="line">@Entity	声明类为实体或表。</span><br><span class="line">@Table	声明表名。</span><br><span class="line">@Basic	指定非约束明确的各个字段。</span><br><span class="line">@Embedded	指定类或它的值是一个可嵌入的类的实例的实体的属性。</span><br><span class="line">@Id	指定的类的属性，用于识别（一个表中的主键）。</span><br><span class="line">@GeneratedValue	指定如何标识属性可以被初始化，例如自动、手动、或从序列表中获得的值。</span><br><span class="line">@Transient	指定的属性，它是不持久的，即：该值永远不会存储在数据库中。</span><br><span class="line">@Column	指定持久属性栏属性。</span><br><span class="line">@SequenceGenerator	指定在@GeneratedValue注解中指定的属性的值。它创建了一个序列。</span><br><span class="line">@TableGenerator	指定在@GeneratedValue批注指定属性的值发生器。它创造了的值生成的表。</span><br><span class="line">@AccessType	这种类型的注释用于设置访问类型。如果设置@AccessType（FIELD），则可以直接访问变量并且不需要getter和setter，但必须为public。如果设置@AccessType（PROPERTY），通过getter和setter方法访问Entity的变量。</span><br><span class="line">@JoinColumn	指定一个实体组织或实体的集合。这是用在多对一和一对多关联。</span><br><span class="line">@UniqueConstraint	指定的字段和用于主要或辅助表的唯一约束。</span><br><span class="line">@ColumnResult	参考使用select子句的SQL查询中的列名。</span><br><span class="line">@ManyToMany	定义了连接表之间的多对多一对多的关系。</span><br><span class="line">@ManyToOne	定义了连接表之间的多对一的关系。</span><br><span class="line">@OneToMany	定义了连接表之间存在一个一对多的关系。</span><br><span class="line">@OneToOne	定义了连接表之间有一个一对一的关系。</span><br><span class="line">@NamedQueries	指定命名查询的列表。</span><br><span class="line">@NamedQuery	指定使用静态名称的查询。</span><br><span class="line"></span><br><span class="line">————————————————</span><br><span class="line">版权声明：本文为CSDN博主「深存少年梦」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。</span><br><span class="line">原文链接：https://blog.csdn.net/wujiaqi0921/article/details/78789087</span><br></pre></td></tr></table></figure>
+
+<p>了解了注解之后我们来看看如何使用吧</p>
+<h2 id="4-代码实战"><a href="#4-代码实战" class="headerlink" title="4.代码实战"></a>4.代码实战</h2><h3 id="4-1maven依赖"><a href="#4-1maven依赖" class="headerlink" title="4.1maven依赖"></a>4.1maven依赖</h3><p>添加jpa起步依赖</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">    &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">————————————————</span><br><span class="line">版权声明：本文为CSDN博主「深存少年梦」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。</span><br><span class="line">原文链接：https://blog.csdn.net/wujiaqi0921/article/details/78789087</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2配置文件"><a href="#4-2配置文件" class="headerlink" title="4.2配置文件"></a>4.2配置文件</h3><p>在application.yml文件中添加如下配置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  datasource:</span><br><span class="line">    url: jdbc:mysql://localhost:3306/mytest</span><br><span class="line">    type: com.alibaba.druid.pool.DruidDataSource</span><br><span class="line">    username: root</span><br><span class="line">    password: root</span><br><span class="line">    driver-class-name: com.mysql.jdbc.Driver //驱动</span><br><span class="line">  jpa:</span><br><span class="line">    hibernate:</span><br><span class="line">      ddl-auto: update //自动更新</span><br><span class="line">    show-sql: true  //日志中显示sql语句</span><br><span class="line">————————————————</span><br><span class="line">版权声明：本文为CSDN博主「深存少年梦」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。</span><br><span class="line">原文链接：https://blog.csdn.net/wujiaqi0921/article/details/78789087</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">jpa.hibernate.ddl-auto是hibernate的配置属性，其主要作用是：自动创建、更新、验证数据库表结构。该参数的几种配置如下：</span><br><span class="line">    ·create：每次加载hibernate时都会删除上一次的生成的表，然后根据你的model类再重新来生成新表，哪怕两次没有任何改变也要这样执行，这就是导致数据库表数据丢失的一个重要原因。</span><br><span class="line">    ·create-drop：每次加载hibernate时根据model类生成表，但是sessionFactory一关闭,表就自动删除。</span><br><span class="line">    ·update：最常用的属性，第一次加载hibernate时根据model类会自动建立起表的结构（前提是先建立好数据库），以后加载hibernate时根据model类自动更新表结构，即使表结构改变了但表中的行仍然存在不会删除以前的行。要注意的是当部署到服务器后，表结构是不会被马上建立起来的，是要等应用第一次运行起来后才会。</span><br><span class="line">    ·validate：每次加载hibernate时，验证创建数据库表结构，只会和数据库中的表进行比较，不会创建新表，但是会插入新值。</span><br><span class="line">————————————————</span><br><span class="line">版权声明：本文为CSDN博主「深存少年梦」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。</span><br><span class="line">原文链接：https://blog.csdn.net/wujiaqi0921/article/details/78789087</span><br></pre></td></tr></table></figure>
+
+<p>以上我们完成了基本的配置工作，记下来看一下如何进行表与实体的映射，以及数据访问接口。</p>
+<h3 id="4-3创建实体以及数据访问接口"><a href="#4-3创建实体以及数据访问接口" class="headerlink" title="4.3创建实体以及数据访问接口"></a>4.3创建实体以及数据访问接口</h3><p>首先来看一下实体类Person.java</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">@Entity</span><br><span class="line">@Getter</span><br><span class="line">@Setter</span><br><span class="line">public class Person &#123;</span><br><span class="line"></span><br><span class="line">    @Id</span><br><span class="line">    @GeneratedValue</span><br><span class="line">    private Long id;</span><br><span class="line"></span><br><span class="line">    @Column(name = &quot;name&quot;, nullable = true, length = 20)</span><br><span class="line">    private String name;</span><br><span class="line"></span><br><span class="line">    @Column(name = &quot;agee&quot;, nullable = true, length = 4)</span><br><span class="line">    private int age;</span><br><span class="line">&#125;</span><br><span class="line">————————————————</span><br><span class="line">版权声明：本文为CSDN博主「深存少年梦」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。</span><br><span class="line">原文链接：https://blog.csdn.net/wujiaqi0921/article/details/78789087</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">接着是PersonRepository.java，改接口只需要继承JpaRepository接口即可。</span><br><span class="line"></span><br><span class="line">public interface PersonRepository extends JpaRepository&lt;Person, Long&gt; &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后写一个rest接口以供测试使用。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">@RestController</span><br><span class="line">@RequestMapping(value = &quot;person&quot;)</span><br><span class="line">public class PerconController &#123;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private PersonRepository personRepository;</span><br><span class="line"></span><br><span class="line">    @PostMapping(path = &quot;addPerson&quot;)</span><br><span class="line">    public void addPerson(Person person) &#123;</span><br><span class="line">        personRepository.save(person);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @DeleteMapping(path = &quot;deletePerson&quot;)</span><br><span class="line">    public void deletePerson(Long id) &#123;</span><br><span class="line">        personRepository.delete(id);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">————————————————</span><br><span class="line">版权声明：本文为CSDN博主「深存少年梦」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。</span><br><span class="line">原文链接：https://blog.csdn.net/wujiaqi0921/article/details/78789087</span><br></pre></td></tr></table></figure>
+
+<p>好了，让我们来运行一下程序看看结果吧,启动程序，查询数据库我们就可以看到，JPA以及自动帮我们创建了表</p>
+<p><img src="/2021/10/09/JPA%E7%9A%84%E8%AF%A6%E8%A7%A3%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/4.jpg"></p>
+<p>接下来我们调用一下addPerson接口。我们使用postman来测试：</p>
+<p><img src="/2021/10/09/JPA%E7%9A%84%E8%AF%A6%E8%A7%A3%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/5.jpg"></p>
+<p>然后通过查询数据库来看一下结果：</p>
+<p><img src="/2021/10/09/JPA%E7%9A%84%E8%AF%A6%E8%A7%A3%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/6.jpg"></p>
+<p>我们可以看到成功插入了数据，并且观察表结构可以看到，agee是我们定义的column名称，id为自增。并且从上面的repository接口代码我们可以看到，接口中并没有定义任何的方法，这是因为JpaRepository中帮我们定义了基础的增删改查方法，可以很方便的直接使用。</p>
+<p>接下来我们来看一下如何编写自己的方法。我们以根据name查询person为例。添加一个rest接口.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">   @GET</span><br><span class="line">    @Produces(TYPE_JSON)</span><br><span class="line">    @Path(&quot;getPerson&quot;)</span><br><span class="line">    public Object getPerson(@QueryParam(&quot;name&quot;) String name) &#123;</span><br><span class="line">        return personRepository.findByName(name);</span><br><span class="line">    &#125;</span><br><span class="line">————————————————</span><br><span class="line">版权声明：本文为CSDN博主「深存少年梦」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。</span><br><span class="line">原文链接：https://blog.csdn.net/wujiaqi0921/article/details/78789087</span><br></pre></td></tr></table></figure>
+
+<p>并在repository接口中添加如下查询方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Person findByName(String name);</span><br></pre></td></tr></table></figure>
+
+<p>重启之后让我们来看一下查询结果</p>
+<p><img src="/2021/10/09/JPA%E7%9A%84%E8%AF%A6%E8%A7%A3%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/8.jpg"></p>
+<p>我们可以看到通过name获取到了想要的结果。我们也可以在日志中看到hibernate输出的日志:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hibernate: select person0_.id as id1_0_, person0_.agee as agee2_0_, person0_.name as name3_0_ from person person0_ where person0_.name=?</span><br></pre></td></tr></table></figure>
+
+<p>那么JPA是通过什么规则来根据方法名生成sql语句查询的呢？<br>其实JPA在这里遵循Convention over configuration（约定大约配置）的原则，遵循spring 以及JPQL定义的方法命名。Spring提供了一套可以通过命名规则进行查询构建的机制。这套机制会把方法名首先过滤一些关键字，比如 find…By, read…By, query…By, count…By 和 get…By 。系统会根据关键字将命名解析成2个子语句，第一个 By 是区分这两个子语句的关键词。这个 By 之前的子语句是查询子语句（指明返回要查询的对象），后面的部分是条件子语句。如果直接就是 findBy… 返回的就是定义Respository时指定的领域对象集合，同时JPQL中也定义了丰富的关键字：and、or、Between等等，下面我们来看一下JPQL中有哪些关键字：<br>————————————————<br>版权声明：本文为CSDN博主「深存少年梦」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/wujiaqi0921/article/details/78789087">https://blog.csdn.net/wujiaqi0921/article/details/78789087</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">Keyword	Sample	JPQL snippet</span><br><span class="line">And	findByLastnameAndFirstname	… where x.lastname = ?1 and</span><br><span class="line">Or	findByLastnameOrFirstname	… where x.lastname = ?1 or x.firstname = ?2</span><br><span class="line">Is,Equals	findByFirstnameIs,findByFirstnameEquals	… where x.firstname = ?1</span><br><span class="line">Between	findByStartDateBetween	… where x.startDate between ?1 and ?2</span><br><span class="line">LessThan	findByAgeLessThan	… where x.age &lt; ?1</span><br><span class="line">LessThanEqual	findByAgeLessThanEqual	… where x.age ⇐ ?1</span><br><span class="line">GreaterThan	findByAgeGreaterThan	… where x.age &gt; ?1</span><br><span class="line">GreaterThanEqual	findByAgeGreaterThanEqual	… where x.age &gt;= ?1</span><br><span class="line">After	findByStartDateAfter	… where x.startDate &gt; ?1</span><br><span class="line">Before	findByStartDateBefore	… where x.startDate &lt; ?1</span><br><span class="line">IsNull	findByAgeIsNull	… where x.age is null</span><br><span class="line">IsNotNull,NotNull	findByAge(Is)NotNull	… where x.age not null</span><br><span class="line">Like	findByFirstnameLike	… where x.firstname like ?1</span><br><span class="line">NotLike	findByFirstnameNotLike	… where x.firstname not like ?1</span><br><span class="line">StartingWith	findByFirstnameStartingWith	… where x.firstname like ?1 (parameter bound with appended %)</span><br><span class="line">EndingWith	findByFirstnameEndingWith	… where x.firstname like ?1 (parameter bound with prepended %)</span><br><span class="line">Containing	findByFirstnameContaining	… where x.firstname like ?1 (parameter bound wrapped in %)</span><br><span class="line">OrderBy	findByAgeOrderByLastnameDesc	… where x.age = ?1 order by x.lastname desc</span><br><span class="line">Not	findByLastnameNot	… where x.lastname &lt;&gt; ?1</span><br><span class="line">In	findByAgeIn(Collection ages)	… where x.age in ?1</span><br><span class="line">NotIn	findByAgeNotIn(Collection age)	… where x.age not in ?1</span><br><span class="line">TRUE	findByActiveTrue()	… where x.active = true</span><br><span class="line">FALSE	findByActiveFalse()	… where x.active = false</span><br><span class="line">IgnoreCase	findByFirstnameIgnoreCase	… where UPPER(x.firstame) = UPPER(?1)</span><br><span class="line">……		</span><br><span class="line">以上就是jpa的简单实用和介绍。</span><br><span class="line">————————————————</span><br><span class="line">版权声明：本文为CSDN博主「深存少年梦」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。</span><br><span class="line">原文链接：https://blog.csdn.net/wujiaqi0921/article/details/78789087</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/10/09/JPA%E7%9A%84%E8%AF%A6%E8%A7%A3%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-将本地项目上传到码云或者GitHub上" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1791,224 +2295,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/09/15/Thymeleaf%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java中的RPC分布式范例：RMI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/">Java中的RPC分布式范例：RMI</a>
-    </h1>
-  
-
-        
-        <a href="/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/" class="archive-article-date">
-  	<time datetime="2021-09-14T12:25:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Java中的RPC分布式范例：RMI"><a href="#Java中的RPC分布式范例：RMI" class="headerlink" title="Java中的RPC分布式范例：RMI"></a>Java中的RPC分布式范例：RMI</h1><p><img src="/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/1.png"></p>
-<p>•从刚才的示例可以看出，分布式的定义及解决问题的方式非常简单，即业务服务器接收到用户的计算请求后根据特定的算法，<strong>将计算的不同部分交由后台的不同主机处理，待结果汇总后，由业务服务器反馈给客户端</strong>。</p>
-<p>•在这个过程中，开发人员最为关注的就是计算的分发调度方式，因为这涉及到对网络通讯和并发的控制。</p>
-<p>•如果有一种方式能够<strong>将网络通讯和并发控制对程序开发人员透明化</strong>，那么将极度简化此类应用的开发成本，<strong>RMI****就是这样一个范例</strong>。</p>
-<p><img src="/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/2.png"></p>
-<p>•RPC(Remote Procedure Call Protocol)：远程过程调用：</p>
-<p>•两台服务器A、B，分别部署不同的应用a,b。当A服务器想要调用B服务器上应用b提供的函数或方法的时候，由于不在一个内存空间，不能直接调用，需要通过网络来表达调用的语义传达调用的数据。 </p>
-<p>•即在远程端的机器上写了一个程序，客户端这边是无法直接调用的，这个时候就出现了一个远程服务调用的概念。</p>
-<p>•RPC是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。在OSI网络通信模型中，RPC跨越了传输层和应用层。RPC使得开发包括网络分布式多程序在内的应用程序更加容易。RPC采用客户端/服务器模式。请求程序就是一个客户机，而服务提供程序就是一个服务器。首先，客户机调用进程发送一个有进程参数的调用信息到服务进程，然后等待应答信息。在服务器端，进程保持睡眠状态直到调用信息到达为止。当一个调用信息到达，服务器获得进程参数，计算结果，发送答复信息，然后等待下一个调用信息，最后，客户端调用进程接收答复信息，获得进程结果，然后调用执行继续进行。</p>
-<p>•RPC需要解决的问题</p>
-<p>•<strong>通讯问题</strong> : </p>
-<p>•主要是通过在客户端和服务器之间建立TCP连接，远程过程调用的所有交换的数据都在这个连接里传输。连接可以是按需连接，调用结束后就断掉，也可以是长连接，多个远程过程调用共享同一个连接。</p>
-<p>•<strong>寻址问题</strong> ： </p>
-<p>•A服务器上的应用怎么告诉底层的RPC框架，如何连接到B服务器（如主机或IP地址）以及特定的端口，方法的名称名称是什么，这样才能完成调用。比如基于Web服务协议栈的RPC，就要提供一个endpoint URI，或者是从UDDI服务上查找。如果是RMI调用(将网络通讯和并发控制对程序开发人员透明化)的话，还需要一个RMI Registry来注册服务的地址。</p>
-<p>•<strong>序列化与反序列化</strong> ： </p>
-<p>•当A服务器上的应用发起远程过程调用时，方法的参数需要通过底层的网络协议如TCP传递到B服务器，由于网络协议是基于二进制的，内存中的参数的值要序列化成二进制的形式，也就是序列化或编组，通过寻址和传输将序列化的二进制发送给B服务器。同理，B服务器接收参数要将参数反序列化。B服务器应用调用自己的方法处理后返回的结果也要序列化给A服务器，A服务器接收也要经过反序列化的过程。</p>
-<p><img src="/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/3.png"></p>
-<p>•RMI是Java的一组拥护开发分布式应用程序的API。RMI使用Java语言接口定义了远程对象，它集合了Java序列化和Java远程方法协议(Java Remote Method Protocol)。简单地说，这样使原先的程序在同一操作系统的方法调用，变成了不同操作系统之间程序的方法调用，由于J2EE是分布式程序平台，它以RMI机制实现程序组件在不同操作系统之间的通信。</p>
-<p>•RMI大大增强了Java开发分布式应用的能力,是开发百分之百纯Java的网络分布式应用系统的核心解决方案之一。其实它可以被看作是RPC的Java版本。但是传统RPC并不能很好地应用于分布式对象系统。而Java RMI 则支持存储于不同地址空间的程序级对象之间彼此进行通信，实现远程对象之间的无缝远程调用,用RMI开发的应用系统可以部署在任何支持JRE的平台上。</p>
-<p>•RMI使用的一般流程:</p>
-<p>•1，客户对象调用客户端辅助对象上的方法；</p>
-<p>•2，客户端辅助对象打包调用信息（变量，方法名），通过网络发送给服务端辅助对象；</p>
-<p>•3，服务端辅助对象将客户端辅助对象发送来的信息解包，找出真正被调用的方法以及该方法所在对象；</p>
-<p>•4，调用真正服务对象上的真正方法，并将结果返回给服务端辅助对象；</p>
-<p>•5，服务端辅助对象将结果打包，发送给客户端辅助对象；</p>
-<p>•6，客户端辅助对象将返回值解包，返回给客户对象；</p>
-<p>•7，客户对象获得返回值。</p>
-<p>•<strong>对于客户对象来说，步骤<strong><strong>2-6</strong></strong>是完全透明的</strong>，也就意味着，<strong>开发人员无需关注任何的网络数据传输处理</strong>。</p>
-<p><img src="/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/4.png"></p>
-<p><img src="/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/5.png"></p>
-<p><img src="/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/6.PNG"></p>
-<p>•RMI提供了一个非常优秀的分布式任务调度思想，将系统开发实施人员从繁重的网络连接、数据传输流程中解放出来。但是在系统中直接应用可能会存在一些缺陷，是否直接使用其在项目中完成分布式网络计算调度取决于这些缺陷是否影响项目的整成执行。比较典型的问题主要体现在以下方面：</p>
-<p>• RMI的一个优势也是其缺陷的体现：为了满足计算任务调度的开发规范性和统一的异常处理，<strong>RMI<strong><strong>对开发的流程规范比较严格，因此需要在业务代码中侵入较多的</strong></strong>RMI<strong><strong>特定</strong></strong>API</strong>，而某些API在无异常情况下对业务几乎无实际作用，如业务接口必须继承自Remote，每个方法都需要抛出RemoteException，业务实现还需要继承自特定的类等等，这对于很多习惯了快速开发，不愿意被太多的系统框架结果限制的开发团队来说需要极大的成本去适应这个开发过程，而且容易由于习惯性的忽略导致最终系统运行的异常。</p>
-<p>•RMI使用了通用统一的网络通讯方式，<strong>客户端参数传递即服务器端计算完成后的返回值传递使用了通用的序列化方式，这对于一些需要在完成分布式调度时对数据进行自定义的安全加密流程的项目来说，无疑是一个不好的消息</strong>，另一方面，<strong>RMI<strong><strong>采用了标准的</strong></strong>Socket****通讯，这对于系统建立在其他网络通讯协议上的业务系统来说也是一个很大的障碍</strong>。</p>
-<p>•由于JRMP的数据序列化部分是专为Java对象制定的，因此，<strong>RMI<strong><strong>对于用非</strong></strong>Java****语言开发的应用系统的支持不足</strong>。不能与用非Java语言书写的对象进行通信。</p>
-<p>•如果在项目中因为上述原因不愿意选择原生RMI完成网络计算任务调度，那么可以根据RMI的基本实现原理自行实现一套无需太多开发规范限制并能够自由扩展加密方式、底层网络协议实现方式的PRC调度模块。</p>
-<p>•RMI应用程序通常包括两个独立的程序：<strong>服务器程序和客户端程序</strong>。典型的服务器应用程序将创建多个远程对象，使这些远程对象能够被引用，然后等待客户机调用这些远程对象的方法。而典型的客户端程序则从服务器中得到一个或多个远程对象的引用，然后调用远程对象的方法。RMI为服务器和客户端进行通信和信息传递提供了一种机制。</p>
-<p>•在与远程对象的通信过程中，<strong>RMI<strong><strong>使用标准机制：</strong></strong>stub<strong><strong>和</strong></strong>skeleton</strong>。远程对象的stub担当远程对象的客户本地代表或代理人角色。调用程序将调用本地stub的方法，而本地stub将负责执行对远程对象的方法调用。在RMI中，远程对象的stub与该远程对象所实现的远程接口集相同。调用stub的方法时将执行下列操作：</p>
-<p>•(1) 初始化与包含远程对象的远程虚拟机的连接；</p>
-<p>•(2) 对远程虚拟机的参数进行编组（写入并传输）；</p>
-<p>•(3) 等待方法调用结果；</p>
-<p>•(4) 解编（读取）返回值或返回的异常；</p>
-<p>•(5) 将值返回给调用程序。为了向调用程序展示比较简单的调用机制，stub将参数的序列化和网络级通信等细节隐藏了起来。在远程虚拟机中，每个远程对象都可以有相应的skeleton（在JDK1.2以后的环境中便无需开发人员编写具体Stub和skeleton，而是自动生成）。</p>
-<p>•Skeleton负责将调用分配给实际的远程对象实现。它在接收方法调用时执行下列操作：</p>
-<p>•(1) 解编（读取）远程方法的参数；</p>
-<p>•(2) 调用实际远程对象实现上的方法；</p>
-<p>•(3) 将结果（返回值或异常）编组（写入并传输）给调用程序。</p>
-<p>•stub和skeleton由rmic编译器生成。</p>
-<p>•利用RMI编写分布式对象应用程序需要完成以下工作：</p>
-<p>•(1) 定位远程对象。应用程序可使用两种机制中的一种得到对远程对象的引用。它既可用RMI的简单命名工具rmiregistry来注册它的远程对象，也可以将远程对象引用作为常规操作的一部分来进行传递和返回。</p>
-<p>•(2)与远程对象通信。远程对象间通信的细节由RMI处理，对于程序员来说，远程通信看起来就像标准的Java方法调用。</p>
-<p>•(3)给作为参数或返回值传递的对象加载类字节码。因为RMI允许调用程序将纯Java对象传给远程对象，所以，RMI将提供必要的机制，既可以加载对象的代码又可以传输对象的数据。在RMI分布式应用程序运行时，服务器调用注册服务程序以使名字与远程对象相关联。客户机在服务器上的注册服务程序中用远程对象的名字查找该远程对象，然后调用它的方法。</p>
-<p>•根据对RMI任务调度的过程和基本实现原理的分析，可以看出，如果借鉴原生RMI的思想自行实现一套自定义的PRC组件主要需要借助Java的以下几个特征或功能：</p>
-<p>•1.Java网络开发</p>
-<p>•2.Java反射机制</p>
-<p>•3.重要的常用设计模式：Java动态代理</p>
-<p>•反射</p>
-<p>•JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意方法和属性；这种动态获取信息以及动态调用对象方法的功能称为java语言的反射机制。Java反射机制主要提供了以下功能：</p>
-<p>•在运行时判断任意一个对象所属的类；</p>
-<p>•在运行时构造任意一个类的对象；</p>
-<p>•在运行时判断任意一个类所具有的成员变量和方法；在运行时调用任意一个对象的方法；生成动态代理。</p>
-<p>•有关反射的详细内容请参见前序的专门章节</p>
-<p>•代理模式</p>
-<p>•代理模式是一种常用的设计模式，其目的就是为其他对象提供一个代理以控制对某个真实对象的访问。代理类负责为委托类预处理消息，过滤消息并转发消息，以及进行消息被委托类执行后的后续处理。通过使用代理，通常有两个优点：</p>
-<p>•1.可以隐藏委托类的实现;</p>
-<p>•2.可以实现客户与委托类间的解耦，在不修改委托类代码的情况下能够做一些额外的处理。</p>
-<p>•代理模式是为了提供额外或不同的操作，而插入的用来替代”实际”对象的对象，这些操作涉及到与”实际”对象的通信，因此代理通常充当中间人角色。Java的动态代理比代理的思想更前进了一步，它可以动态地创建并代理并动态地处理对所代理方法的调用。在动态代理上所做的所有调用都会被重定向到单一的调用处理器上，它的工作是揭示调用的类型并确定相应的策略。</p>
-<p><img src="/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/7.png"></p>
-<p><img src="/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/8.png"></p>
-<p><img src="/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/9.png"></p>
-<p>•常见的修改字节码实现动态代理的库：</p>
-<p>•CGLib</p>
-<p>•Javassist</p>
-<p>•更多动态代理相关内容参见前序专门章节</p>
-<p><img src="/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/10.png"></p>
-<p>•Java中通常使用什么方式实现网络和并发透明的便捷分布式RPC调用？</p>
-<p>•Java中通常使用动态代理模式在代理处理器中完成分布式RPC调用的网络连接、数据传输和并发控制处理，由于Java的反射机制和部分动态特性，使用动态代理后，这些操作可以完全对用户（开发人员）透明，用户可以方便的以本地方法调用的方式调用远程端声明实现的业务方法（计算过程在远程端实现）</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/09/14/Java%E4%B8%AD%E7%9A%84RPC%E5%88%86%E5%B8%83%E5%BC%8F%E8%8C%83%E4%BE%8B%EF%BC%9ARMI/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-什么是QPS，TPS，吞吐量" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/13/%E4%BB%80%E4%B9%88%E6%98%AFQPS%EF%BC%8CTPS%EF%BC%8C%E5%90%9E%E5%90%90%E9%87%8F/">什么是QPS，TPS，吞吐量</a>
-    </h1>
-  
-
-        
-        <a href="/2021/09/13/%E4%BB%80%E4%B9%88%E6%98%AFQPS%EF%BC%8CTPS%EF%BC%8C%E5%90%9E%E5%90%90%E9%87%8F/" class="archive-article-date">
-  	<time datetime="2021-09-13T04:15:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="什么是QPS，TPS，吞吐量"><a href="#什么是QPS，TPS，吞吐量" class="headerlink" title="什么是QPS，TPS，吞吐量"></a>什么是QPS，TPS，吞吐量</h1><h4 id="1、TPS：Transactions-Per-Second（每秒传输的事物处理个数），即服务器每秒处理的事务数。TPS包括一条消息入和一条消息出，加上一次用户数据库访问"><a href="#1、TPS：Transactions-Per-Second（每秒传输的事物处理个数），即服务器每秒处理的事务数。TPS包括一条消息入和一条消息出，加上一次用户数据库访问" class="headerlink" title="1、TPS：Transactions Per Second（每秒传输的事物处理个数），即服务器每秒处理的事务数。TPS包括一条消息入和一条消息出，加上一次用户数据库访问."></a>1、<strong>TPS</strong>：Transactions Per Second（每秒传输的事物处理个数），即服务器<strong>每秒</strong>处理的事务数。TPS包括一条消息入和一条消息出，加上一次用户数据库访问.</h4><p>TPS是软件测试结果的测量单位。一个事务是指一个客户机向服务器发送请求然后服务器做出反应的过程。客户机在发送请求时开始计时，收到服务器响应后结束计时，以此来计算使用的时间和完成的事务个数。</p>
-<p>一般的，评价系统性能均以每秒钟完成的技术交易的数量来衡量。系统整体处理能力取决于处理能力最低模块的TPS值。</p>
-<p>例如：天猫双十一，一秒完成多少订单</p>
-<p>2、<strong>QPS</strong>：每秒查询率QPS是对一个特定的查询服务器在<strong>规定时间内</strong>所处理流量多少的衡量标准，在因特网上，作为域名系统服务器的机器的性能经常用每秒查询率来衡量。</p>
-<p>对应fetches/sec，即每秒的响应请求数，也即是最大吞吐能力。</p>
-<p>QPS与TPS的<strong>区别</strong>是什么呢？</p>
-<p>举个栗子：假如一个大胃王一秒能吃10个包子，一个女孩子0.1秒能吃1个包子，那么他们是不是一样的呢？答案是否定的，因为这个女孩子不可能在一秒钟吃下10个包子，她可能要吃很久。这个时候这个大胃王就相当于TPS，而这个女孩子则是QPS。虽然很相似，但其实是不同的。</p>
-<p>一．系统吞吐量要素：</p>
-<p>一个系统的<strong>吞吐量</strong>（承压能力）与request对CPU的消耗、外部接口、IO等等紧密关联。单个reqeust 对CPU消耗越高，外部系统接口、IO影响速度越慢，系统吞吐能力越低，反之越高。</p>
-<p>系统吞吐量几个重要参数：QPS（TPS）、并发数、响应时间</p>
-<p>QPS（TPS）：每秒钟request/事务 数量</p>
-<p>并发数： 系统同时处理的request/事务数</p>
-<p>响应时间： 一般取平均响应时间</p>
-<p>（很多人经常会把并发数和TPS理解混淆）</p>
-<p>理解了上面三个要素的意义之后，就能推算出它们之间的关系：</p>
-<p>QPS（TPS）= 并发数/平均响应时间</p>
-<p>tps ：每秒的响应事务数量  例如：天猫双十一，一秒完成多少订单<br>qps : 每秒的响应请求数量  例如：<br>吞吐量（throughput）(qps):并发在多少的时候，网站的qps是多少<br>QPS（TPS）= 并发数/平均响应时间</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/09/13/%E4%BB%80%E4%B9%88%E6%98%AFQPS%EF%BC%8CTPS%EF%BC%8C%E5%90%9E%E5%90%90%E9%87%8F/">展开全文 >></a>
         </p>
       
 
